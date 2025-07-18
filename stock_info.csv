@@ -1,43 +1,1383 @@
 ticker,name,industry
-AAPL,è˜‹æžœå…¬å¸,è³‡è¨Šç§‘æŠ€
-MSFT,å¾®è»Ÿå…¬å¸,è³‡è¨Šç§‘æŠ€
-GOOGL,è°·æ­Œæ¯å…¬å¸,é€šè¨Šæœå‹™
-AMZN,äºžé¦¬éœå…¬å¸,éžå¿…éœ€æ¶ˆè²»å“
-TSLA,ç‰¹æ–¯æ‹‰å…¬å¸,éžå¿…éœ€æ¶ˆè²»å“
-JPM,æ‘©æ ¹å¤§é€š,é‡‘èžæœå‹™
-JNJ,å¬Œç”Ÿå…¬å¸,é†«ç™‚ä¿å¥
-V,å¨å£«å¡å…¬å¸,è³‡è¨Šç§‘æŠ€
-PG,å¯¶æ½”å…¬å¸,å¿…éœ€æ¶ˆè²»å“
-XOM,åŸƒå…‹æ£®ç¾Žå­š,èƒ½æº
-NVDA,è‹±å‰é”å…¬å¸,è³‡è¨Šç§‘æŠ€
-META,Metaå¹³å°,é€šè¨Šæœå‹™
-BRK.B,ä¼¯å…‹å¸Œçˆ¾,é‡‘èžæœå‹™
-UNH,è¯åˆå¥åº·,é†«ç™‚ä¿å¥
-LLY,ç¦®ä¾†å…¬å¸,é†«ç™‚ä¿å¥
-WMT,æ²ƒçˆ¾ç‘ª,å¿…éœ€æ¶ˆè²»å“
-HD,å®¶å¾—å¯¶,éžå¿…éœ€æ¶ˆè²»å“
-KO,å¯å£å¯æ¨‚,å¿…éœ€æ¶ˆè²»å“
-DIS,è¿ªå£«å°¼å…¬å¸,é€šè¨Šæœå‹™
-NFLX,å¥ˆé£›å…¬å¸,é€šè¨Šæœå‹™
-ADBE,Adobeå…¬å¸,è³‡è¨Šç§‘æŠ€
-CRM,Salesforce,è³‡è¨Šç§‘æŠ€
-ORCL,ç”²éª¨æ–‡å…¬å¸,è³‡è¨Šç§‘æŠ€
-CSCO,æ€ç§‘å…¬å¸,è³‡è¨Šç§‘æŠ€
-INTC,è‹±ç‰¹çˆ¾å…¬å¸,è³‡è¨Šç§‘æŠ€
-AMD,è¶…å¾®å…¬å¸,è³‡è¨Šç§‘æŠ€
-QCOM,é«˜é€šå…¬å¸,è³‡è¨Šç§‘æŠ€
-TXN,å¾·å·žå„€å™¨,è³‡è¨Šç§‘æŠ€
-AVGO,åšé€šå…¬å¸,è³‡è¨Šç§‘æŠ€
-PYPL,PayPalå…¬å¸,è³‡è¨Šç§‘æŠ€
-BA,æ³¢éŸ³å…¬å¸,å·¥æ¥­
-CAT,å¡ç‰¹å½¼å‹’,å·¥æ¥­
-MMM,3Må…¬å¸,å·¥æ¥­
-NEE,æ–°ç´€å…ƒèƒ½æº,å…¬ç”¨äº‹æ¥­
-SO,å—æ–¹å…¬å¸,å…¬ç”¨äº‹æ¥­
-D,é“æ˜Žå°¼èƒ½æº,å…¬ç”¨äº‹æ¥­
-AMT,ç¾Žåœ‹é›»å¡”,æˆ¿åœ°ç”¢
-PLD,æ™®æ´›æ–¯,æˆ¿åœ°ç”¢
-EXR,æ“´å±•ä½å®¿,æˆ¿åœ°ç”¢
-LIN,æž—å¾·é›†åœ˜,åŽŸææ–™
-APD,ç©ºæ°£åŒ–å·¥,åŽŸææ–™
-FCX,è‡ªç”±æ¸¯,åŽŸææ–™ 
+AAL,¬ü°ê¯èªÅ¶°¹Î¤½¥q,¤u·~
+ABNB,·R©¼ªï¤½¥q,«D¥²»Ý®ø¶O«~
+ADBE,¶ø¦h¤ñ¨t²Î¤½¥q,¸ê°T¬ì§Þ
+AMT,¬ü°ê¹q¶ð,©Ð¦a²£
+BA,ªi­µ¤½¥q,¤u·~
+BAC,¬ü°ê»È¦æ,ª÷¿ÄªA°È
+BKNG,Ä}«È±±ªÑ¤½¥q,«D¥²»Ý®ø¶O«~
+BMY,¥²ªv§´¬I¶QÄ_¤½¥q,ÂåÀø«O°·
+C,ªáºX¶°¹Î,ª÷¿ÄªA°È
+COST,¦n¥«¦h¤½¥q,¥²»Ý®ø¶O«~
+DAL,¹F¬ü¯èªÅ,¤u·~
+F,ºÖ¯S¨T¨®¤½¥q,«D¥²»Ý®ø¶O«~
+GE,©_²§¤½¥q,¤u·~
+GILD,¦N§Q¼w¬ì¾Ç¤½¥q,ÂåÀø«O°·
+GS,°ª²±¶°¹Î,ª÷¿ÄªA°È
+HCA,HCAÂåÀø«O°·¤½¥q,ÂåÀø«O°·
+ISRG,ª½Ä±¥~¬ì¤½¥q,ÂåÀø«O°·
+LLY,Â§¨Ó¤½¥q,ÂåÀø«O°·
+MMM,3M,¤u·~
+MS,¼¯®Ú¤h¤¦§Q,ª÷¿ÄªA°È
+NEE,·s¬ö¤¸¯à·½¤½¥q,¤½¥Î¨Æ·~
+NFLX,ºô­¸¤½¥q,³q°TªA°È
+NOW,ServiceNow¤½¥q,¸ê°T¬ì§Þ
+PANW,Palo Alto Networks Inc,¸ê°T¬ì§Þ
+PLTR,©¬Äõ´£º¸¬ì§Þ¤½¥q,¸ê°T¬ì§Þ
+PYPL,Paypal±±ªÑ¦³­­¤½¥q,ª÷¿ÄªA°È
+SMCI,¶W·L¹q¸£¤½¥q,¸ê°T¬ì§Þ
+TSLA,¯S´µ©Ô¤½¥q,«D¥²»Ý®ø¶O«~
+UAL,Áp¦X¯èªÅ±±ªÑ¤½¥q,¤u·~
+V,«Â¤h¥d,ª÷¿ÄªA°È
+WFC,´I°ê»È¦æ,ª÷¿ÄªA°È
+WMT,¨Uº¸º¿¤½¥q,¥²»Ý®ø¶O«~
+ZM,Zoom³q°T¦³­­¤½¥q,¸ê°T¬ì§Þ
+AA,¬ü°ê¾T·~¤½¥q,­ì§÷®Æ
+AAPL,Ä«ªG¤½¥q,¸ê°T¬ì§Þ
+ABBV,¦ã§Bºû¤½¥q,ÂåÀø«O°·
+ABT,¨È°ö,ÂåÀø«O°·
+ADI,¨È¼w¿Õ¤½¥q,¸ê°T¬ì§Þ
+ALB,¶®«O¤½¥q,­ì§÷®Æ
+AMAT,À³¥Î§÷®Æ,¸ê°T¬ì§Þ
+AMD,¶W·L¥b¾ÉÅé¤½¥q,¸ê°T¬ì§Þ
+AMGN,¦w¶i¤½¥q,ÂåÀø«O°·
+AMZN,¨È°¨»¹¤½¥q,«D¥²»Ý®ø¶O«~
+APTV,¦wªiºÖ±±ªÑ¦³­­¤½¥q,«D¥²»Ý®ø¶O«~
+AVGO,³Õ³q¤½¥q,¸ê°T¬ì§Þ
+AXP,¬ü°ê¹B³q,ª÷¿ÄªA°È
+AZN,ªü´µ¯S±¶§Q±d¤½¶}¦³­­¤½¥q,ÂåÀø«O°·
+BLK,¨©µÜ¼w¤½¥q,ª÷¿ÄªA°È
+BSX,ªi¤h¹y¬ì¾Ç¤½¥q,ÂåÀø«O°·
+CAT,¥d¯S©¼°Ç¤½¥q,¤u·~
+CCL,¹Å¦~µØ¤½¥q,«D¥²»Ý®ø¶O«~
+CMCSA,±d¥d´µ¯S¤½¥q,³q°TªA°È
+CRM,ÁÉ´I®É¤½¥q,¸ê°T¬ì§Þ
+CSCO,«ä¬ì,¸ê°T¬ì§Þ
+CVS,CVS«O°·¤½¥q,ÂåÀø«O°·
+CVX,³·¦òÀs¤½¥q,¯à·½
+DIS,µØ¯S­}¤h¥§¤½¥q,³q°TªA°È
+EA,¬ü°ÓÃÀ¹q¤½¥q,³q°TªA°È
+EL,¶®¸ÖÄõÂL,¥²»Ý®ø¶O«~
+FCX,¦Û¥Ñ´ä³Á§J²öÄõ»Éª÷¤½¥q,­ì§÷®Æ
+FDX,Áp¨¹§Ö»¼¤½¥q,¤u·~
+GD,³q¥Î°Ê¤O¤½¥q,¤u·~
+GEV,©_²§ºû¿Õ¥Ë¤½¥q,¤u·~
+GM,³q¥Î¨T¨®¤½¥q,«D¥²»Ý®ø¶O«~
+GOOG,Alphabet¤½¥q,³q°TªA°È
+GRMN,°ê»Ú¯è¹qªÑ¥÷¦³­­¤½¥q,«D¥²»Ý®ø¶O«~
+HD,®a±oÄ_¤½¥q,«D¥²»Ý®ø¶O«~
+HON,º~«ÂÁp¦X°ê»Ú¤½¥q,¤u·~
+HPQ,´f´¶¤½¥q,¸ê°T¬ì§Þ
+IBM,°ê»Ú°Ó·~¾÷¾¹¤½¥q,¸ê°T¬ì§Þ
+INTC,­^¯Sº¸,¸ê°T¬ì§Þ
+JNJ,¼b¥Í¤½¥q,ÂåÀø«O°·
+JPM,¼¯®Ú¤j³q»È¦æ,ª÷¿ÄªA°È
+KHC,¥d¤Ò¦ë¤ó¤½¥q,¥²»Ý®ø¶O«~
+KLAC,¬ì½U¤½¥q,¸ê°T¬ì§Þ
+KO,¥i¤f¥i¼Ö¤½¥q,¥²»Ý®ø¶O«~
+LMT,¬¥§J§Æ¼w°¨¤B,¤u·~
+LRCX,¬ìªL¬ãµoªÑ¥÷¦³­­¤½¥q,¸ê°T¬ì§Þ
+LULU,ÅSÅSÂfÂc¤½¥q,«D¥²»Ý®ø¶O«~
+LUV,¦è«n¯èªÅ,¤u·~
+MA,¸U¨Æ¹F¥d,ª÷¿ÄªA°È
+MCD,³Á·í³Ò¤½¥q,«D¥²»Ý®ø¶O«~
+MCO,¿p­},ª÷¿ÄªA°È
+MDT,¬ü´°¤O¤½¥q,ÂåÀø«O°·
+MET,¤j³£·|¤H¹Ø,ª÷¿ÄªA°È
+META,Meta¥­¥x¤½¥q,³q°TªA°È
+MRK,Àq§JÃÄ¼t,ÂåÀø«O°·
+MRNA,²ö¼w¯Ç¤½¥q,ÂåÀø«O°·
+MSFT,·L³n,¸ê°T¬ì§Þ
+MU,¬ü¥ú¬ì§Þ¤½¥q,¸ê°T¬ì§Þ
+NEM,¯Ã»X¯S¤½¥q,­ì§÷®Æ
+NKE,­@¦N¤½¥q,«D¥²»Ý®ø¶O«~
+NVAX,¿Õ¥Ë¥Ë§J´µ¤½¥q,ÂåÀø«O°·
+NVDA,½÷¹F,¸ê°T¬ì§Þ
+NXPI,®¦´¼®ú¥b¾ÉÅéªÑ¥÷¦³­­¤½¥q,¸ê°T¬ì§Þ
+O,Realty Income Corp,©Ð¦a²£
+ON,¦w´Ë¬ü¥b¾ÉÅé,¸ê°T¬ì§Þ
+ORCL,¥Ò°©¤å¤½¥q,¸ê°T¬ì§Þ
+PEP,¦Ê¨Æ¥i¼Ö¤½¥q,¥²»Ý®ø¶O«~
+PFE,½÷·ç¤jÃÄ¼tªÑ¥÷¦³­­¤½¥q,ÂåÀø«O°·
+PG,Ä_¹´¤½¥q,¥²»Ý®ø¶O«~
+QCOM,°ª³q¤½¥q,¸ê°T¬ì§Þ
+ROKU,Roku¤½¥q,³q°TªA°È
+RTX,¹p¯«¬ì§Þ¤½¥q,¤u·~
+SBUX,¬P¤Ú§J,«D¥²»Ý®ø¶O«~
+SNPS,·s«ä¬ì§Þ¤½¥q,¸ê°T¬ì§Þ
+SPG,ÁÉªùª«·~¶°¹Î,©Ð¦a²£
+T,AT&T¤½¥q,³q°TªA°È
+TMO,ÁÉÀq­¸¥@º¸¬ì§Þ¦³­­¤½¥q,ÂåÀø«O°·
+TSM,¥xÆW¿nÅé¹q¸ô»s³yªÑ¥÷¦³­­¤½¥q,¸ê°T¬ì§Þ
+TXN,¼w¦{»ö¾¹¤½¥q,¸ê°T¬ì§Þ
+UBER,Àu¨B¬ì§Þ¤½¥q,¤u·~
+UNH,Áp¦X°·±d¶°¹Î¤½¥q,ÂåÀø«O°·
+VRTX,ºÖ®õ»sÃÄ¤½¥q,ÂåÀø«O°·
+VZ,«Â·ç´Ë¹q«H¤½¥q,³q°TªA°È
+WBD,µØ¯Ç¥S§Ì±´¯Á¤½¥q,³q°TªA°È
+WELL,«Âº¸¶ð¤½¥q,©Ð¦a²£
+WOLF,Wolfspeed¤½¥q,¸ê°T¬ì§Þ
+XOM,®J§J´Ë¬ü§·¤½¥q,¯à·½
+XYZ,¥¬¬¥§J¤½¥q,ª÷¿ÄªA°È
+ACN,®J´Ë­õ¦³­­¤½¥q,¸ê°T¬ì§Þ
+ADM,Archer-Daniels-Midland Co,¥²»Ý®ø¶O«~
+ADSK,¼Ú¯S§J,¸ê°T¬ì§Þ
+ANET,Aristaºô¸ô¤½¥q,¸ê°T¬ì§Þ
+APD,®ðÅé²£«~»P¤Æ¾Ç,­ì§÷®Æ
+APH,¦w¶O¿Õ,¸ê°T¬ì§Þ
+ASML,¦ã¥q¼¯º¸±±ªÑ¤½¥q,¸ê°T¬ì§Þ
+AWK,¬ü°ê¤ô³B²z¤½¥q,¤½¥Î¨Æ·~
+BABA,ªü¨½¤Ú¤Ú¶°¹Î±±ªÑ¦³­­¤½¥q,«D¥²»Ý®ø¶O«~
+BIIB,¦Ê°·¤½¥q,ÂåÀø«O°·
+BK,¯Ã¬ù±ö¶©»È¦æ,ª÷¿ÄªA°È
+CHTR,¯S³\³q°T¤½¥q,³q°TªA°È
+CI,«H¿Õ¶°¹Î,ÂåÀø«O°·
+CL,°ªÅS¼ä-´ÄÆV¤½¥q,¥²»Ý®ø¶O«~
+COF,²Ä¤@¸ê¥»ª÷¿Ä¤½¥q,ª÷¿ÄªA°È
+COIN,¤ñ¯S¹ô°ò¦a¥þ²y¤½¥q,ª÷¿ÄªA°È
+COP,±dµá¥Ûªo,¯à·½
+CRWD,Crowdstrike±±ªÑ¤½¥q,¸ê°T¬ì§Þ
+CSX,CSX Corp,¤u·~
+DD,·s§ù¨¹¤½¥q,­ì§÷®Æ
+DE,­}º¸,¤u·~
+DELL,À¹º¸¬ì§Þ¤½¥q,¸ê°T¬ì§Þ
+DG,¹F¼Ö¤½¥q,¥²»Ý®ø¶O«~
+DHR,¤¦¯Ç»®¶°¹Î,ÂåÀø«O°·
+DOCU,DocuSign¤½¥q,¸ê°T¬ì§Þ
+EBAY,¹q¤lÆW©ç½æºô¯¸¤½¥q,«D¥²»Ý®ø¶O«~
+ELV,Elevance°·±d¤½¥q,ÂåÀø«O°·
+EQIX,Equinix¤½¥q,©Ð¦a²£
+FI,Fiserv¤½¥q,ª÷¿ÄªA°È
+FTNT,¨¾¯Sºô¤½¥q,¸ê°T¬ì§Þ
+GLW,±d¹ç¤½¥q,¸ê°T¬ì§Þ
+GPN,Àô¶×¤½¥q,ª÷¿ÄªA°È
+ICE,¬w»Ú¥æ©ö©Ò,ª÷¿ÄªA°È
+INTU,ª½Ä±¤½¥q,¸ê°T¬ì§Þ
+KD,Kyndryl Holdings Inc,¸ê°T¬ì§Þ
+LIN,ªL¼w¤½¶}¦³­­¤½¥q,­ì§÷®Æ
+LOW,Ã¹«Â¤½¥q,«D¥²»Ý®ø¶O«~
+MAR,¸U»¨°ê»Ú¶°¹Î(°¨¨½Äõ),«D¥²»Ý®ø¶O«~
+MDLZ,»õ´þ°ê»Ú,¥²»Ý®ø¶O«~
+MNST,©ÇÃ~¶¼®Æ¤½¥q,¥²»Ý®ø¶O«~
+MO,°ª¯S§Q¶°¹Î,¥²»Ý®ø¶O«~
+MRVL,Marvell Technology Inc,¸ê°T¬ì§Þ
+MSCI,MSCI ©úÑÔ,ª÷¿ÄªA°È
+MSTR,·Lµ¦²¤¤½¥q,¸ê°T¬ì§Þ
+NCLH,®¿«Â¶l½ü±±ªÑ¦³­­¤½¥q,«D¥²»Ý®ø¶O«~
+NDAQ,¨º´µ¹F§J¦³­­¤½¥q,ª÷¿ÄªA°È
+NOC,¿Õ´µ¬¥´¶®æ©Ô°Ò,¤u·~
+OGN,¼Ú¹Å¶©¤½¥q,ÂåÀø«O°·
+OXY,¦è¤è¥Ûªo,¯à·½
+PCAR,©¬¥d¤½¥q,¤u·~
+PLD,´¶¬¥´µ,©Ð¦a²£
+PRU,«O¼w«Hª÷¿Ä,ª÷¿ÄªA°È
+RCL,¬Ó®a¥[°Ç¤ñ°ê»Ú¹C½ü¦³­­¤½¥q,«D¥²»Ý®ø¶O«~
+REGN,Regeneron Pharmaceuticals Inc,ÂåÀø«O°·
+SCHW,¹Å«H²z°]¤½¥q,ª÷¿ÄªA°È
+SLB,´µ­Û¨©ÁÂ¤½²³¦³­­¤½¥q,¯à·½
+SNOW,Snowflake¤½¥q,¸ê°T¬ì§Þ
+SOLV,Solventum¤½¥q,ÂåÀø«O°·
+SPGI,¼Ð·Ç´¶º¸¥þ²y¤½¥q,ª÷¿ÄªA°È
+SYK,¥vÁÉ§J,ÂåÀø«O°·
+TGT,¥Ø¼Ð¦Ê³f¤½¥q,¥²»Ý®ø¶O«~
+TTWO,Take-Two¤¬°Ê³nÅé¤½¥q,³q°TªA°È
+TWLO,Twilio¤½¥q,¸ê°T¬ì§Þ
+U,Unity³nÅé¤½¥q,¸ê°T¬ì§Þ
+UNP,Áp¦X¤Ó¥­¬v¤½¥q,¤u·~
+UPS,Áp¦X¥]»qªA°È¤½¥q,¤u·~
+VTRS,·u­P¤½¥q,ÂåÀø«O°·
+WM,¼o±óª«ºÞ²z,¤u·~
+ADP,¦Û°Ê¸ê®Æ³B²z¤½¥q,¤u·~
+AEP,¬ü°ê¹q¤O¤½¥q,¤½¥Î¨Æ·~
+AIG,¬ü°ê°ê»Ú¶°¹Î,ª÷¿ÄªA°È
+ALGN,¦ã§Q¬ì§Þ¤½¥q,ÂåÀø«O°·
+ALK,ªü©Ô´µ¥[¯èªÅ¶°¹Î¤½¥q,¤u·~
+ALL,¦n¨Æ¹F«OÀI¤½¥q,ª÷¿ÄªA°È
+AON,©É¦w¤½¶}¦³­­¤½¥q,ª÷¿ÄªA°È
+ARM,¦w¿Ñ±±ªÑ¤½¶}¦³­­¤½¥q,¸ê°T¬ì§Þ
+BBWI,Bath & Body Works¤½¥q,«D¥²»Ý®ø¶O«~
+BBY,¦Ê«ä¶R¤½¥q,«D¥²»Ý®ø¶O«~
+BDX,ºÑ­}ÂåÀø¾¹±ñ¦³­­¤½¥q,ÂåÀø«O°·
+BE,¥¬¾|©i¯à·½¤½¥q,¤u·~
+BIDU,¦Ê«×¶°¹ÎªÑ¥÷¦³­­¤½¥q,³q°TªA°È
+BX,¶Â¥Û¤½¥q,ª÷¿ÄªA°È
+BYND,¶W¶V¦×Ãþ¤½¥q,¥²»Ý®ø¶O«~
+CB,¥C³Õ¦³­­¤½¥q,ª÷¿ÄªA°È
+CCI,¬Ó«a«°³ù¤½¥q,©Ð¦a²£
+CDNS,Cadence³]­p¨t²Î¤½¥q,¸ê°T¬ì§Þ
+CEG,¬P®y¯à·½¤½¥q,¤½¥Î¨Æ·~
+CF,CF¤u·~±±ªÑ¤½¥q,­ì§÷®Æ
+CME,ªÛ¥[­ô°Ó«~´Á³f¥æ©ö©Ò¶°¹Î,ª÷¿ÄªA°È
+CMG,©_ªi¹p¾¥¦è­ô¿N¯N¤½¥q,«D¥²»Ý®ø¶O«~
+CMI,±d©ú´µ¤½¥q,¤u·~
+CPRT,¬ì¬£¯S¤½¥q,¤u·~
+CRWV,CoreWeave¤½¥q,¸ê°T¬ì§Þ
+D,¹D©ú¥§¯à·½¤½¥q,¤½¥Î¨Æ·~
+DDOG,¼Æ¾Úª¯¤½¥q,¸ê°T¬ì§Þ
+DLR,¼Æ¦ì¤£°Ê²£«H°U¤½¥q,©Ð¦a²£
+DLTR,¿ú¾ð°Ó©±¤½¥q,¥²»Ý®ø¶O«~
+DPZ,¹F¬ü¼Ö©ÜÂÄªÑ¥÷¦³­­¤½¥q,«D¥²»Ý®ø¶O«~
+DUK,§ù§J¯à·½¤½¥q,¤½¥Î¨Æ·~
+ECL,ÃÀ±d¶°¹Î,­ì§÷®Æ
+ETN,¥ì¹y¤½¶}¦³­­¤½¥q,¤u·~
+EW,·R¼wµØ¥Í©R¬ì¾Ç,ÂåÀø«O°·
+EXPE,´¼¹Cºô¶°¹Î¤½¥q,«D¥²»Ý®ø¶O«~
+FIS,´I¹F¥þ°ê¸ê°TªA°È,ª÷¿ÄªA°È
+FOXA,ºÖ´µ¤½¥q,³q°TªA°È
+GEHC,©_²§ÂåÀø«O°·¬ì§Þ¤½¥q,ÂåÀø«O°·
+GIS,³q¥Î¿i§{¤½¥q,¥²»Ý®ø¶O«~
+GOOGL,Alphabet¤½¥q,³q°TªA°È
+HUM,«¢ªù¨º¤½¥q,ÂåÀø«O°·
+IDXX,IDEXX¹êÅç«Ç¤½¥q,ÂåÀø«O°·
+ILMN,¥ì¾|¦Ì¯Ç¤½¥q,ÂåÀø«O°·
+IQV,¦ã©ø½n±±ªÑ¤½¥q,ÂåÀø«O°·
+IRBT,iRobot¤½¥q,«D¥²»Ý®ø¶O«~
+KMB,ª÷¦Ê§Q§J©Ô§J,¥²»Ý®ø¶O«~
+KR,§JÃ¹®æ¤½¥q,¥²»Ý®ø¶O«~
+LHX,L3«¢¨½´µ¬ì§Þ¤½¥q,¤u·~
+LUMN,¬y©ú¬ì§Þ¤½¥q,³q°TªA°È
+M,±ö¦è¦Ê³f¤½¥q,«D¥²»Ý®ø¶O«~
+MCK,³Á¥d»¹,ÂåÀø«O°·
+MGM,¬ü°ª±ö«×°²§ø°ê»Ú,«D¥²»Ý®ø¶O«~
+MLM,Martin Marietta Materials Inc,­ì§÷®Æ
+NIO,½«¨Ó¶°¹Î,«D¥²»Ý®ø¶O«~
+NVO,¿Õ©M¿Õ¼w¤½¥q,ÂåÀø«O°·
+ORLY,¶ø¿à§Q¨T¨®¤½¥q,«D¥²»Ý®ø¶O«~
+PARA,¬£©Ô»X¥þ²y,³q°TªA°È
+PFG,«H¦wª÷¿Ä«OÀI¶°¹Î,ª÷¿ÄªA°È
+PHM,´¶±o¶°¹Î¤½¥q,«D¥²»Ý®ø¶O«~
+PLUG,´¶©Ô®æ¯à·½¤½¥q,¤u·~
+PM,µá§Q®ú²ö¨½´µ°ê»Ú¤½¥q,¥²»Ý®ø¶O«~
+PNC,PNCª÷¿ÄªA°È¶°¹Î,ª÷¿ÄªA°È
+PSA,¤½¦@¦sÀx¤½¥q,©Ð¦a²£
+PSX,µá§Q´¶66,¯à·½
+PTON,¬£¼ÖÄË°·±d¬ì§Þ¤½¥q,«D¥²»Ý®ø¶O«~
+PWR,¼s¹FªA°È¤½¥q,¤u·~
+QRVO,¬ì¨U¤½¥q,¸ê°T¬ì§Þ
+RBLX,Roblox¤½¥q,³q°TªA°È
+ROP,Roper¬ì§Þ¤½¥q,¸ê°T¬ì§Þ
+RUN,Sunrun¤½¥q,¤u·~
+SHOP,Shopify¤½¥q,¸ê°T¬ì§Þ
+SHW,Á§¤å«Â·G¤½¥q,­ì§÷®Æ
+SKX,¬ü°Ó«ä³Í±¶ªÑ¥÷¦³­­¤½¥q,«D¥²»Ý®ø¶O«~
+SO,«n¤è¤½¥q,¤½¥Î¨Æ·~
+SONY,¯Á¥§,«D¥²»Ý®ø¶O«~
+SPOT,Án¯}¤Ñ¬ì§Þ¦³­­³d¥ô¤½¥q,³q°TªA°È
+SRE,®á´¶©Ô,¤½¥Î¨Æ·~
+STM,·Nªk¥b¾ÉÅé¤½¥q,¸ê°T¬ì§Þ
+SWKS,«ä¨Î°T¥b¾ÉÅé¦³­­¤½¥q,¸ê°T¬ì§Þ
+TDOC,Teladoc¤½¥q,ÂåÀø«O°·
+TEL,TE Connectivity PLC,¸ê°T¬ì§Þ
+TEM,Tempus AI¤½¥q,ÂåÀø«O°·
+TJX,TJX¤½¥q,«D¥²»Ý®ø¶O«~
+TM,Â×¥Ð¨T¨®¤½¥q,«D¥²»Ý®ø¶O«~
+TMUS,T-Mobile¬ü°ê¤½¥q,³q°TªA°È
+TPR,±¾´à¤½¥q,«D¥²»Ý®ø¶O«~
+TRV,®È¦æªÌ«OÀI¤½¥q,ª÷¿ÄªA°È
+UAA,¦w¼wº¿¤½¥q,«D¥²»Ý®ø¶O«~
+USB,¬ü°ê¦X²³»È¦æ,ª÷¿ÄªA°È
+VRT,ºû¿Í±±ªÑ¤½¥q,¤u·~
+VTR,Ventas¤½¥q,©Ð¦a²£
+WBA,¨U³ÕÁp¤½¥q,¥²»Ý®ø¶O«~
+XEL,Xcel ¯à·½,¤½¥Î¨Æ·~
+YUM,¦Ê³ÓÀ\¶¼,«D¥²»Ý®ø¶O«~
+ZTS,ºÓÄËªÑ¥÷¦³­­¤½¥q,ÂåÀø«O°·
+A,¦w±¶­Û¬ì§Þ¤½¥q,ÂåÀø«O°·
+AEE,ªü²öªL¤½¥q,¤½¥Î¨Æ·~
+AES,·R¥ì´µ¤½¥q,¤½¥Î¨Æ·~
+AFL,¬ü°ê®a®x¤H¹Ø«OÀI¤½¥q,ª÷¿ÄªA°È
+AJG,Arthur J Gallagher & Co,ª÷¿ÄªA°È
+AKAM,Akamai¬ì§Þ¤½¥q,¸ê°T¬ì§Þ
+AME,ªü¬ü¯S§J¤½¥q,¤u·~
+AMP,ªüÀq´¶µÜ´µª÷¿Ä¤½¥q,ª÷¿ÄªA°È
+ANSS,ANSYS¤½¥q,¸ê°T¬ì§Þ
+AOS,A.O.¥v±K´µ¤½¥q,¤u·~
+APA,ªü©¬©_¤½¥q,¯à·½
+APLD,À³¥Î¼Æ¦ì¤½¥q,¸ê°T¬ì§Þ
+AVB,AvalonBay Communities Inc,©Ð¦a²£
+AZO,¨T¨®¦a±a¤½¥q,«D¥²»Ý®ø¶O«~
+BHP,¥²©M¥²©Ý¶°¹Î¦³­­¤½¥q,­ì§÷®Æ
+BRK.B,#N/A,#N/A
+BRK/B,ªi§J®L®ü·æ«Â¤½¥q,ª÷¿ÄªA°È
+BTDR,¤ñ¯S¤p³À¬ì§Þ¶°¹Î,¸ê°T¬ì§Þ
+BWA,³Õ®æµØ¯Ç,«D¥²»Ý®ø¶O«~
+BXP,ªi¤h¹y¦a²£¤½¥q,©Ð¦a²£
+CAG,±d¥§®æ©Ô«~µP¤½¥q,¥²»Ý®ø¶O«~
+CARR,¶}§Q¥þ²y¤½¥q,¤u·~
+CBOE,ªÛ¥[­ô¿ï¾ÜÅv¥æ©ö©Ò¥þ²y¥«³õ¤½¥q,ª÷¿ÄªA°È
+CBRE,¥@¨¹ÃQ²z¥K¶°¹Î¤½¥q,©Ð¦a²£
+CDW,CDW Corp/DE,¸ê°T¬ì§Þ
+CE,¶ë©Ô¥§´µ¤½¥q,­ì§÷®Æ
+CHD,¥C©_¤Î¼wÃh¯S¤½¥q,¥²»Ý®ø¶O«~
+CINF,¨¯¨¯¨º´£ª÷¿Ä¤½¥q,ª÷¿ÄªA°È
+CLF,§J¨½¤ÒÄõ§J¨½¤Ò¤½¥q,­ì§÷®Æ
+CLS,Celestica Inc,¸ê°T¬ì§Þ
+CLX,°ª¼Ö¤ó¤½¥q,¥²»Ý®ø¶O«~
+CMS,CMS¯à·½,¤½¥Î¨Æ·~
+CNC,¸t¤B¤½¥q,ÂåÀø«O°·
+COR,´Ë¬ì©Ô¤½¥q,ÂåÀø«O°·
+CPB,ª÷Ä_¤½¥q,¥²»Ý®ø¶O«~
+CPRI,¥d¥¬¨½±±ªÑ¦³­­¤½¥q,«D¥²»Ý®ø¶O«~
+CSIQ,ªü´µ¯S¶§¥ú¹q¤O,¸ê°T¬ì§Þ
+CTAS,«H¹F«ä¤½¥q,¤u·~
+CTRA,¬ì¯S©Ô¯à·½¤½¥q,¯à·½
+CTSH,°ªª¾¯S¬ì§Þ¤½¥q,¸ê°T¬ì§Þ
+DB,¼w·N§Ó»È¦æ,ª÷¿ÄªA°È
+DBX,¦hÄ_½c¤½¥q,¸ê°T¬ì§Þ
+DDD,3D¨t²Î¤½¥q,¤u·~
+DECK,¼w§J´µ¤á¥~¥Î«~¤½¥q,«D¥²»Ý®ø¶O«~
+DHI,D.R. Horton¤½¥q,«D¥²»Ý®ø¶O«~
+DOW,³³¤ó,­ì§÷®Æ
+DTE,DTE¯à·½,¤½¥Î¨Æ·~
+DVA,¼wºû¯S¤½¥q,ÂåÀø«O°·
+DXCM,¼w±dÂåÀø¤½¥q,ÂåÀø«O°·
+ED,Áp¦X·R­}¥Í,¤½¥Î¨Æ·~
+EMN,¥ì¤h°Ò¤Æ¾Ç¦³­­¤½¥q,­ì§÷®Æ
+EMR,¦ãÀq¥Í¹q®ð,¤u·~
+ENPH,Enphase¯à·½¤½¥q,¸ê°T¬ì§Þ
+EOG,¨Ì¼Ú®æ¸ê·½,¯à·½
+ETR,¦w¯S¦N¤½¥q,¤½¥Î¨Æ·~
+EXC,·R§J´µÀs¤½¥q,¤½¥Î¨Æ·~
+FAST,§Ö¦©¦³­­¤½¥q,¤u·~
+FBIN,¦n¹B«~µP³Ð·s¤½¥q,¤u·~
+FLR,ºÖ³°¤½¥q,¤u·~
+FMC,FMC¤½¥q,­ì§÷®Æ
+FSLR,²Ä¤@¤Ó¶§¯à,¸ê°T¬ì§Þ
+FTI,TechnipFMC¤½¶}¦³­­¤½¥q,¯à·½
+FUBO,fuboTV¤½¥q,³q°TªA°È
+GAP,»\¿\¤½¥q,«D¥²»Ý®ø¶O«~
+GL,Àô²y¤H¹Ø¤½¥q,ª÷¿ÄªA°È
+GME,¹CÀ¸Åæ¯¸¤½¥q,«D¥²»Ý®ø¶O«~
+GPRO,GoPro¤½¥q,«D¥²»Ý®ø¶O«~
+GRAL,GRAIL Inc,ÂåÀø«O°·
+GSAT,Globalstar Inc,³q°TªA°È
+GT,©T¯S²§½ü­L¤½¥q,«D¥²»Ý®ø¶O«~
+HAS,«Ä¤§Ä_¤½¥q,«D¥²»Ý®ø¶O«~
+HIG,«¢¯SºÖ¼w«OÀI¶°¹Î¤½¥q,ª÷¿ÄªA°È
+HIMS,¥L©M¦oªº°·±d¤½¥q,ÂåÀø«O°·
+HIMX,©_´º,¸ê°T¬ì§Þ
+HLF,¶PÄ_ªÜ¦³­­¤½¥q,¥²»Ý®ø¶O«~
+HLT,§Æº¸¹y¥þ²y±±ªÑ¤½¥q,«D¥²»Ý®ø¶O«~
+HOG,«¢¹pÀ¹ºû´Ë¤½¥q,«D¥²»Ý®ø¶O«~
+HOLX,Hologic¤½¥q,ÂåÀø«O°·
+HOOD,Ã¹»«º~¥«³õ¤½¥q,ª÷¿ÄªA°È
+HPE,¼z»P¥ø·~¤½¥q,¸ê°T¬ì§Þ
+HRL,ÀN±öº¸­¹«~,¥²»Ý®ø¶O«~
+HSY,¦n®É¤½¥q,¥²»Ý®ø¶O«~
+IFF,°ê»Ú­»®Æ­»ºë,­ì§÷®Æ
+INCY,­^ÁÉ¼w¤½¥q,ÂåÀø«O°·
+IONQ,IonQ Inc,¸ê°T¬ì§Þ
+IP,°ê»Ú¯È·~,­ì§÷®Æ
+IRM,ÅK¤s¤½¥q,©Ð¦a²£
+ITW,¥ì§Q¿Õ¤u¨ã¤½¥q,¤u·~
+IVZ,´º¶¶¦³­­¤½¥q,ª÷¿ÄªA°È
+JCI,¦¿´Ë¦Û±±°ê»Ú¤½¥q,¤u·~
+JD,¨ÊªF¶°¹ÎªÑ¥÷¦³­­¤½¥q,«D¥²»Ý®ø¶O«~
+K,®a¼Ö¤ó,¥²»Ý®ø¶O«~
+KEYS,¬O¼w¬ì§Þ¤½¥q,¸ê°T¬ì§Þ
+KMI,ª÷¼w¼¯®Ú¤½¥q(¼w©Ô¥Ë¦{),¯à·½
+KMX,¨®¬ü¥K¤½¥q,«D¥²»Ý®ø¶O«~
+KVUE,Kenvue¤½¥q,¥²»Ý®ø¶O«~
+LDOS,¹p¦h´µ±±ªÑ¤½¥q,¤u·~
+LEN,µÜ¯Ç©Ð«Î¤½¥q,«D¥²»Ý®ø¶O«~
+LI,²z·Q¨T¨®,«D¥²»Ý®ø¶O«~
+LITE,¾|ªù¯S©i±±ªÑ¤½¥q,¸ê°T¬ì§Þ
+LKQ,LKQ¤½¥q,«D¥²»Ý®ø¶O«~
+LMND,Lemonade¤½¥q,ª÷¿ÄªA°È
+LNT,Áp¦X¯à·½¤½¥q,¤½¥Î¨Æ·~
+LVS,©Ô´µºû¥[´µª÷¨F¶°¹Î,«D¥²»Ý®ø¶O«~
+LYB,§Q¦w¼w¤Ú¶ëº¸¤u·~¤½¥q,­ì§÷®Æ
+MAC,°¨ÁÉ¨½©_©Ð²£¤½¥q,©Ð¦a²£
+MARA,º¿©Ô±±ªÑ¤½¥q,¸ê°T¬ì§Þ
+MCHP,¶W±¶°ê»ÚªÑ¥÷¦³­­¤½¥q,¸ê°T¬ì§Þ
+MHK,Mohawk¤u·~¤½¥q,«D¥²»Ý®ø¶O«~
+MKC,³Á¬ì©ú§J¤½¥q(°¨¨½Äõ¦{),¥²»Ý®ø¶O«~
+MMC,°¨¤°³Á§J­Û«n,ª÷¿ÄªA°È
+MOH,²ö§Q¯ÇÂåÀø«O°·¤½¥q,ÂåÀø«O°·
+MPC,°¨©ÔªQ¥Ûªo¤½¥q,¯à·½
+MSI,¼¯¦«Ã¹©Ô¨t²Î¤½¥q,¸ê°T¬ì§Þ
+MTB,M&T»È¦æ¤½¥q,ª÷¿ÄªA°È
+NI,NiSource¤½¥q,¤½¥Î¨Æ·~
+NOK,¿Õ°ò¨È,¸ê°T¬ì§Þ
+NSC,¿ÕºÖ§J«n¤è¤½¥q,¤u·~
+NTAP,ºô¸ôÀ³¥Î¤½¥q,¸ê°T¬ì§Þ
+NTRS,¥_¤è«H°U¤½¥q,ª÷¿ÄªA°È
+NU,NU±±ªÑ¦³­­¤½¥q(¶}°Ò¸s®q),ª÷¿ÄªA°È
+NUE,¿Õ¥i¤½¥q,­ì§÷®Æ
+NUS,¦p·s¥ø·~¤½¥q,¥²»Ý®ø¶O«~
+NWSA,·s»D¶°¹Î,³q°TªA°È
+OHI,¼Ú¦Ì­X°·±d·ÓÅ@§ë¸ê¤H¤½¥q,©Ð¦a²£
+OKE,ONEOK Inc,¯à·½
+OKLO,¶ø¬ì¬¥¤½¥q,¤½¥Î¨Æ·~
+ONL,Ây¤á®y¦a²£¤½¥q,©Ð¦a²£
+OPEN,Opendoor Technologies Inc,©Ð¦a²£
+OTIS,¶øªº´µ¹q±è¤½¥q,¤u·~
+OUST,Ouster Inc,¸ê°T¬ì§Þ
+PATH,UiPath¤½¥q,¸ê°T¬ì§Þ
+PAYC,Paycom³nÅé¤½¥q,¤u·~
+PAYX,Paychex¤½¥q,¤u·~
+PCG,¤Ó¥­¬v¹q¤O¥Ë´µ¤½¥q,¤½¥Î¨Æ·~
+PDD,«÷¦h¦h±±ªÑ¤½¥q,«D¥²»Ý®ø¶O«~
+PEG,¤j²³ªA°È¥ø·~¶°¹Î¤½¥q,¤½¥Î¨Æ·~
+PGR,¥ý¶i¤½¥q,ª÷¿ÄªA°È
+PH,¬£§Jº~¥§¨W¤½¥q,¤u·~
+PINS,Ä}½ì¤½¥q,³q°TªA°È
+PNR,ÀØ¯Sº¸¤½¶}¦³­­¤½¥q,¤u·~
+POOL,´¶º¸¤½¥q,«D¥²»Ý®ø¶O«~
+PPL,PPL¤½¥q,¤½¥Î¨Æ·~
+QS,QuantumScape Corp,«D¥²»Ý®ø¶O«~
+RGTI,Rigetti­pºâ¤½¥q,¸ê°T¬ì§Þ
+RIO,¤O©Ý¤½¶}¦³­­¤½¥q,­ì§÷®Æ
+RL,¹p¤ÒÃ¹­Û¤½¥q,«D¥²»Ý®ø¶O«~
+RMD,·ç´µÁÚªÑ¥÷¦³­­¤½¥q,ÂåÀø«O°·
+ROST,Ã¹´µ¦Ê³f¤½¥q,«D¥²»Ý®ø¶O«~
+RSG,¦@©MªA°È¤½¥q,¤u·~
+RY,¥[®³¤j¬Ó®a»È¦æ,ª÷¿ÄªA°È
+SBAC,SBA³q°T¤½¥q,©Ð¦a²£
+SE,®ü¬v¦³­­¤½¥q,³q°TªA°È
+SERV,Serve Robotics Inc,«D¥²»Ý®ø¶O«~
+SJM,J M Smucker Co/The,¥²»Ý®ø¶O«~
+SNAP,Snap¤½¥q,³q°TªA°È
+SNY,ÁÉ¿Õµá¦³­­³d¥ô¤½¥q(ªk°ê),ÂåÀø«O°·
+SPCE,ºû¬Ã»Èªe±±ªÑ¤½¥q,¤u·~
+STT,¹D´I»È¦æ,ª÷¿ÄªA°È
+STX,§Æ±¶¬ì§Þ±±ªÑ¤½¶}¦³­­¤½¥q,¸ê°T¬ì§Þ
+STZ,¬P®y«~µP¤½¥q,¥²»Ý®ø¶O«~
+SYY,¦è´µ¬_¤½¥q,¥²»Ý®ø¶O«~
+TD,¦h­Û¦h¹D©ú»È¦æ,ª÷¿ÄªA°È
+TFC,Truistª÷¿Ä¤½¥q,ª÷¿ÄªA°È
+TRIP,¿ß³~ÆN¤½¥q,³q°TªA°È
+TROW,´¶±t¥K¶°¹Î¤½¥q,ª÷¿ÄªA°È
+TT,¯SÆF¬ì§Þ¤½¶}¦³­­¤½¥q,¤u·~
+UA,¦w¼wº¿¤½¥q,«D¥²»Ý®ø¶O«~
+UBS,·ç»È¶°¹Î¤½¥q,ª÷¿ÄªA°È
+UMC,ÁpµØ¹q¤lªÑ¥÷¦³­­¤½¥q,¸ê°T¬ì§Þ
+VALE,²H¤ôªe¨¦,­ì§÷®Æ
+VLO,¥Ë°ÇÃ¹¯à·½,¯à·½
+VMC,¥Ëº¸§¢§÷®Æ¤½¥q,­ì§÷®Æ
+VST,ºû´µ¹F¯à·½¤½¥q,¤½¥Î¨Æ·~
+WAB,¦è«ÎªÅ®ð¨î°Ê§Þ³N¤½¥q,¤u·~
+WAT,¨U¯S´µ¤½¥q,ÂåÀø«O°·
+WDAY,Workday¤½¥q,¸ê°T¬ì§Þ
+WDC,«ÂÄË¹q¤l¤½¥q,¸ê°T¬ì§Þ
+WEC,WEC¯à·½¶°¹Î¤½¥q,¤½¥Î¨Æ·~
+WHR,´f¦Ó®ú¤½¥q,«D¥²»Ý®ø¶O«~
+WMB,«Â·G´µ¤½¥q,¯à·½
+WU,¦èÁp¶×´Ú¤½¥q,ª÷¿ÄªA°È
+WYNN,¥Ã§Q«×°²§ø¦³­­¤½¥q,«D¥²»Ý®ø¶O«~
+XPEV,¤pÄP¨T¨®¦³­­¤½¥q,«D¥²»Ý®ø¶O«~
+XYL,Xylem¤½¥q,¤u·~
+Z,Zillow¶°¹Î¤½¥q,©Ð¦a²£
+0005.HK,#N/A,#N/A
+0011.HK,#N/A,#N/A
+0066.HK,#N/A,#N/A
+0175.HK,#N/A,#N/A
+0285.HK,#N/A,#N/A
+0371.HK,#N/A,#N/A
+0388.HK,#N/A,#N/A
+0435.HK,#N/A,#N/A
+0700.HK,#N/A,#N/A
+0823.HK,#N/A,#N/A
+0857.HK,#N/A,#N/A
+0880.HK,#N/A,#N/A
+0939.HK,#N/A,#N/A
+0941.HK,#N/A,#N/A
+0992.HK,#N/A,#N/A
+1211.HK,#N/A,#N/A
+1347.HK,#N/A,#N/A
+1398.HK,#N/A,#N/A
+1810.HK,#N/A,#N/A
+1876.HK,#N/A,#N/A
+1881.HK,#N/A,#N/A
+1919.HK,#N/A,#N/A
+1928.HK,#N/A,#N/A
+1929.HK,#N/A,#N/A
+2020.HK,#N/A,#N/A
+2269.HK,#N/A,#N/A
+2318.HK,#N/A,#N/A
+2333.HK,#N/A,#N/A
+2382.HK,#N/A,#N/A
+2611.HK,#N/A,#N/A
+2688.HK,#N/A,#N/A
+2899.HK,#N/A,#N/A
+3690.HK,#N/A,#N/A
+3888.HK,#N/A,#N/A
+6030.HK,#N/A,#N/A
+6088.HK,#N/A,#N/A
+6808.HK,#N/A,#N/A
+87001.HK,#N/A,#N/A
+9618.HK,#N/A,#N/A
+9988.HK,#N/A,#N/A
+9999.HK,#N/A,#N/A
+AAOI,²»­Z¥ú¹q¬ì§ÞªÑ¥÷¦³­­¤½¥q,¸ê°T¬ì§Þ
+AAP,«e¶i¨T¨®¹s¥ó¤½¥q,«D¥²»Ý®ø¶O«~
+AAPU,Direxion Daily AAPL Bull 2X Sh,#N/A
+AAXJ,iShares MSCI¨È¬w(°£¤é¥»)ETF,#N/A
+ABC,´Ë¬ì©Ô¤½¥q,ÂåÀø«O°·
+ABCL,AbCellera Biologics Inc,ÂåÀø«O°·
+ABMD,ABIOMED¤½¥q,ÂåÀø«O°·
+ACB,·¥¥ú¤j³Â¤½¥q,ÂåÀø«O°·
+ACGL,¦ã©_¸ê¥»¶°¹Î¦³­­¤½¥q,ª÷¿ÄªA°È
+ACHR,ªü¹ý¯èªÅ¤½¥q,¤u·~
+ACWI,iShares MSCI ACWI ETF,#N/A
+ADS,Breadª÷¿Ä±±ªÑ¤½¥q,ª÷¿ÄªA°È
+AFRM,Affirm±±ªÑ¤½¥q,ª÷¿ÄªA°È
+AGN,·R¤O®Ú¤½¥q,ÂåÀø«O°·
+AGX,ªü®Ú¤½¥q,¤u·~
+AI,C3.ai Inc,¸ê°T¬ì§Þ
+AIQ,Global X Artificial Intelligen,#N/A
+AIRR,²Ä¤@«H°URBA¬ü°ê¤u·~´_¿³ETF,#N/A
+AIV,¤½´J§ë¸êºÞ²z,©Ð¦a²£
+AIZ,¦w«HÀs¤½¥q,ª÷¿ÄªA°È
+ALLE,¦w®ÔªN¦³­­¤½¥q,¤u·~
+ALLY,Allyª÷¿Ä¤½¥q,ª÷¿ÄªA°È
+ALXN,Alexion»sÃÄ¤½¥q,ÂåÀø«O°·
+AMCR,¦w©i¬ì¤½¶}¦³­­¤½¥q,­ì§÷®Æ
+AMG,ÁpÀç§ë¸êºÞ²z¶°¹Î¤½¥q,ª÷¿ÄªA°È
+AMSC,¬ü°ê¶W¾É¤½¥q,¤u·~
+AMZU,Direxion Daily AMZN Bull 2X Sh,#N/A
+ANF,Abercrombie & Fitch¤½¥q,«D¥²»Ý®ø¶O«~
+ANTM,Elevance°·±d¤½¥q,ÂåÀø«O°·
+APC,ªü¯Ç¹F¬ì¥Ûªo¤½¥q,¯à·½
+API,¤W®ü¥ü¨¥ºô¸ô¬ì§Þ¦³­­¤½¥q,¸ê°T¬ì§Þ
+APP,AppLovin¤½¥q,¸ê°T¬ì§Þ
+AQMS,ªü«¶¨Èª÷ÄÝ¤½¥q,¤u·~
+ARE,¨È¾ú¤s¨ô¤£°Ê²£ªÑ¥÷¤½¥q,©Ð¦a²£
+ARKF,ARK Fintech Innovation ETF,#N/A
+ARKG,ARK°ò¦]²Õ¾Ç­²·s¦h»â°ì¥æ©ö©Ò¥æ,#N/A
+ARKK,ARK·s¿³¥D°Ê«¬ETF,#N/A
+ARKQ,ARK¦Û°Ê§Þ³N»P¾÷¾¹¤HETF,#N/A
+ARKW,ARK Nextª«Ápºô¥D°Ê«¬ETF,#N/A
+ARNC,Arconic Corp,­ì§÷®Æ
+ARR,¨È¹õ¦í¦v¤£°Ê²£§ë¸ê«H°U¤½¥q,ª÷¿ÄªA°È
+ARTY,iShares Future AI & Tech ETF,#N/A
+ASAN,Asana¤½¥q,¸ê°T¬ì§Þ
+ASHR,Xtrackers Harvestº­²`300¤¤°êA,#N/A
+ATVI,°Êµø¼É³·¤½¥q,³q°TªA°È
+AVIR,Atea»sÃÄ¤½¥q,ÂåÀø«O°·
+AVPT,®|ÂI¬ì§Þ¤½¥q,¸ê°T¬ì§Þ
+AVY,¦ã§Q¤¦¥§´Ë,­ì§÷®Æ
+AXON,®õ·æ°ê»Ú¤½¥q,¤u·~
+B,¤Ú¨½§JÄq·~¤½¥q,­ì§÷®Æ
+BACPA,#N/A,#N/A
+BACPB,#N/A,#N/A
+BACPK,#N/A,#N/A
+BALL,¥]º¸¤½¥q,­ì§÷®Æ
+BAX,¦Ê¯SÂåÀø²£«~¦³­­¤½¥q,ÂåÀø«O°·
+BBH,VanEck¥Íª«¬ì§ÞETF,#N/A
+BBT,#N/A,#N/A
+BCS,¤Ú§JµÜ¶°¹Î,ª÷¿ÄªA°È
+BEKE,¨©´ß±±ªÑ¦³­­¤½¥q,©Ð¦a²£
+BEN,´IÄõ§JªL¸ê·½¤½¥q,ª÷¿ÄªA°È
+BFB,#N/A,#N/A
+BFH,Breadª÷¿Ä±±ªÑ¤½¥q,ª÷¿ÄªA°È
+BG,¨¹¦N¥þ²y¦³­­³d¥ô¤½¥q,¥²»Ý®ø¶O«~
+BHF,©ú«Îª÷¿Ä¤½¥q,ª÷¿ÄªA°È
+BILI,¹Í­ù¹Í­ùªÑ¥÷¦³­­¤½¥q,³q°TªA°È
+BIO,§B·çªÑ¥÷¦³­­¤½¥q,ÂåÀø«O°·
+BIS,ProShares¨â­¿©ñªÅ¨º´µ¹F§J¥Í§Þ,#N/A
+BIV,»â¯è¤¤´Á¶Å¨éETF,#N/A
+BIVV,¤ñ¶ø¨©©Ô¸¦¤½¥q,ÂåÀø«O°·
+BKCH,Global X Blockchain ETF,#N/A
+BKR,¨©§J¥ð´µ¤½¥q,¯à·½
+BLDP,¤Ú©Ô¼w°Ê¤O¨t²Î¤½¥q,¤u·~
+BLDR,Builders FirstSource Inc,¤u·~
+BLL,¥]º¸¤½¥q,­ì§÷®Æ
+BLV,»â¯èªø´Á¶Å¨éETF,#N/A
+BMO,º¡¦a¥i»È¦æ,ª÷¿ÄªA°È
+BMYR,#N/A,#N/A
+BN,¥¬¾|§Jµáº¸¼w¤½¥q,ª÷¿ÄªA°È
+BND,»â¯èÁ`¶Å¨é¥«³õETF,#N/A
+BNDW,Vanguard Total World Bond ETF,#N/A
+BNDX,»â¯è¥þ³¡°ê»Ú¶Å¨éETF,#N/A
+BNS,¥[®³¤jÂ×·~»È¦æ,ª÷¿ÄªA°È
+BNTX,BioNTec¤½¥q,ÂåÀø«O°·
+BOIL,ProShares Ultra´^³Õ¤ÑµM®ð,#N/A
+BOTZ,Global X Robotics & Artificial,#N/A
+BP,BP¤½¶}¦³­­¤½¥q,¯à·½
+BR,Broadridge°]°È¸Ñ¨M¤è®×¤½¥q,¤u·~
+BRF,VanEck¤Ú¦è¤p«¬ªÑETF,#N/A
+BRK/A,ªi§J®L®ü·æ«Â¤½¥q,ª÷¿ÄªA°È
+BRKB,#N/A,#N/A
+BSV,»â¯èµu´Á¶Å¨éETF,#N/A
+BTI,­^¬üµÒ¯ó¤½¶}¦³­­¤½¥q,¥²»Ý®ø¶O«~
+BUD,¦Ê«Â­^³Õ,¥²»Ý®ø¶O«~
+BUG,Global X Cybersecurity ETF,#N/A
+CAAS,¤¤°ê¨T¨®¨t²ÎªÑ¥÷¦³­­¤½¥q,«D¥²»Ý®ø¶O«~
+CAH,¹Å¼w¿Õ°·±d¶°¹Î,ÂåÀø«O°·
+CAN,¹Å·£¯Ð´¼¤½¥q,¸ê°T¬ì§Þ
+CAPR,CapricorªvÀø¤½¥q,ÂåÀø«O°·
+CARZ,²Ä¤@«H°US-ºô¸ô¥¼¨Ó¨®½ø»P¬ì§Þ¥æ,#N/A
+CBS,¬£©Ô»X¥þ²y,³q°TªA°È
+CCJ,¥d±ö¬ì¤½¥q,¯à·½
+CELG,ÁÉ°ò¦³­­¤½¥q,ÂåÀø«O°·
+CERN,¶ë¤º¤½¥q,ÂåÀø«O°·
+CFG,¤½¥Áª÷¿Ä¶°¹Î¤½¥q,ª÷¿ÄªA°È
+CGC,«a­x¦¨ªø¤½¥q,ÂåÀø«O°·
+CGNX,±d­@µø¤½¥q,¸ê°T¬ì§Þ
+CGW,Invesco S&P Global Water Index,#N/A
+CHAU,Direxion Dailyº­²`300 AªÑ¨â­¿,#N/A
+CHGG,Chegg¤½¥q,«D¥²»Ý®ø¶O«~
+CHIQ,¥þ²yX MSCI¤¤°ê«D¥²»Ý®ø¶OETF,#N/A
+CHIX,¥þ²yX MSCI¤¤°êª÷¿ÄÃþªÑETF,#N/A
+CHPT,¥R¹qÂI±±ªÑ¤½¥q,¤u·~
+CHRW,Ã¹»«ª@°ê»ÚÁp¹BªÑ¥÷¦³­­¤½¥q,¤u·~
+CHT,¤¤µØ¹q«HªÑ¥÷¦³­­¤½¥q,³q°TªA°È
+CHWY,Chewy¤½¥q,«D¥²»Ý®ø¶O«~
+CIBR,²Ä¤@«H°U¨º´µ¹F§Jºô¸ô¦w¥þ¥æ©ö©Ò,#N/A
+CIT,CIT¶°¹Î,ª÷¿ÄªA°È
+CLOA,iShares AAA CLO Active ETF,#N/A
+CLOU,Global X Cloud Computing ETF,#N/A
+CM,¥[®³¤j«Ò°ê°Ó·~»È¦æ,ª÷¿ÄªA°È
+CMA,¬ì°¨¨½¥d¤½¥q,ª÷¿ÄªA°È
+CNP,Centerpoint¯à·½,¤½¥Î¨Æ·~
+CNQ,Canadian Natural Resources Ltd,¯à·½
+CNXT,¥«³õ°Ê¤OµØ®L¤¤¤p¥ø·~ª©³Ð·~ªOET,#N/A
+CODX,Co-Diagnostics Inc,ÂåÀø«O°·
+COFPI,#N/A,#N/A
+COFPJ,#N/A,#N/A
+COG,¬ì¯S©Ô¯à·½¤½¥q,¯à·½
+COH,±¾´à¤½¥q,«D¥²»Ý®ø¶O«~
+COO,Cooper Cos Inc/The,ÂåÀø«O°·
+COPX,Global X»ÉÄqETF,#N/A
+COTY,¬ì¸¦¤½¥q,¥²»Ý®ø¶O«~
+CPK,¤ÁÂÄ¥Ö§J¤½¥Î¨Æ·~¤½¥q,¤½¥Î¨Æ·~
+CPNG,»Å¼ê¤½¥q,«D¥²»Ý®ø¶O«~
+CQQQ,Invesco China Technology ETF,#N/A
+CRBP,Corbus»sÃÄ±±ªÑ¤½¥q,ÂåÀø«O°·
+CRCL,Circleºô¸ô¶°¹Î¤½¥q,¸ê°T¬ì§Þ
+CRL,¬dº¸´µªe¹êÅç«Ç°ê»Ú¤½¥q,ÂåÀø«O°·
+CROC,ProShares¶Wµu¿D¹ôETF,#N/A
+CRSP,CRISPRªvÀø¤½¥q,ÂåÀø«O°·
+CRSR,®üµs²î¹CÀ¸¤½¥q,¸ê°T¬ì§Þ
+CRVS,±dºÖ´µ»sÃÄ¤½¥q,ÂåÀø«O°·
+CSD,Invesco S&P Spin-Off ETF,#N/A
+CSGP,¬ì´µ¶ð¶°¹Î¤½¥q,©Ð¦a²£
+CTEC,Global X CleanTech ETF,#N/A
+CTL,¬y©ú¬ì§Þ¤½¥q,³q°TªA°È
+CTLT,±d®õ­Û¯S¤½¥q,ÂåÀø«O°·
+CTRM,Castor Maritime Inc,¤u·~
+CTVA,¬ì­}µØ¤½¥q,­ì§÷®Æ
+CTXS,«äªN¨t²Î¤½¥q,¸ê°T¬ì§Þ
+CXO,±d³ì¸ê·½¤½¥q,¯à·½
+DASH,DoorDash¤½¥q,«D¥²»Ý®ø¶O«~
+DBA,´º¶¶¼w»È¹A·~°òª÷,#N/A
+DBB,PowerShares¼w»È°ò¥»ª÷ÄÝ°òª÷,#N/A
+DBC,´º¶¶¼w»È°Ó«~«ü¼Æ°lÂÜ°òª÷,#N/A
+DBEF,Xtrackers MSCI EAFEÁ×ÀIªÑ²¼ETF,#N/A
+DBEM,Xtrackers MSCI·s¿³¥«³õ¶×²vÁ×ÀI,#N/A
+DDL,¥m©N¶Rµæ,¥²»Ý®ø¶O«~
+DFE,´¼¼z¾ð¼Ú¬w¤p«¬ªÑªÑ§Q°òª÷,#N/A
+DFS,µo²{ª÷¿ÄªA°È¤½¥q,ª÷¿ÄªA°È
+DGRO,iShares¦wºÓ®Ö¤ßªÑ§Q¦¨ªø¥æ©ö©Ò,#N/A
+DGX,«¶´µ¯S¶EÂ_¤½¥q,ÂåÀø«O°·
+DIA,SPDR¹DÃ£¤u·~¥­§¡ETF«H°U,#N/A
+DISCK,µØ¯Ç¥S§Ì±´¯Á¤½¥q,³q°TªA°È
+DISH,DISHºô¸ô¤½¥q,³q°TªA°È
+DKNG,DraftKings¤½¥q,«D¥²»Ý®ø¶O«~
+DOC,Healthpeak Properties Inc,©Ð¦a²£
+DOCN,¼Æ¦ì®ü¬v±±ªÑ¤½¥q,¸ê°T¬ì§Þ
+DORM,¦hº¸°Ò²£«~¤½¥q,«D¥²»Ý®ø¶O«~
+DOV,¦h¦ò¤½¥q,¤u·~
+DOYU,°«³½°ê»Ú±±ªÑ¦³­­¤½¥q,³q°TªA°È
+DRE,§ù§J©Ð¦a²£¤½¥q,©Ð¦a²£
+DRI,¹FµnÀ\ÆU¤½¥q,«D¥²»Ý®ø¶O«~
+DRIV,Global X Autonomous & Electric,#N/A
+DRUA,#N/A,#N/A
+DSI,iShares¦wºÓESG MSCI KLD 400 ET,#N/A
+DSX,Diana Shipping Inc,¤u·~
+DUST,Direxion¨C¤éª÷Äq·~ªÅÀY2­¿ªÑ,#N/A
+DVN,À¹¤å¯à·½,¯à·½
+DVY,iShares¦wºÓºë¿ï°ªªÑ§QETF,#N/A
+DXC,©ö«ä¸ê°T¬ì§ÞªÑ¥÷¦³­­¤½¥q,¸ê°T¬ì§Þ
+DXGE,´¼¼z¾ð¼w°ê¹ï¨RªÑ²¼°òª÷,#N/A
+DXJ,´¼¼z¾ð¤é¥»ªÑ²¼«¬¹ï¨R°òª÷,#N/A
+EAI,#N/A,#N/A
+EBAYL,#N/A,#N/A
+EBC,ªF¤è»È¦æªÑ¥÷¤½¥q,ª÷¿ÄªA°È
+EBIZ,Global X E-Commerce ETF,#N/A
+EDC,Direxion¨C¤éMSCI·s¿³¥«³õ¦hÀY3,#N/A
+EDOC,Global X HealthTech ETF,#N/A
+EDV,»â¯è¬ü°êªø´Á°ê¶ÅETF,#N/A
+EDZ,Direxion¨C¤éMSCI·s¿³¥«³õªÅÀY3,#N/A
+EEM,iShares MSCI·s¿³¥«³õETF,#N/A
+EET,ProShares Ultra MSCI Emerging,#N/A
+EEV,ProShares¤G­¿©ñªÅMSCI·s¿³¥«³õE,#N/A
+EFA,iShares MSCI EAFE ETF,#N/A
+EFAV,iShares¦wºÓMSCI EAFE³Ì¤pªi°Ê²v,#N/A
+EFX,©ö³t¶Ç¯u¤½¥q,¤u·~
+EG,Everest¶°¹Î¦³­­¤½¥q,ª÷¿ÄªA°È
+EIDO,iShares¦wºÓMSCI¦L¥§¥æ©ö©Ò¥æ©ö,#N/A
+EIX,·R­}¥Í°ê»Ú,¤½¥Î¨Æ·~
+EMBC,­^¨Õ¹F¤½¥q,ÂåÀø«O°·
+EMLP,First Trust¥_¬ü¯à·½°òÂ¦«Ø³]¥D,#N/A
+ENVX,¨Ì¿Õºû¤½¥q,¤u·~
+EPHE,iShares MSCIµá«ß»«ETF,#N/A
+EPI,WisdomTree¦L«×¦¬¯q°òª÷,#N/A
+EPOL,iShares¦wºÓMSCIªiÄõETF,#N/A
+EPP,iShares MSCI¤Ó¥­¬v°£¤é¥»ETF,#N/A
+EPV,ProShares¨â­¿©ñªÅ´I®É¼Ú¬wETF,#N/A
+EQR,¤½¥­¦í«Î¤½¥q,©Ð¦a²£
+ERUS,iShares MSCI«XÃ¹´µ¤W­­ETF,#N/A
+ERX,Direxion¨C¤é¯à·½¦hÀY2­¿ªÑ,#N/A
+ES,Eversource¯à·½,¤½¥Î¨Æ·~
+ESGD,iShares ESG Aware MSCI EAFE ET,#N/A
+ESGE,iShares ESG Aware MSCI EM ETF,#N/A
+ESGU,iShares ESG Aware MSCI USA ETF,#N/A
+ESGV,Vanguard ESG US Stock ETF,#N/A
+ESPO,VanEck Video Gaming and eSport,#N/A
+ESRX,Evernorth°·±d¤½¥q,ÂåÀø«O°·
+ESS,®J¶ë§J´µ¤£°Ê²£«H°U¤½¥q,©Ð¦a²£
+ETFC,»õ³Ð²z°]¤½¥q,ª÷¿ÄªA°È
+ETSY,Etsy¤½¥q,«D¥²»Ý®ø¶O«~
+EUFN,iShares MSCI¼Ú¬wª÷¿ÄETF,#N/A
+EUM,ProShares¤@­¿©ñªÅMSCI·s¿³¥«³õ,#N/A
+EUO,ProShares UltraShort¼Ú¤¸,#N/A
+EVGO,EVgo¤½¥q,«D¥²»Ý®ø¶O«~
+EVRG,Evergy¤½¥q,¤½¥Î¨Æ·~
+EWA,iShares MSCI¿D¬wETF,#N/A
+EWD,iShares¦wºÓMSCI·ç¨åETF,#N/A
+EWG,iShares MSCI¼w°êETF,#N/A
+EWH,iShares MSCI­»´äETF,#N/A
+EWI,iShares¦wºÓMSCI¸q¤j§QETF,#N/A
+EWJ,iShares MSCI¤é¥»ETF,#N/A
+EWM,iShares MSCI°¨¨Ó¦è¨ÈETF,#N/A
+EWP,iShares MSCI¦è¯Z¤ú¤W­­ETF,#N/A
+EWQ,iShares MSCIªk°êETF,#N/A
+EWS,iShares¦wºÓMSCI·s¥[©YETF,#N/A
+EWU,iShares MSCI­^°êETF,#N/A
+EWV,ProShares¨â­¿©ñªÅ«¬MSCI¤é¥»«ü,#N/A
+EWW,iShares¦wºÓMSCI¾¥¦è­ôETF,#N/A
+EWY,iShares¦wºÓMSCI«nÁúETF,#N/A
+EWZ,iShares¦wºÓMSCI¤Ú¦èETF,#N/A
+EXAS,ºë±K¬ì¾Ç¤½¥q,ÂåÀø«O°·
+EXPD,Expeditors International of Wa,¤u·~
+EXR,ÃB¥~ªÅ¶¡­ÜÀx¤½¥q,©Ð¦a²£
+EZA,iShares MSCI«n«DETF,#N/A
+EZJ,ProShares¤G­¿°µ¦hMSCI¤é¥»,#N/A
+FAN,²Ä¤@«H°U¥þ²y­·¤O¯à·½ETF,#N/A
+FANG,ÅT§À³D¯à·½¤½¥q,¯à·½
+FB,ProShares S&P 500 Dynamic Buff,#N/A
+FBHS,¦n¹B«~µP³Ð·s¤½¥q,¤u·~
+FBT,²Ä¤@«H°UNYSE Arca¥Í§Þ«ü¼Æ°òª÷,#N/A
+FCG,²Ä¤@«H°U¤ÑµM®ðETF,#N/A
+FDN,²Ä¤@«H°U¹DÃ£ºô¸ô«ü¼Æ°òª÷,#N/A
+FDNI,First Trust Dow Jones Internat,#N/A
+FE,²Ä¤@¯à·½¤½¥q,¤½¥Î¨Æ·~
+FEZ,«ä¬f¹F¼Ú·ùSTOXX 50 ETF,#N/A
+FFIV,F5¤½¥q,¸ê°T¬ì§Þ
+FINX,Global X FinTech ETF,#N/A
+FISV,Fiserv¤½¥q,ª÷¿ÄªA°È
+FITB,¤­¤T»È¦æ,ª÷¿ÄªA°È
+FIVG,Defiance Connective Technologi,#N/A
+FIW,First Trust Water ETF,#N/A
+FL,Foot Locker¤½¥q,«D¥²»Ý®ø¶O«~
+FLIR,FLIR¨t²Î¤½¥q,¸ê°T¬ì§Þ
+FLS,Flowserve Corp,¤u·~
+FLT,Corpay¤½¥q,ª÷¿ÄªA°È
+FM,iShares¦wºÓÃä¹Ò¤Îºë¿ïEM«ü¼ÆªÑ,#N/A
+FOX,ºÖ´µ¤½¥q,³q°TªA°È
+FPEI,First Trust Institutional Pref,#N/A
+FRC,²Ä¤@«H°U»È¦æ/¥[¦{,ª÷¿ÄªA°È
+FRCB,²Ä¤@«H°U»È¦æ/¥[¦{,ª÷¿ÄªA°È
+FRCKL,#N/A,#N/A
+FRCPJ,#N/A,#N/A
+FRCPK,#N/A,#N/A
+FRT,Áp¨¹¤£°Ê²£§ë¸ê«H°U,©Ð¦a²£
+FSLY,Fastly¤½¥q,¸ê°T¬ì§Þ
+FTHI,²Ä¤@«H°U¶R¨R¦¬¯qETF,#N/A
+FTQI,First Trust Exchange-Traded Fu,#N/A
+FTSL,²Ä¤@«H°UÀu¥ý¶U´ÚETF,#N/A
+FTV,Fortive¤½¥q,¤u·~
+FTXO,First Trust Nasdaq Bank ETF,#N/A
+FTXR,First Trust Nasdaq Transportat,#N/A
+FUTU,´I³~±±ªÑ¦³­­¤½¥q,ª÷¿ÄªA°È
+FXB,´º¶¶CurrencyShares­^Âé«H°U,#N/A
+FXD,²Ä¤@«H°U«D®Ö¤ß®ø¶OAlphaDEX°ò,#N/A
+FXE,´º¶¶CurrencyShares¼Ú¤¸³f¹ô«H°U,#N/A
+FXF,´º¶¶CurrencyShares·ç¤hªk­¦«H°U,#N/A
+FXG,²Ä¤@«H°U®Ö¤ß®ø¶OAlphaDEX°òª÷,#N/A
+FXH,²Ä¤@«H°UÂåÀø«O°·AlphaDEX°òª÷,#N/A
+FXI,iShares¤¤°ê¤j«¬ªÑETF,#N/A
+FXL,²Ä¤@«H°U¬ì§ÞAlphaDEX°òª÷,#N/A
+FXO,First Trustª÷¿ÄAlphaDEX«ü¼ÆETF,#N/A
+FXP,ProShares 2­¿©ñªÅ´I®É¤¤°ê50«ü,#N/A
+FXR,²Ä¤@«H°U¤u·~/­@¤[°]¥Í²£ÃþªÑAlp,#N/A
+FXU,²Ä¤@«H°U¤½¥Î¨Æ·~AlphaDEX°òª÷,#N/A
+FXY,´º¶¶CurrencyShares¤é¶ê«H°U°òª÷,#N/A
+FXZ,²Ä¤@«H°U­ìª«®ÆAlphaDEX°òª÷,#N/A
+GDRX,GoodRx Holdings Inc,ÂåÀø«O°·
+GDS,¸U°ê¼Æ¾Ú±±ªÑ¦³­­¤½¥q,¸ê°T¬ì§Þ
+GDX,VanEck¶Àª÷Äq·~¥æ©ö©Ò¥æ©ö°òª÷(,#N/A
+GDXJ,VanEck¤p«¬¶Àª÷Äq·~ETF,#N/A
+GEN,¼Æ¦ì¥@¥N¤½¥q,¸ê°T¬ì§Þ
+GGLL,Direxion Daily GOOGL Bull 2X S,#N/A
+GLCN,VanEck¤¤°ê¦¨ªø»â³S,#N/A
+GLD,SPDRª÷ETF,#N/A
+GLIN,VanEck¦L«×¦¨ªø»â³SETF,#N/A
+GLL,ProShares¤G­¿©ñªÅ¶Àª÷ETF,#N/A
+GNOM,Global X Genomics & Biotechnol,#N/A
+GNRC,°ò¤º·ç§J±±ªÑ¤½¥q,¤u·~
+GOOS,¥[®³¤jÃZ±±ªÑ¤½¥q,«D¥²»Ý®ø¶O«~
+GOTU,°ª³~±Ð¨|¬ì§Þ¶°¹Î¦³­­¤½¥q,«D¥²»Ý®ø¶O«~
+GPC,¯Â¥¿¹s¥ó¤½¥q,«D¥²»Ý®ø¶O«~
+GPS,#N/A,#N/A
+GRID,²Ä¤@«H°U¨º´µ¹F§JClean Edge´¼¼z,#N/A
+GRRR,¤jµVµV¬ì§Þ¶°¹Î¤½¥q,¸ê°T¬ì§Þ
+GSK,¸¯Äõ¯À¥v§J¤½¶}¦³­­¤½¥q,ÂåÀø«O°·
+GSPN,MainStreetChamber Holdings Inc,#N/A
+GTM,ZoomInfo¬ì§Þ¤½¥q,³q°TªA°È
+GUSH,Direxion¨C¤é¼Ð´¶ªo®ð±´°É¥Í²£°Ó,#N/A
+GWW,®æ¹pªN¤½¥q,¤u·~
+GXTG,Global X Dorsey Wright Themati,#N/A
+HAL,«¢¨½§B¹y¤½¥q,¯à·½
+HAO,¯Eº³°·±d¬ì§Þ¦³­­¤½¥q,³q°TªA°È
+HBAN,ªC®x¹y»È¦æ¤½¥q(«X¥è«X¦{),ª÷¿ÄªA°È
+HBI,«¢¥§´µ«~µP¤½¥q,«D¥²»Ý®ø¶O«~
+HCP,HashiCorp¤½¥q,¸ê°T¬ì§Þ
+HEDJ,´¼¼z¾ð¼Ú¬wªÑ²¼«¬¹ï¨R°òª÷,#N/A
+HEI,HEICO¤½¥q,¤u·~
+HERO,Global X Video Games & Esports,#N/A
+HES,»®´µ¤½¥q,¯à·½
+HFC,HollyFrontier¤½¥q,¯à·½
+HII,Huntington Ingalls Industries,¤u·~
+HLI,µØ§Q¦w¿Õ°ò¤½¥q,ª÷¿ÄªA°È
+HOT,³ß¹F«Î°ê»Ú¶º©±¶°¹Î¦³­­³d¥ô¤½¥q,«D¥²»Ý®ø¶O«~
+HP,»®º¸Àq¨½©_©M¨Ø®¦§÷®Æ¤½¥q,¯à·½
+HRB,H&R¥¬¬¥§Jµ|°È¤½¥q,«D¥²»Ý®ø¶O«~
+HRS,L3«¢¨½´µ¬ì§Þ¤½¥q,¤u·~
+HSIC,º~·ç²»¤½¥q,ÂåÀø«O°·
+HST,Host®ÈÀ]¤Î«×°²§ø¤½¥q,©Ð¦a²£
+HUBB,¦w¬f,¤u·~
+HUYA,ªê¤ú¤½¥q,³q°TªA°È
+HWM,Howmet¯è¤Ó¤½¥q,¤u·~
+HYG,iShares¦wºÓiBoxx°ª¦¬¯q¤½¥q¶ÅET,#N/A
+HYLS,First Trust ETF IV - First Tru,#N/A
+IAI,iShares¦wºÓ¬ü°ê¸g¬ö°Ó»P¥æ©ö°ÓE,#N/A
+IBB,iShares¦wºÓ¥Í§Þ¥æ©ö©Ò¥æ©ö°òª÷,#N/A
+IBUY,Amplify Online Retail ETF,#N/A
+ICLN,iShares¦wºÓ¥þ²y°®²b¯à·½¥æ©ö©Ò,#N/A
+IDGT,iShares¦wºÓ¬ü°ê¼Æ¦ì°òÂ¦³]¬I»P,#N/A
+IDNA,iShares Genomics Immunology an,#N/A
+IDRV,iShares Self-Driving EV and Te,#N/A
+IFRA,iShares U.S. Infrastructure ET,#N/A
+IGF,iShares¥þ²y°òÂ¦«Ø³]ETF,#N/A
+IGM,iShares¦wºÓÂX¤j¬ì§ÞÃþªÑETF,#N/A
+IGN,iShares¦wºÓ¬ü°ê¼Æ¦ì°òÂ¦³]¬I»P,#N/A
+IGV,iShares¦wºÓÂX¤j¬ì§Þ³nÅéÃþªÑETF,#N/A
+IHAK,iShares Cybersecurity and Tech,#N/A
+IHE,iShares¦wºÓ¬ü°ê»sÃÄ·~ETF,#N/A
+IHI,iShares¦wºÓ¬ü°êÂåÀø³]³ÆETF,#N/A
+IILG,¤À®É«×°²¶°¹Î¦³­­³d¥ô¤½¥q,«D¥²»Ý®ø¶O«~
+ILCG,iShares Morningstar Growth ETF,#N/A
+ILF,iShares¦wºÓ©Ô¤B¬ü¬w40 ETF,#N/A
+IMAX,IMAX¤½¥q,³q°TªA°È
+IMCG,iShares Morningstar Mid-Cap Gr,#N/A
+IMMP,Immutep¦³­­¤½¥q,ÂåÀø«O°·
+INDA,iShares MSCI¦L«×ETF,#N/A
+INDY,iShares¦L«×50 ETF,#N/A
+INFO,Harbor PanAgora Dynamic Large,#N/A
+INN,³»®p®ÈÀ]©Ð¦a²£¤½¥q,©Ð¦a²£
+INVH,ÁÜ½Ð¦^®a¤½¥q,©Ð¦a²£
+IONS,¦ã¨½´µ»sÃÄ¤½¥q,ÂåÀø«O°·
+IPG,®J°ö´¼¶°¹Î,³q°TªA°È
+IPGP,IPG¥ú¤l¤½¥q,¸ê°T¬ì§Þ
+IQLT,iShares MSCI Intl Quality Fact,#N/A
+IR,­^®æ¯ÁÄõ¤½¥q,¤u·~
+IRBO,iShares Future AI & Tech ETF,#N/A
+IRDM,äv³q°T¤½¥q,³q°TªA°È
+IT,°ª¼w¯Ç¤½¥q,¸ê°T¬ì§Þ
+ITA,iShares¬ü°ê¯è¤Ó¤Î°ê¨¾ETF,#N/A
+ITB,iShares¦wºÓ¬ü°ê©Ð«ÎÀç«ØETF,#N/A
+IUSG,iShares¦wºÓ®Ö¤ß¼Ð´¶¬ü°ê¦¨ªø«¬E,#N/A
+IUSV,iShares¦wºÓ®Ö¤ß¼Ð´¶¬ü°ê»ù­ÈETF,#N/A
+IVE,iShares¦wºÓ¼Ð´¶500»ù­È«¬ETF,#N/A
+IVOO,»â¯è¼Ð´¶¤¤«¬ªÑ400 ETF,#N/A
+IVW,iShares¦wºÓ¼Ð´¶500¦¨ªø«¬ETF,#N/A
+IWC,iShares¶W¤p«¬ªÑETF,#N/A
+IWD,iSharesÃ¹¯À1000»ù­È«¬ETF,#N/A
+IWF,iSharesÃ¹¯À1000¦¨ªø«¬ETF,#N/A
+IWM,iShares¦wºÓÃ¹¯À2000¥æ©ö©Ò¥æ©ö,#N/A
+IXN,iShares¦wºÓ¥þ²y¬ì§ÞETF,#N/A
+IYC,iShares¦wºÓ¬ü°ê®ø¶OªÌ«D¥²»Ý«~,#N/A
+IYF,iShares¦wºÓ¬ü°êª÷¿ÄETF,#N/A
+IYK,iShares¦wºÓ¬ü°ê®ø¶O¥²»Ý«~¥æ©ö,#N/A
+IYR,iShares¦wºÓ¬ü°ê¤£°Ê²£ETF,#N/A
+IYT,iShares¦wºÓ¹B¿é¥­§¡¥æ©ö©Ò¥æ©ö,#N/A
+IYW,iShares¦wºÓ¬ü°ê¬ì§ÞETF,#N/A
+IYZ,iShares¬ü°ê¹q«HETF,#N/A
+IZRL,ARK Israel Innovative Technolo,#N/A
+J,¶®¦U¥¬¸Ñ¨M¤è®×¤½¥q,¤u·~
+JBHT,JB Hunt Transport Services Inc,¤u·~
+JBL,±¶´¶¤½¥q,¸ê°T¬ì§Þ
+JBLU,±¶ÂÅ¯èªÅ¤½¥q,¤u·~
+JEF,³Ç´I·çª÷¿Ä¶°¹Î¤½¥q,ª÷¿ÄªA°È
+JEPI,JPMorgan Equity Premium Income,#N/A
+JEPQ,JPMorgan Nasdaq Equity Premium,#N/A
+JG,·¥¥ú²¾°Ê¦³­­¤½¥q,¸ê°T¬ì§Þ
+JKHY,Jack Henry & Associates¤½¥q,ª÷¿ÄªA°È
+JNPR,Â¤³Õºô¸ô,¸ê°T¬ì§Þ
+JOBY,³ì¤ñ¯èªÅ¤½¥q,¤u·~
+JOUT,±j¥Í¤á¥~¤½¥q,«D¥²»Ý®ø¶O«~
+JPMPC,#N/A,#N/A
+JPMPD,#N/A,#N/A
+JPMPG,#N/A,#N/A
+JPMPH,#N/A,#N/A
+JPMPJ,#N/A,#N/A
+JWN,¿Õ¼w´µ¯SÀs¤½¥q,«D¥²»Ý®ø¶O«~
+KBE,SPDR¼Ð´¶»È¦æETF,#N/A
+KBR,KBR¤½¥q,¤u·~
+KC,ª÷¤s¶³±±ªÑ¦³­­¤½¥q,¸ê°T¬ì§Þ
+KEY,¬ì³Í°ê»Ú¶°¹Î,ª÷¿ÄªA°È
+KG,«È¾A¨ô¶°¹Î¦³­­¤½¥q,ª÷¿ÄªA°È
+KIE,«ä¬f¹F¼Ð´¶«OÀIETF,#N/A
+KIM,KRCÁ{®É¤½¥q,©Ð¦a²£
+KLG,WK®a¼Ö¤ó¤½¥q,¥²»Ý®ø¶O«~
+KODK,¥ì¤h°Ò¬_¹F,¸ê°T¬ì§Þ
+KOLD,ProShares¶Wµu´Á´^³Õ¤ÑµM®ð,#N/A
+KRE,SPDR¼Ð´¶¦a°Ï©Ê»È¦æETF,#N/A
+KSS,¬_º¸¤½¥q,«D¥²»Ý®ø¶O«~
+KSU,³ôÂÄ´µ¥««n¤è¤½¥q,¤u·~
+KULR,KULR Technology Group Inc,¤u·~
+L,¬¥´µ¤½¥q,ª÷¿ÄªA°È
+LABD,Direxion¨C¤é¤T­¿©ñªÅ¼Ð´¶¥Í§ÞÃþ,#N/A
+LABU,Direxion¨C¤é¤T­¿°µ¦h¼Ð´¶¥Í§ÞET,#N/A
+LAND,®æµÜ´µ¹y¤g¦a¤½¥q,©Ð¦a²£
+LAZR,Luminar¬ì§Þ¤½¥q,«D¥²»Ý®ø¶O«~
+LB,Landbridge Co LLC,©Ð¦a²£
+LCID,Lucid¶°¹Î¤½¥q,«D¥²»Ý®ø¶O«~
+LCTX,ÃÐ¨t²Ó­MªvÀø¤½¥q,ÂåÀø«O°·
+LEG,Leggett & Platt Inc,«D¥²»Ý®ø¶O«~
+LEH,¹p°Ò¥S§Ì±±ªÑ¤½¥q,#N/A
+LH,±t³Õ¬ì±±ªÑ¤½¥q,ÂåÀø«O°·
+LIT,¥þ²yX¾Y¹q¦À§Þ³NETF,#N/A
+LLL,ª÷¹b«~®È¡]®ü«n¡^¼Æ¦r¬ì§Þ¦³­­¤½,«D¥²»Ý®ø¶O«~
+LM,¬ü²±¤½¥q,ª÷¿ÄªA°È
+LMHA,#N/A,#N/A
+LMHB,#N/A,#N/A
+LMIBL,#N/A,#N/A
+LNC,ªLªÖ¥þ°ê«OÀI,ª÷¿ÄªA°È
+LQD,iSharesiBoxx$§ë¸ê¯Å¤½¥q¶ÅETF,#N/A
+LQDT,¬y°Ê©ÊªA°È¤½¥q,¤u·~
+LU,³°ª÷©Ò±±ªÑ¦³­­¤½¥q,ª÷¿ÄªA°È
+LUNR,ª½Ä±¾÷¾¹¤½¥q,¤u·~
+LW,ÂÅ«Â´µ¹y±±ªÑ¤½¥q,¥²»Ý®ø¶O«~
+LYFT,¨ÓºÖ¨®¤½¥q,¤u·~
+LYLT,Loyalty Ventures Inc,³q°TªA°È
+LYLTQ,Loyalty Ventures Inc,³q°TªA°È
+LYV,²z·Q°êºtÃÀªÑ¥÷¦³­­¤½¥q,³q°TªA°È
+MAA,Mid-America Apartment Communit,©Ð¦a²£
+MAS,°¨´µ¥i,¤u·~
+MAT,¬ü®õ¨à¤½¥q,«D¥²»Ý®ø¶O«~
+MAXN,Maxeon Solar Technologies Ltd,¸ê°T¬ì§Þ
+MBLY,Mobileye¥þ²y¤½¥q,«D¥²»Ý®ø¶O«~
+MCHI,iShares¦wºÓMSCI¤¤°êETF,#N/A
+MCRB,ÁÉ¨½´µÂåÀø¤½¥q,ÂåÀø«O°·
+MDB,MongoDB¤½¥q,¸ê°T¬ì§Þ
+MELI,¬ü¥d¦h¤½¥q,«D¥²»Ý®ø¶O«~
+MER,¬üªL¤½¥q,#N/A
+METPE,Voice One Corp,#N/A
+MGA,³Á®æ¯Ç°ê»Ú¤½¥q,«D¥²»Ý®ø¶O«~
+MGC,»â¯è¥¨«¬ªÑETF,#N/A
+MGK,»â¯è¥¨«¬ªÑ¦¨ªø«¬ETF,#N/A
+MGNI,¿c¤ñ¤Õ±M®×¤½¥q,³q°TªA°È
+MGV,»â¯è¥¨«¬ªÑ»ù­È«¬ETF,#N/A
+MILN,Global X Funds Global X Millen,#N/A
+MLPA,Global X·~¥D¦³­­¦X¹ÙETF,#N/A
+MLPX,Global X·~¥D¦³­­¦X¹Ù»P¯à·½³]³Æ,#N/A
+MMYT,MakeMyTrip Ltd,«D¥²»Ý®ø¶O«~
+MNDY,Monday.com¦³­­¤½¥q,¸ê°T¬ì§Þ
+MNSO,¦W³ÐÀu«~¶°¹Î±±ªÑ¦³­­¤½¥q,«D¥²»Ý®ø¶O«~
+MOAT,VanEck±á¬P¼eÅ@«°ªeETF,#N/A
+MOO,VanEck¹A·~¥ø·~ETF,#N/A
+MOS,¬ü²±¤½¥q,­ì§÷®Æ
+MP,MP§÷®Æ¤½¥q,­ì§÷®Æ
+MPWR,ªä·½¨t²Î¦³­­¤½¥q,¸ê°T¬ì§Þ
+MRO,°¨©ÔªQ¥Ûªo¤½¥q,¯à·½
+MSFU,Direxion Daily MSFT Bull 2X Sh,#N/A
+MSPL,Metalcrafters Specialties,#N/A
+MT,¦wÁÉ¼Ö¦Ì¶ðº¸,­ì§÷®Æ
+MTCH,Match Group Inc,³q°TªA°È
+MTD,Mettler-Toledo°ê»Ú¤½¥q,ÂåÀø«O°·
+MTUM,iShares¦wºÓMSCI¬ü°ê°Ê¯à¦]¤l¥æ,#N/A
+MTZ,MasTec¤½¥q,¤u·~
+MVIS,MicroVision Inc,¸ê°T¬ì§Þ
+MXIM,¬ü«H°ê»ÚªÑ¥÷¦³­­¤½¥q,¸ê°T¬ì§Þ
+MYL,ÁÚÄõ,ÂåÀø«O°·
+NATR,¦ÛµM¶§¥ú²£«~¤½¥q,¥²»Ý®ø¶O«~
+NBIS,¥§¤ñ¤Ì´µ¶°¹Î¤½²³¦³­­¤½¥q,¸ê°T¬ì§Þ
+NBL,¿Õ¥¬º¸¯à·½¤½¥q,¯à·½
+NCNO,nCino Inc,¸ê°T¬ì§Þ
+NCTY,²Ä¤E«°¥«,¸ê°T¬ì§Þ
+NET,Cloudflare¤½¥q,¸ê°T¬ì§Þ
+NIU,¤û¹q¬ì§Þ,«D¥²»Ý®ø¶O«~
+NKTR,¤º§J¶ðªvÀø,ÂåÀø«O°·
+NKTX,Nkarta¤½¥q,ÂåÀø«O°·
+NLOK,¼Æ¦ì¥@¥N¤½¥q,¸ê°T¬ì§Þ
+NLR,VanEck¹\»P®Ö¯àETF,#N/A
+NLSN,¥§º¸´Ë±±ªÑ¦³­­¤½¥q,¤u·~
+NNOX,Nano-X¦¨¹³¦³­­¤½¥q,ÂåÀø«O°·
+NOV,°ê¥Áªo¤«µØ°ª¤½¥q,¯à·½
+NRG,NRG Energy Inc,¤½¥Î¨Æ·~
+NTLA,­^¯S§Q¨ÈªvÀø¤½¥q,ÂåÀø«O°·
+NUGT,Direxion¨C¤éª÷Äq·~«ü¼Æ¦hÀY2­¿,#N/A
+NVDL,GraniteShares 2x Long NVDA Dai,#N/A
+NVR,NVR Inc,«D¥²»Ý®ø¶O«~
+NVS,¿ÕµØ¤½¥q,ÂåÀø«O°·
+NVTS,Navitas Semiconductor Corp,¸ê°T¬ì§Þ
+NWL,¯Ã¤Ìº¸«~µP¤½¥q,«D¥²»Ý®ø¶O«~
+NWS,·s»D¶°¹Î,³q°TªA°È
+NXE,NexGen¯à·½¦³­­¤½¥q,¯à·½
+NXTG,First Trust Indxx NextG ETF,#N/A
+ODFL,Old Dominion Freight Line¤½¥q,¤u·~
+OLED,Àô¦tÅã¥Ü§Þ³N¤½¥q,¸ê°T¬ì§Þ
+OMC,¶ø©i¥§±d¶°¹Î,³q°TªA°È
+ONON,©ù¶]±±ªÑªÑ¥÷¦³­­¤½¥q,«D¥²»Ý®ø¶O«~
+ORKA,¤è¦à¥Íª«ÂåÃÄ¤½¥q,ÂåÀø«O°·
+OXYWS,#N/A,#N/A
+PAVE,Global X US Infrastructure Dev,#N/A
+PAYO,Payoneer Global Inc,ª÷¿ÄªA°È
+PBCT,¤H¥ÁÁp¦Xª÷¿Ä¤½¥q,ª÷¿ÄªA°È
+PBW,´º¶¶WilderHill²M¼ä¯à·½ETF,#N/A
+PCLN,Ä}«È±±ªÑ¤½¥q,«D¥²»Ý®ø¶O«~
+PEAK,Healthpeak Properties Inc,©Ð¦a²£
+PEJ,´º¶¶¥ð¶¢®T¼ÖETF,#N/A
+PEK,VanEck¤¤°ê¦¨ªø»â³S,#N/A
+PFF,iShares¦wºÓ¯S§OªÑ¤Î¦¬¯qÃÒ¨é¥æ,#N/A
+PFFD,Global X US Preferred ETF,#N/A
+PHO,´º¶¶¤ô¸ê·½ETF,#N/A
+PICK,iShares MSCI©úÑÔ¥þ²yª÷ÄÝ¤ÎÄq·~,#N/A
+PK,¤½¶é°s©±¤Î«×°²§ø¤½¥q,©Ð¦a²£
+PKG,¬ü°ê¥]¸Ë¤½¥q,­ì§÷®Æ
+PKI,Revvity¤½¥q,ÂåÀø«O°·
+PNQI,´º¶¶¨º´µ¹F§Jºô¸ôETF,#N/A
+PNW,¥Ö¨º¥i¸ê¥»¤½¥q,¤½¥Î¨Æ·~
+PPG,¤Ç¯÷³ù¤u·~,­ì§÷®Æ
+PPH,VanEck»sÃÄETF,#N/A
+PRGO,°ö§Q°ª¤½¶}¦³­­¤½¥q,ÂåÀø«O°·
+PRNT,The 3D Printing ETF,#N/A
+PRS,#N/A,#N/A
+PSAPJ,#N/A,#N/A
+PSAPL,#N/A,#N/A
+PSAPP,#N/A,#N/A
+PSAPQ,#N/A,#N/A
+PSI,´º¶¶¥b¾ÉÅéETF,#N/A
+PSQ,ProShares¤@­¿©ñªÅ¨º´µ¹F§J«ü¼Æ,#N/A
+PTC,°Ñ¼Æ¬ì§Þ¤½¥q,¸ê°T¬ì§Þ
+PTH,´º¶¶¦hº¸¦èµÜ¯SÂåÀø°Ê¯àETF,#N/A
+PVH,PVH¤½¥q,«D¥²»Ý®ø¶O«~
+PXD,¥ý¾W¦ÛµM¸ê·½¤½¥q,¯à·½
+QCLN,²Ä¤@«H°U¨º´µ¹F§J²M¼ä¥ý¾Wºñ¦â¯à,#N/A
+QD,½ì©±¤½¥q,ª÷¿ÄªA°È
+QID,ProShares¤G­¿©ñªÅ¯Ç´µ¹F§J«ü¼Æ,#N/A
+QLD,ProShares¤G­¿°µ¦h¨º´µ¹F§J,#N/A
+QQQ,´º¶¶QQQ«H°U¨t¦C1,#N/A
+QTEC,²Ä¤@«H°U¨º´µ¹F§J-100¬ì§Þ«ü¼Æ°ò,#N/A
+QUAL,iShares¦wºÓMSCI¬ü°êÀu½è¦]¼Æ¥æ,#N/A
+QUBT,¶q¤l¹Bºâ¤½¥q,¸ê°T¬ì§Þ
+QYLD,Global X Nasdaq 100 Covered Ca,#N/A
+RACE,ªk©Ô§Q¤½¥q,«D¥²»Ý®ø¶O«~
+RBNE,Robin Energy Ltd,¤u·~
+RCON,¬ã±±¬ì§Þ¦³­­¤½¥q,¯à·½
+RDW,¬õ½u¤½¥q,¤u·~
+RE,Everest¶°¹Î¦³­­¤½¥q,ª÷¿ÄªA°È
+REG,Regency Centers¤½¥q,©Ð¦a²£
+REM,iShares¦wºÓ©Ð¦a²£©è©ã¶U´Ú¤W­­E,#N/A
+REMX,VanEckµ}¤g»P¾Ô²¤ª÷ÄÝETF,#N/A
+RF,°Ï°ìª÷¿Ä¤½¥q,ª÷¿ÄªA°È
+RHI,Ã¹­PùÚ´I¤½¥q,¤u·~
+RHT,¬õ´U¤½¥q,¸ê°T¬ì§Þ
+RIG,Transocean¦³­­¤½¥q,¯à·½
+RIOT,Riot¥­¥x¤½¥q,¸ê°T¬ì§Þ
+RJF,Raymond James Financial Inc,ª÷¿ÄªA°È
+RKT,¬¥°ò¯S¶°¹ÎªÑ¥÷¦³­­¤½¥q,ª÷¿ÄªA°È
+RLX,RLX¬ì§Þ¤½¥q,¥²»Ý®ø¶O«~
+RNRG,¥þ²yX°òª÷-¥þ²yX¥i¦A¥Í,#N/A
+ROBO,Robo¥þ²y¾÷¾¹¤H»P¦Û°Ê¤Æ«ü¼ÆETF,#N/A
+ROBT,First Trust Nasdaq Artificial,#N/A
+ROK,¬¥§J«Âº¸¦Û°Ê¤Æ¤½¥q,¤u·~
+ROL,Ã¹ªL´µ¤½¥q,¤u·~
+RS,Reliance¿û¾T¤½¥q,­ì§÷®Æ
+RSX,VanEck«XÃ¹´µETF,#N/A
+RTH,VanEck¹s°âETF,#N/A
+RTN,¹p¯«¤½¥q,¤u·~
+RUSL,Direxion¨C¤é«XÃ¹´µ¦hÀY2­¿ªÑ,#N/A
+RUSS,Direxion¨C¤é«XÃ¹´µªÅÀY3­¿ªÑ,#N/A
+RVTY,Revvity¤½¥q,ÂåÀø«O°·
+RWM,ProShares©ñªÅ«¬Ã¹¯À2000,#N/A
+RXT,¹p­¿¾A¬ì§Þ¤½¥q,¸ê°T¬ì§Þ
+S7816,#N/A,#N/A
+S7828,#N/A,#N/A
+S7875,#N/A,#N/A
+SAM,ªi¤h¹y°à°s¦³­­¤½¥q,¥²»Ý®ø¶O«~
+SAP,«ä·R´¶,¸ê°T¬ì§Þ
+SAVA,¥dÂÄ¥Ë¬ì¾Ç¤½¥q,ÂåÀø«O°·
+SBRA,SabraÂåÀø«O°·¤£°Ê²£«H°U¤½¥q,©Ð¦a²£
+SBSW,¦è¯Z¥ìÀR¤ô¦³­­¤½¥q,­ì§÷®Æ
+SCCO,Southern Copper Corp,­ì§÷®Æ
+SCHWPJ,#N/A,#N/A
+SCIF,VanEck¦L«×¦¨ªø»â³SETF,#N/A
+SCO,ProShares¨â­¿°µªÅ´^³Õ­ìªo,#N/A
+SDGR,¬ü°ê¬IÃ¹¤B®æ¤½¥q,ÂåÀø«O°·
+SDIV,¥þ²yX¶W¯ÅªÑ§QETF,#N/A
+SDS,ProShares¨â­¿©ñªÅ¼Ð·Ç´¶º¸500,#N/A
+SEA,US Global Sea to Sky Cargo ETF,#N/A
+SEDG,©Ò¼Ö¤Ó¶§¯à¬ì§Þ,¸ê°T¬ì§Þ
+SEE,§Æ®®º¸,­ì§÷®Æ
+SELX,Semilux International Ltd,¸ê°T¬ì§Þ
+SEMR,SEMrush±±ªÑ¤½¥q,¸ê°T¬ì§Þ
+SES,SES¤H¤u´¼¼z¤½¥q,¤u·~
+SFM,¨§ªÞ¹A¤Ò¥«³õ¤½¥q,¥²»Ý®ø¶O«~
+SGHC,³t³Õ¶°¹ÎSGHC¦³­­¤½¥q,«D¥²»Ý®ø¶O«~
+SH,ProSharesªÅÀY¼Ð´¶500,#N/A
+SH600009,#N/A,#N/A
+SH600104,#N/A,#N/A
+SH600138,#N/A,#N/A
+SH600276,#N/A,#N/A
+SH600372,#N/A,#N/A
+SH600519,#N/A,#N/A
+SH600600,#N/A,#N/A
+SH601006,#N/A,#N/A
+SH601888,#N/A,#N/A
+SH603986,#N/A,#N/A
+SHEL,´ßµP¤½¶}¦³­­¤½¥q,¯à·½
+SIL,Global X»ÈÄq·~ETF,#N/A
+SIMO,¼zºa¬ì§Þ,¸ê°T¬ì§Þ
+SIVB,ª¿¨¦»È¦æª÷¿Ä¶°¹Î,ª÷¿ÄªA°È
+SIVBQ,ª¿¨¦»È¦æª÷¿Ä¶°¹Î,ª÷¿ÄªA°È
+SIXG,Defiance Connective Technologi,#N/A
+SKF,ProShares¤G­¿©ñªÅª÷¿ÄªÑETF,#N/A
+SKYW,¦èªÅ¯èªÅ¤½¥q,¤u·~
+SKYY,²Ä¤@«H°U¶³ºÝ­pºâETF,#N/A
+SLG,SL®æªL¤£°Ê²£¤½¥q,©Ð¦a²£
+SLV,iShares¥Õ»È«H°U,#N/A
+SLVM,«ä¥Ë²ö¤½¥q,­ì§÷®Æ
+SLVP,iShares¦wºÓMSCI¥þ²y¥Õ»ÈÄq·~ETF,#N/A
+SLX,¥«³õ°Ê¤O¿ûÅK«ü¼Æ°òª÷,#N/A
+SMH,VanEck¥b¾ÉÅéETF,#N/A
+SMOG,VanEck§CºÒ¯à·½ETF,#N/A
+SMR,¯Ã«ä³Í¹q¤O¤½¥q,¤u·~
+SNA,¹ê­@Ä_¤½¥q,¤u·~
+SNDK,ÑÔºÐ¤½¥q¡]¼w©Ô¥Ë¦{¡^,¸ê°T¬ì§Þ
+SNDL,SNDL Inc,ÂåÀø«O°·
+SNSR,Global X Internet of Things ET,#N/A
+SOCL,Global XªÀ¸s´CÅé«ü¼ÆETF,#N/A
+SOFI,¯Áµá¬ì§Þ¤½¥q,ª÷¿ÄªA°È
+SOJB,#N/A,#N/A
+SOUN,Án¯èAI¤½¥q,¸ê°T¬ì§Þ
+SOXL,Direxion¨C¤é¤T­¿°µ¦h¥b¾ÉÅé,#N/A
+SOXS,Direxion¨C¤é¤T­¿©ñªÅ¥b¾ÉÅé,#N/A
+SOXX,iShares¦wºÓ¥b¾ÉÅé¥æ©ö©Ò¥æ©ö°ò,#N/A
+SPHD,´º¶¶¼Ð´¶500°ªªÑ§Q§Cªi°Ê²vETF,#N/A
+SPSM,SPDR§ë¸ê²Õ¦X¼Ð´¶600¤p«¬ªÑ¥æ©ö,#N/A
+SPWR,Complete Solaria Inc,¤u·~
+SPXL,Direxion¨C¤é¼Ð´¶500¦hÀY3­¿,#N/A
+SPXS,Direxion¨C¤é¤T­¿©ñªÅ¼Ð´¶500,#N/A
+SPY,SPDR¼Ð´¶500¥æ©ö©Ò¥æ©ö°òª÷«H°U,#N/A
+SQM,´¼§Q¤Æ¤uÄq·~¤½¥q,­ì§÷®Æ
+SQQQ,Proshares UltraProµuQQQ,#N/A
+SRLN,SPDR¶Â¥ÛÀu¥ý¶U´ÚETF,#N/A
+SSO,ProShares Ultra¼Ð´¶500,#N/A
+STE,STERIS¤½¶}¦³­­¤½¥q,ÂåÀø«O°·
+STI,±ô§Q¨å¬ì§Þ¤½¥q,¤u·~
+STWD,¥v¶ð«Î¸ê²£«H°U,ª÷¿ÄªA°È
+SUSA,iShares¦wºÓESGÀu¤ÆMSCI ETF,#N/A
+SUSL,iShares ESG MSCI USA Leaders E,#N/A
+SVXY,ProShares½æªÅVIXµu´Á´Á³fETF,#N/A
+SW,´µÀqµá¯S­³´µ¯S¬¥§J¤½¶}¦³­­¤½¥q,­ì§÷®Æ
+SWK,¥v¤¦§Q¦Ê±o¤½¥q,¤u·~
+SY,¥_¨Ê·s®ñ¬ì§Þ¦³­­¤½¥q,³q°TªA°È
+SYF,¦P¨Bª÷¿Ä,ª÷¿ÄªA°È
+SYMC,¼Æ¦ì¥@¥N¤½¥q,¸ê°T¬ì§Þ
+SZ000538,#N/A,#N/A
+SZ000729,#N/A,#N/A
+SZ000999,#N/A,#N/A
+SZ002042,#N/A,#N/A
+SZ002120,#N/A,#N/A
+TAN,Invesco Solar ETF,#N/A
+TAP,¼¯²Ô®wº¸´µ¶¼®Æ¤½¥q,¥²»Ý®ø¶O«~
+TASK,TaskUS Inc,¤u·~
+TBB,#N/A,#N/A
+TBC,#N/A,#N/A
+TBF,ProShares©ñªÅ20¦~¥H¤W¤½¶Å,#N/A
+TBT,ProShares¤G­¿©ñªÅ20¦~¥H¤W¤½¶Å,#N/A
+TDG,TransDigm¶°¹Î¤½¥q,¤u·~
+TDIV,First Trust NASDAQ Technology,#N/A
+TDY,±o¥ß¹F¬ì§Þ¤½¥q,¸ê°T¬ì§Þ
+TE,T1¯à·½¤½¥q,¤u·~
+TECH,Bio-Techne Corp,ÂåÀø«O°·
+TER,®õ·ç¹F¤½¥q,¸ê°T¬ì§Þ
+TFX,Teleflex Inc,ÂåÀø«O°·
+THD,iShares¦wºÓMSCI®õ°êETF,#N/A
+THNPY,¼w¦è¥§¥¬¯à·½¤½¥q,¯à·½
+TIF,¸¦ªÜ¥§¤½¥q,«D¥²»Ý®ø¶O«~
+TIP,iShares¦wºÓ§Ü³q¿±¶Å¨éETF,#N/A
+TLRY,­}·ç«~µP¤½¥q,ÂåÀø«O°·
+TLS,Telos Corp,¸ê°T¬ì§Þ
+TLT,iShares¦wºÓ20¦~¥H¤W¤½¶ÅETF,#N/A
+TMC,TMC the metals co Inc,­ì§÷®Æ
+TME,ÄË°T­µ¼Ö®T¼Ö¶°¹Î,³q°TªA°È
+TMF,Direxion¨C¤é¤T­¿°µ¦h20¦~´Á¥H¤W,#N/A
+TMK,Àô²y¤H¹Ø¤½¥q,ª÷¿ÄªA°È
+TMV,Direxion¨C¤é¤T­¿©ñªÅ20¦~´Á¥H¤W,#N/A
+TPA,¼¯®Ú¤h¤¦§Q,ª÷¿ÄªA°È
+TPC,Tutor Perini Corp,¤u·~
+TQQQ,ProShares UltraPro QQQ,#N/A
+TRAW,Traws»sÃÄ¤½¥q,ÂåÀø«O°·
+TRMB,¤ÑÄ_¤½¥q,¸ê°T¬ì§Þ
+TRUP,·¡¼ï¥§®¦¤½¥q,ª÷¿ÄªA°È
+TSCO,¦²¤Þ¨®¨ÑÀ³¤½¥q,«D¥²»Ý®ø¶O«~
+TSLL,Direxion Daily TSLA Bull 2X Sh,#N/A
+TSMX,Direxion Daily TSM Bull 2X Sha,#N/A
+TSN,®õ´Ë­¹«~,¥²»Ý®ø¶O«~
+TSS,Total SystemªA°È¤½¥q,#N/A
+TTD,¥æ©ö¥x¤½¥q,³q°TªA°È
+TUR,iShares¦wºÓMSCI¤g¦Õ¨ä¥æ©ö©Ò¥æ,#N/A
+TUYA,¶î¾~´¼¯à,¸ê°T¬ì§Þ
+TWM,ProShares¶Wµu´ÁÃ¹¯À2000,#N/A
+TWTR,±À¯S,³q°TªA°È
+TWX,¬ü°ê®É¥NµØ¯Ç,³q°TªA°È
+TXT,¼w¨Æ¶©¤½¥q,¤u·~
+TYL,Tyler Technologies Inc,¸ê°T¬ì§Þ
+UCO,ProShares¨â­¿´^³Õ­ìªo,#N/A
+UDN,´º¶¶¼w»È¬ü¤¸«ü¼Æ©ñªÅ°òª÷,#N/A
+UDR,UDR¤½¥q,©Ð¦a²£
+UEC,¹\¯à·½¤½¥q,¯à·½
+UGL,ProShares¶W¶Àª÷,#N/A
+UHS,Àô²y°·±dªA°È¤½¥q,ÂåÀø«O°·
+UI,Àu³Õ³q¤½¥q,¸ê°T¬ì§Þ
+ULTA,µS¥L¬ü®e¤½¥q,«D¥²»Ý®ø¶O«~
+UMAC,Unusual Machines Inc /US,¸ê°T¬ì§Þ
+UMCADR,#N/A,#N/A
+UNG,¬ü°ê¤ÑµM®ð°òª÷¦³­­¦X¹Ù,#N/A
+UNM,Unum¶°¹Î,ª÷¿ÄªA°È
+UPST,Upstart Holdings Inc,ª÷¿ÄªA°È
+URA,Global X¹\ETF,#N/A
+URI,Áp¦X¯²¸î¤½¥q,¤u·~
+USBPQ,#N/A,#N/A
+USBPR,#N/A,#N/A
+USNA,Àu®á¨º°·±d¬ì¾Ç¤½¥q,¥²»Ý®ø¶O«~
+USO,¬ü°ê¥Ûªo°òª÷¦³­­¦X¹Ù¤½¥q,#N/A
+UTX,¹p¯«¬ì§Þ¤½¥q,¤u·~
+UUP,´º¶¶¼w»È¬ü¤¸«ü¼Æ¦hÀY°òª÷,#N/A
+UVXY,ProShares¨â­¿VIXµu´Á´Á³f,#N/A
+UWM,ProShares UltraÃ¹¯À2000,#N/A
+UYG,ProShares¤G­¿°µ¦hª÷¿ÄªÑETF,#N/A
+VAC,¸U»¨¥þ²y«×°²¤½¥q,«D¥²»Ý®ø¶O«~
+VAR,¥Ë¨½¦wÂåÀø¨t²Î¤½¥q,ÂåÀø«O°·
+VAW,»â¯è­ìª«®ÆETF,#N/A
+VB,»â¯è¤p«¬ªÑETF,#N/A
+VBK,»â¯è¤p«¬ªÑ¦¨ªø«¬ETF,#N/A
+VBR,»â¯è¤p«¬ªÑ»ù­È«¬ETF,#N/A
+VCIT,»â¯è¤¤´Á¤½¥q¶ÅETF,#N/A
+VCLT,»â¯èªø´Á¤½¥q¶ÅETF,#N/A
+VCR,»â¯è«D®Ö¤ß®ø¶OETF,#N/A
+VCSH,»â¯èµu´Á¤½¥q¶ÅETF,#N/A
+VDC,»â¯è®Ö¤ß®ø¶OETF,#N/A
+VDE,»â¯è¯à·½ETF,#N/A
+VEA,»â¯è´I®É¤w¶}µo¥«³õETF,#N/A
+VEEV,Veeva¨t²Î¤½¥q,ÂåÀø«O°·
+VEU,¥ý¾W´I®É¥þ²y¬ü°ê°£¥~ETF,#N/A
+VFC,VF¤½¥q,«D¥²»Ý®ø¶O«~
+VFH,»â¯èª÷¿ÄÃþªÑETF,#N/A
+VGIT,»â¯è¤¤´Á¬F©²¶Å¨éETF,#N/A
+VGK,¥ý¾W´I®É¼Ú¬wETF,#N/A
+VGLT,»â¯èªø´Á¬F©²¶Å¨éETF,#N/A
+VGSH,»â¯èµu´Á¬F©²¶Å¨éETF,#N/A
+VGT,»â¯è¸ê°T¬ì§Þ¥æ©ö©Ò¥æ©ö°òª÷,#N/A
+VHT,»â¯èÂåÀø«O°·ETF,#N/A
+VIAB,ºû±d,³q°TªA°È
+VIAC,#N/A,#N/A
+VIG,»â¯èªÑ§Q¼W­È¥æ©ö©Ò¥æ©ö°òª÷,#N/A
+VIOO,Vanguard S&P Small-Cap 600 ETF,#N/A
+VIOV,Vanguard S&P Small-Cap 600 Val,#N/A
+VIS,¥ý¾W¤u·~«ü¼Æ°òª÷,#N/A
+VIXY,ProShares VIXµu´Á´Á³fETF,#N/A
+VKTX,ºû¨ÊªvÀø¤½¥q,ÂåÀø«O°·
+VLTO,Veralto¤½¥q,¤u·~
+VMBS,»â¯è©è©ã¶U´ÚÃÒ¨éETF,#N/A
+VNM,VanEck¶V«nETF,#N/A
+VNO,ºû¯Ç¦h¤£°Ê²£«H°U¤½¥q,©Ð¦a²£
+VNQ,»â¯è¤£°Ê²£ETF,#N/A
+VNQI,»â¯è¥þ²y(¬ü°ê°£¥~)¤£°Ê²£ETF,#N/A
+VNT,Vontier Corp,¸ê°T¬ì§Þ
+VO,»â¯è¤¤«¬ªÑETF,#N/A
+VOE,»â¯è¤¤«¬ªÑ»ù­È«¬ETF,#N/A
+VONE,Vanguard Russell 1000,#N/A
+VONG,»â¯èÃ¹¯À1000¦¨ªø¥æ©ö©Ò¥æ©ö°òª÷,#N/A
+VONV,»â¯èÃ¹¯À1000»ù­È,#N/A
+VOO,¥ý¾W¼Ð´¶500ETF,#N/A
+VOOG,»â¯è¼Ð´¶500¦¨ªø«ü¼ÆETF,#N/A
+VOOV,Vanguard S&P 500 Value ETF,#N/A
+VOT,»â¯è¤¤«¬ªÑ¦¨ªø«¬ETF,#N/A
+VOX,»â¯è³q°TªA°È¥æ©ö©Ò¥æ©ö°òª÷,#N/A
+VPL,¥ý¾W´I®É¤Ó¥­¬vETF,#N/A
+VPU,»â¯è¤½¥Î¨Æ·~ETF,#N/A
+VRSK,Verisk Analytics Inc,¤u·~
+VRSN,ºû¸t¤½¥q,¸ê°T¬ì§Þ
+VSGX,Vanguard ESG International Sto,#N/A
+VSS,¥ý¾W´I®É¬ü°ê°£¥~¤p«¬ªÑETF,#N/A
+VT,¥ý¾W¥þ¥@¬ÉªÑ²¼ETF,#N/A
+VTC,Vanguard Total Corporate Bond,#N/A
+VTEB,¥ý¾W§Kµ|«¬¶Å¨é«ü¼ÆETF,#N/A
+VTI,¥ý¾W¾ãÅé¥«³õ«ü¼Æ°òª÷,#N/A
+VTIP,»â¯èµu´Á§Ü³q¿±ÃÒ¨éETF,#N/A
+VTV,¥ý¾W»ù­È«¬ETF,#N/A
+VTWO,¥ý¾WÃ¹¯À2000«ü¼ÆETF,#N/A
+VTWV,Vanguard Russell 2000 Value,#N/A
+VUG,»â¯è¦¨ªø«¬ETF,#N/A
+VUZI,Vuzix¤½¥q,¸ê°T¬ì§Þ
+VV,¥ý¾W¤j«¬ªÑETF,#N/A
+VWO,¥ý¾W´I®É·s¿³¥«³õETF,#N/A
+VWOB,»â¯è·s¿³¥«³õ¬F©²¶Å¨éETF,#N/A
+VXF,¥ý¾W©µ®i¥«³õETF,#N/A
+VXUS,¥ý¾W¥þ³¡°ê»ÚªÑ²¼ETF,#N/A
+VYM,»â¯è°ªªÑ§Q¦¬¯qETF,#N/A
+WCG,ºû®a«O°·¤½¥q,ÂåÀø«O°·
+WDS,¥î¼wÁÉ¼w¯à·½¶°¹Î¦³­­¤½¥q,¯à·½
+WFCPW,#N/A,#N/A
+WFCPX,Allspring Managed Account Core,#N/A
+WFCPY,#N/A,#N/A
+WLTW,«Â§Q´µÃüºÍ´f®®¤½¥q,ª÷¿ÄªA°È
+WOOD,iShares¥þ²y¤ì§÷¤ÎªL·~ETF,#N/A
+WRB,W.R.¬f§J§Q¤½¥q,ª÷¿ÄªA°È
+WRD,¤å»·ª¾¦æ¤½¥q,«D¥²»Ý®ø¶O«~
+WRK,¦è©¥¤½¥q,­ì§÷®Æ
+WST,West Pharmaceutical Services I,ÂåÀø«O°·
+WTW,«Â§Q´µÃüºÍ´f®®¤½¥q,ª÷¿ÄªA°È
+WWR,¦è¤ô¸ê·½¤½¥q,¤u·~
+WY,´f¦n¤½¥q,©Ð¦a²£
+XAR,SPDR¼Ð´¶¯è¤Ó»P°ê¨¾ETF,#N/A
+XBI,SPDR¼Ð´¶¥Í§ÞETF,#N/A
+XEC,¦è°¨µÜ§J´µ¯à·½¤½¥q,¯à·½
+XES,SPDR¼Ð´¶ªo®ð³]³Æ¤ÎªA°ÈETF,#N/A
+XLB,SPDR­ì®Æ«ü¼Æ°òª÷,#N/A
+XLC,³q«HªA°Èºë¿ï¦æ·~SPDR°òª÷,³q°TªA°È
+XLE,¯à·½ºë¿ï¦æ·~SPDR°òª÷,#N/A
+XLF,«ä¬f¹Fª÷¿Ä«ü¼Æ°òª÷,#N/A
+XLI,«ä¬f¹F¤u·~«ü¼Æ°òª÷,#N/A
+XLK,«ä¬f¹F¬ì§Þ«ü¼Æ°òª÷,#N/A
+XLNX,ÁÉÆF«ä¤½¥q,¸ê°T¬ì§Þ
+XLP,«ä¬f¹F®Ö¤ß®ø¶O«ü¼Æ°òª÷,#N/A
+XLRE,Real Estate Select Sector SPDR,#N/A
+XLU,SPDR¤½¥Î¨Æ·~ºë¿ï¦æ·~°òª÷,#N/A
+XLV,«ä¬f¹F°·±dÅ@²z«ü¼Æ°òª÷,#N/A
+XLY,«ä¬f¹F«D®Ö¤ß®ø¶O«ü¼Æ°òª÷,#N/A
+XME,SPDR¼Ð´¶ª÷ÄÝ»PÄq²£·~ETF,#N/A
+XOP,SPDR¼Ð´¶ªo®ð¶}±Ä¤Î¥Í²£ETF,#N/A
+XPP,ProShares¶W¯Å´I®É¤¤°ê50°òª÷,#N/A
+XRAY,µn¤h¬f¦è¿Õ¼w¤½¥q,ÂåÀø«O°·
+XRT,SPDR¼Ð´¶¹s°âETF,#N/A
+XRX,¥þ¿ý±±ªÑ¤½¥q,¸ê°T¬ì§Þ
+XSD,SPDR¼Ð´¶¥b¾ÉÅéETF,#N/A
+XT,iShares¦wºÓ«ü¼Æ«¬§Þ³NETF,#N/A
+XYLD,Global X S&P 500 Covered Call,#N/A
+YALA,Yalla Group Ltd,³q°TªA°È
+YANG,Direxion¨C¤é¤T­¿©ñªÅ´I®É¤¤°ê,#N/A
+YCS,ProShares UltraShort¤é¶ê,#N/A
+YINN,Direxion¨C¤é´I®É¤¤°ê¦hÀY3­¿ªÑ,#N/A
+ZBH,±¶ÁÚ¨¹¬ü±±ªÑ¤½¥q,ÂåÀø«O°·
+ZBRA,´³°¨¬ì§Þ¤½¥q,¸ê°T¬ì§Þ
+ZETA,Zeta Global Holdings Corp,¸ê°T¬ì§Þ
+ZG,Zillow¶°¹Î¤½¥q,©Ð¦a²£
+ZION,»ô©ù»È¦æ,ª÷¿ÄªA°È

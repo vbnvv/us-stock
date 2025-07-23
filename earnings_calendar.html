@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美股財報日曆 - Finnhub API</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 1.5rem;
+        }
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+        h1 {
+            text-align: center;
+            color: #1a2c5b;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+            align-items: center;
+            justify-content: center;
+        }
+        .date-range {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .date-range input {
+            padding: 0.75rem;
+            border-radius: 6px;
+            border: 1px solid #ced4da;
+            font-size: 1rem;
+        }
+        .date-range input[readonly] {
+            background-color: #f8f9fa;
+            color: #6c757d;
+            cursor: not-allowed;
+        }
+        .search-box {
+            flex: 0 0 auto;
+            width: 400px;
+            max-width: 100%;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            border: 1px solid #ced4da;
+            font-size: 1rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .search-box input:focus {
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+            outline: none;
+        }
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.2s;
+            font-weight: 600;
+        }
+        .btn-primary {
+            background-color: #4a90e2;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #357abd;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+        .btn-secondary:hover {
+            background-color: #545b62;
+        }
+        .btn-success {
+            background-color: #28a745;
+            color: white;
+        }
+        .btn-success:hover {
+            background-color: #218838;
+        }
+        .ubot-segment-control {
+            display: flex;
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 20px;
+            padding: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        .ubot-segment-control input[type="radio"] {
+            display: none;
+        }
+        .ubot-segment-control label {
+            padding: 0.4rem 1rem;
+            cursor: pointer;
+            white-space: nowrap;
+            border-radius: 18px;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #6c757d;
+            background: transparent;
+            border: none;
+            position: relative;
+            z-index: 2;
+            min-width: 80px;
+            text-align: center;
+        }
+        .ubot-segment-control input[type="radio"]:checked + label {
+            background: #007bff;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+        }
+        .ubot-segment-control label:hover {
+            color: #495057;
+        }
+        .ubot-segment-control input[type="radio"]:checked + label:hover {
+            color: white;
+        }
+        .filter-label {
+            font-weight: 600;
+            color: #495057;
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        .loading {
+            text-align: center;
+            color: #4a90e2;
+            font-size: 1.1rem;
+            margin: 2rem 0;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+        .info {
+            background-color: #cce7ff;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        .table-container {
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+        }
+        th, td {
+            padding: 0.6rem 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+            white-space: nowrap;
+        }
+        td:first-child {
+            white-space: normal;
+            min-width: 180px;
+            max-width: 250px;
+        }
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            cursor: pointer;
+            user-select: none;
+            z-index: 1;
+            border-bottom: 2px solid #dee2e6;
+        }
+        th:hover {
+            background-color: #e9ecef;
+        }
+        th.sorted {
+            background-color: #e2e6ea;
+        }
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+        .symbol {
+            font-weight: 600;
+            color: #1a2c5b;
+        }
+        .positive {
+            color: #28a745;
+        }
+        .negative {
+            color: #dc3545;
+        }
+        .hour-badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .hour-bmo {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+        .hour-amc {
+            background-color: #fff3e0;
+            color: #f57c00;
+        }
+        .hour-dmh {
+            background-color: #f3e5f5;
+            color: #7b1fa2;
+        }
+        .sort-arrow {
+            display: inline-block;
+            margin-left: 0.5rem;
+            opacity: 0.5;
+        }
+        .sort-arrow.active {
+            opacity: 1;
+        }
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            min-width: 120px;
+        }
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1a2c5b;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+        .navbar {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .navbar li {
+            margin: 0;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .navbar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        .navbar a.active {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .company-info {
+            padding: 2px 0;
+            transition: background-color 0.2s;
+        }
+        .company-info:hover {
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+        .summary-row .summary-text {
+            margin: 6px 0;
+            border-left: 4px solid #4a90e2;
+        }
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">🏠 首頁</a></li>
+                <li><a href="stock_summary_dynamic.html">📈 美股同業分析</a></li>
+                <li><a href="earnings_calendar.html" class="active">📅 財報日曆</a></li>
+                <li><a href="us_stock_news.html">📰 美股新聞</a></li>
+            </ul>
+        </nav>
+        <h1>美股財報日曆</h1>
+        
+        <div class="info">
+            數據來源: <strong>Finnhub API</strong> | 顯示公司的財報發布日期、EPS 預估與實際值、營收預估與實際值<br>
+            <small>自動分三次查詢：過去15天-今天 / 今天-未來15天 / 未來15天之後</small>
+        </div>
+
+        <div class="controls">
+            <div class="date-range">
+                <label>查詢範圍:</label>
+                <input type="date" id="fromDate" value="2025-01-01" readonly>
+                <label>至</label>
+                <input type="date" id="toDate" value="2025-01-31" readonly>
+            </div>
+            <button class="btn btn-primary" onclick="fetchEarningsData()">重新載入財報數據</button>
+            <button class="btn btn-secondary" onclick="clearData()">清除數據</button>
+        </div>
+
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="搜尋股票代碼或公司名稱..." oninput="filterData()">
+            </div>
+            <div class="ubot-segment-control">
+                <input type="radio" name="ubotFilter" value="all" id="ubot-all">
+                <label for="ubot-all">全部顯示</label>
+                <input type="radio" name="ubotFilter" value="only" id="ubot-only" checked>
+                <label for="ubot-only">聯邦上架</label>
+            </div>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            載入中...
+        </div>
+
+        <div id="error" class="error" style="display: none;"></div>
+
+        <div class="stats" id="stats" style="display: none;">
+            <div class="stat-item">
+                <div class="stat-number" id="totalCompanies">0</div>
+                <div class="stat-label">總公司數</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="totalEarnings">0</div>
+                <div class="stat-label">財報筆數</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="withActuals">0</div>
+                <div class="stat-label">有實際數據</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="ubotCount">0</div>
+                <div class="stat-label">聯邦上架股票</div>
+            </div>
+        </div>
+
+        <div class="table-container" id="tableContainer" style="display: none;">
+            <table>
+                <thead>
+                    <tr>
+                        <th onclick="sortTable('symbol')">股票代碼 <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortTable('date')">日期 <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortTable('hour')">時間 <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortTable('quarter')">季度 <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortTable('year')">年份 <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortTable('revenueEstimate')">營收預估 <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortTable('revenueActual')">營收實際 <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortTable('revenueDiffPercent')">營收差異% <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortTable('epsEstimate')">EPS 預估 <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortTable('epsActual')">EPS 實際 <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortTable('epsDiffPercent')">EPS 差異% <span class="sort-arrow">↕</span></th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let earningsData = [];
+        let filteredData = [];
+        let sortConfig = { column: null, direction: 'asc' };
+
+        let ubotStocks = new Set(); // 聯邦銀行股票清單
+        let ubotStockNames = new Map(); // 聯邦銀行股票代碼與名稱對應
+        let ubotFilterMode = 'only'; // 聯邦銀行篩選模式: 'all', 'only'
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 設定時間範圍：過去30天 + 未來60天 (四次查詢總範圍)
+            const today = new Date();
+            const fromDate = new Date(today);
+            fromDate.setDate(today.getDate() - 30); // 過去30天
+            
+            const toDate = new Date(today);
+            toDate.setDate(today.getDate() + 60); // 未來60天
+            
+            document.getElementById('fromDate').value = fromDate.toISOString().split('T')[0];
+            document.getElementById('toDate').value = toDate.toISOString().split('T')[0];
+            
+            // 載入聯邦銀行股票清單
+            loadUbotStocks();
+            
+            // 設置聯邦銀行篩選事件監聽器
+            const ubotRadios = document.querySelectorAll('input[name="ubotFilter"]');
+            ubotRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    if (this.checked) {
+                        ubotFilterMode = this.value;
+                        filterData();
+                    }
+                });
+            });
+            
+            // 自動載入財報數據
+            setTimeout(() => {
+                fetchEarningsData();
+            }, 500); // 延遲500ms確保頁面完全載入
+        });
+
+        // 載入聯邦銀行股票清單
+        async function loadUbotStocks() {
+            try {
+                const response = await fetch('all_bank_stock/ubot_bank.csv');
+                const csvText = await response.text();
+                const lines = csvText.trim().split('\n');
+                
+                // 跳過標題行，提取股票代碼和名稱
+                for (let i = 1; i < lines.length; i++) {
+                    const columns = lines[i].split(',');
+                    if (columns.length >= 2) {
+                        let stockName = columns[0].trim();
+                        const symbol = columns[1].trim();
+                        
+                        // 保持原始名稱
+                        stockName = stockName.trim();
+                        
+                        if (symbol && stockName) {
+                            ubotStocks.add(symbol);
+                            ubotStockNames.set(symbol, stockName);
+                        }
+                    }
+                }
+                
+                console.log(`載入聯邦銀行股票清單: ${ubotStocks.size} 檔股票`);
+            } catch (error) {
+                console.error('載入聯邦銀行股票清單失敗:', error);
+            }
+        }
+
+        async function fetchEarningsData() {
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('error').style.display = 'none';
+            document.getElementById('tableContainer').style.display = 'none';
+            document.getElementById('stats').style.display = 'none';
+
+            // 計算三個時間區間
+            const today = new Date();
+            
+            // 過去15天-今天
+            const period1Start = new Date(today);
+            period1Start.setDate(today.getDate() - 15);
+            const period1End = new Date(today);
+            
+            // 今天-未來15天
+            const period2Start = new Date(today);
+            const period2End = new Date(today);
+            period2End.setDate(today.getDate() + 15);
+            
+            // 未來15天之後
+            const period3Start = new Date(today);
+            period3Start.setDate(today.getDate() + 15);
+            const period3End = new Date(today);
+            period3End.setDate(today.getDate() + 60); // 未來60天
+
+            const periods = [
+                { start: period1Start, end: period1End, name: '過去15天-今天' },
+                { start: period2Start, end: period2End, name: '今天-未來15天' },
+                { start: period3Start, end: period3End, name: '未來15天之後' }
+            ];
+
+            try {
+                let allEarningsData = [];
+                const loadingElement = document.getElementById('loading');
+                
+                // 分四次查詢
+                for (let i = 0; i < periods.length; i++) {
+                    const period = periods[i];
+                    const fromDate = period.start.toISOString().split('T')[0];
+                    const toDate = period.end.toISOString().split('T')[0];
+                    
+                    loadingElement.textContent = `載入中... (${i + 1}/4: ${period.name})`;
+                    
+                    const apiUrl = `https://finnhub.io/api/v1/calendar/earnings?from=${fromDate}&to=${toDate}&token=d1v545pr01qo0ln2isa0d1v545pr01qo0ln2isag`;
+                    
+                    try {
+                        const response = await fetch(apiUrl);
+                        
+                        if (!response.ok) {
+                            console.warn(`HTTP error for period ${period.name}: status ${response.status}`);
+                            continue;
+                        }
+                        
+                        const data = await response.json();
+                        
+                        if (data && data.earningsCalendar && data.earningsCalendar.length > 0) {
+                            allEarningsData = allEarningsData.concat(data.earningsCalendar);
+                            console.log(`${period.name}: ${data.earningsCalendar.length} 筆資料`);
+                        }
+                        
+                        // 延遲100ms避免API限制
+                        await new Promise(resolve => setTimeout(resolve, 100));
+                        
+                    } catch (error) {
+                        console.warn(`Error fetching period ${period.name}:`, error);
+                        continue;
+                    }
+                }
+                
+                if (allEarningsData.length > 0) {
+                    // 去除重複的資料 (根據symbol + date去重)
+                    const uniqueData = [];
+                    const seenItems = new Set();
+                    
+                    allEarningsData.forEach(item => {
+                        const key = `${item.symbol}-${item.date}-${item.quarter}-${item.year}`;
+                        if (!seenItems.has(key)) {
+                            seenItems.add(key);
+                            uniqueData.push(item);
+                        }
+                    });
+                    
+                    // 按日期排序
+                    uniqueData.sort((a, b) => new Date(a.date) - new Date(b.date));
+                    
+                    earningsData = uniqueData;
+                    console.log(`總共載入 ${earningsData.length} 筆財報數據 (去重後)`);
+                    
+                    // 應用當前的篩選設定
+                    filterData();
+                    document.getElementById('tableContainer').style.display = 'block';
+                    document.getElementById('stats').style.display = 'flex';
+                } else {
+                    showError('沒有找到財報數據');
+                }
+                
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                showError('載入數據時發生錯誤: ' + error.message);
+            } finally {
+                document.getElementById('loading').style.display = 'none';
+            }
+        }
+
+        function displayData() {
+            const tableBody = document.getElementById('tableBody');
+            tableBody.innerHTML = '';
+
+            filteredData.forEach(item => {
+                const row = tableBody.insertRow();
+                
+                // 股票代碼
+                const symbolCell = row.insertCell();
+                const isUbotStock = ubotStocks.has(item.symbol);
+                const ubotBadge = isUbotStock ? ' <span style="background: #28a745; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.75rem;">聯邦</span>' : '';
+                const stockName = isUbotStock ? ubotStockNames.get(item.symbol) : '';
+                const nameDisplay = stockName ? `<br><span style="font-size: 0.85rem; color: #666; font-weight: normal;">${stockName}</span>` : '';
+                
+                // 生成財報摘要文字
+                const summaryText = generateSummaryText(item);
+                symbolCell.innerHTML = `
+                    <div class="stock-symbol">
+                        <div style="cursor: pointer;" onclick="showSummary(this.closest('tr'))" class="company-info">
+                            <span class="symbol">${item.symbol}</span>${ubotBadge}${nameDisplay}
+                        </div>
+                    </div>
+                `;
+                
+                // 創建一個跨越所有列的摘要行
+                const summaryRow = tableBody.insertRow();
+                summaryRow.style.display = 'none';
+                summaryRow.className = 'summary-row';
+                const summaryCell = summaryRow.insertCell();
+                summaryCell.colSpan = 11; // 跨越所有列
+                summaryCell.innerHTML = `
+                    <div class="summary-text" style="padding: 12px 16px; background: #f8f9fa; border-radius: 4px; font-size: 0.9rem; white-space: normal; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div>${summaryText}</div>
+                        <button onclick="copySummary(this)" class="copy-btn" style="background: none; border: none; cursor: pointer; padding: 4px; margin-left: 12px; color: #666;">📋</button>
+                    </div>`;
+                
+                // 日期
+                const dateCell = row.insertCell();
+                dateCell.textContent = item.date;
+                
+                // 時間
+                const hourCell = row.insertCell();
+                if (item.hour) {
+                    const hourClass = item.hour === 'bmo' ? 'hour-bmo' : 
+                                     item.hour === 'amc' ? 'hour-amc' : 'hour-dmh';
+                    const hourText = item.hour === 'bmo' ? '盤前' : 
+                                    item.hour === 'amc' ? '盤後' : item.hour;
+                    hourCell.innerHTML = `<span class="hour-badge ${hourClass}">${hourText}</span>`;
+                } else {
+                    hourCell.textContent = '-';
+                }
+                
+                // 季度
+                const quarterCell = row.insertCell();
+                quarterCell.textContent = item.quarter ? `Q${item.quarter}` : '-';
+                
+                // 年份
+                const yearCell = row.insertCell();
+                yearCell.textContent = item.year || '-';
+                
+                // 營收預估
+                const revenueEstimateCell = row.insertCell();
+                revenueEstimateCell.textContent = item.revenueEstimate !== null ? 
+                    formatCurrency(item.revenueEstimate) : '-';
+                
+                // 營收實際
+                const revenueActualCell = row.insertCell();
+                revenueActualCell.textContent = item.revenueActual !== null ? 
+                    formatCurrency(item.revenueActual) : '-';
+                
+                // 營收差異
+                const revenueDiffCell = row.insertCell();
+                if (item.revenueActual !== null && item.revenueEstimate !== null) {
+                    const diff = item.revenueActual - item.revenueEstimate;
+                    const percentage = ((diff / Math.abs(item.revenueEstimate)) * 100).toFixed(1);
+                    const className = diff >= 0 ? 'positive' : 'negative';
+                    revenueDiffCell.innerHTML = `<span class="${className}">${formatCurrency(diff)} (${percentage}%)</span>`;
+                } else {
+                    revenueDiffCell.textContent = '-';
+                }
+                
+                // EPS 預估
+                const epsEstimateCell = row.insertCell();
+                epsEstimateCell.textContent = item.epsEstimate !== null ? item.epsEstimate.toFixed(4) : '-';
+                
+                // EPS 實際
+                const epsActualCell = row.insertCell();
+                epsActualCell.textContent = item.epsActual !== null ? item.epsActual.toFixed(4) : '-';
+                
+                // EPS 差異
+                const epsDiffCell = row.insertCell();
+                if (item.epsActual !== null && item.epsEstimate !== null) {
+                    const diff = item.epsActual - item.epsEstimate;
+                    const percentage = ((diff / Math.abs(item.epsEstimate)) * 100).toFixed(1);
+                    const className = diff >= 0 ? 'positive' : 'negative';
+                    epsDiffCell.innerHTML = `<span class="${className}">${diff.toFixed(4)} (${percentage}%)</span>`;
+                } else {
+                    epsDiffCell.textContent = '-';
+                }
+            });
+        }
+
+        function formatCurrency(amount) {
+            const isNegative = amount < 0;
+            const absAmount = Math.abs(amount);
+            let result;
+            if (absAmount >= 1e9) {
+                result = (absAmount / 1e9).toFixed(2) + 'B';
+            } else if (absAmount >= 1e6) {
+                result = (absAmount / 1e6).toFixed(2) + 'M';
+            } else if (absAmount >= 1e3) {
+                result = (absAmount / 1e3).toFixed(2) + 'K';
+            } else {
+                result = absAmount.toFixed(0);
+            }
+            return isNegative ? '-' + result : result;
+        }
+
+        function filterData() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            let tempData = [...earningsData];
+            
+            // 搜尋篩選
+            if (searchTerm) {
+                tempData = tempData.filter(item => {
+                    // 檢查股票代碼
+                    const symbolMatch = item.symbol.toLowerCase().includes(searchTerm);
+                    
+                    // 檢查公司名稱
+                    const stockName = ubotStockNames.get(item.symbol) || '';
+                    const nameMatch = stockName.toLowerCase().includes(searchTerm);
+                    
+                    return symbolMatch || nameMatch;
+                });
+            }
+            
+            // 聯邦銀行篩選
+            if (ubotFilterMode === 'only') {
+                // 只顯示聯邦銀行股票
+                tempData = tempData.filter(item => 
+                    ubotStocks.has(item.symbol)
+                );
+            }
+            // ubotFilterMode === 'all' 時不做任何篩選
+            
+            filteredData = tempData;
+            updateStats();
+            displayData();
+        }
+
+
+
+        function updateStats() {
+            const totalCompanies = new Set(filteredData.map(item => item.symbol)).size;
+            const totalEarnings = filteredData.length;
+            const withActuals = filteredData.filter(item => 
+                item.epsActual !== null || item.revenueActual !== null
+            ).length;
+            
+            // 計算聯邦上架的股票數量 (在全部數據中)
+            const totalUbotCount = earningsData.filter(item => 
+                ubotStocks.has(item.symbol)
+            ).length;
+            
+            // 當前顯示的聯邦股票數量
+            const currentUbotCount = filteredData.filter(item => 
+                ubotStocks.has(item.symbol)
+            ).length;
+
+            document.getElementById('totalCompanies').textContent = totalCompanies;
+            document.getElementById('totalEarnings').textContent = totalEarnings;
+            document.getElementById('withActuals').textContent = withActuals;
+            
+            // 根據篩選模式顯示不同的聯邦股票統計
+            if (ubotFilterMode === 'only') {
+                document.getElementById('ubotCount').textContent = currentUbotCount;
+            } else {
+                document.getElementById('ubotCount').textContent = `${currentUbotCount}/${totalUbotCount}`;
+            }
+        }
+
+        function sortTable(column) {
+            if (sortConfig.column === column) {
+                sortConfig.direction = sortConfig.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                sortConfig.column = column;
+                sortConfig.direction = 'asc';
+            }
+
+            filteredData.sort((a, b) => {
+                let aVal, bVal;
+                
+                // 特殊處理百分比差異排序
+                if (column === 'revenueDiffPercent') {
+                    // 計算營收差異百分比
+                    aVal = a.revenueActual && a.revenueEstimate ? 
+                        ((a.revenueActual - a.revenueEstimate) / Math.abs(a.revenueEstimate)) * 100 : null;
+                    bVal = b.revenueActual && b.revenueEstimate ? 
+                        ((b.revenueActual - b.revenueEstimate) / Math.abs(b.revenueEstimate)) * 100 : null;
+                } else if (column === 'epsDiffPercent') {
+                    // 計算EPS差異百分比
+                    aVal = a.epsActual && a.epsEstimate ? 
+                        ((a.epsActual - a.epsEstimate) / Math.abs(a.epsEstimate)) * 100 : null;
+                    bVal = b.epsActual && b.epsEstimate ? 
+                        ((b.epsActual - b.epsEstimate) / Math.abs(b.epsEstimate)) * 100 : null;
+                } else {
+                    aVal = a[column];
+                    bVal = b[column];
+                }
+                
+                // 處理 null 值
+                if (aVal === null && bVal === null) return 0;
+                if (aVal === null) return 1;
+                if (bVal === null) return -1;
+                
+                // 數值比較
+                if (typeof aVal === 'number' && typeof bVal === 'number') {
+                    return sortConfig.direction === 'asc' ? aVal - bVal : bVal - aVal;
+                }
+                
+                // 字串比較
+                aVal = String(aVal).toLowerCase();
+                bVal = String(bVal).toLowerCase();
+                
+                if (sortConfig.direction === 'asc') {
+                    return aVal < bVal ? -1 : aVal > bVal ? 1 : 0;
+                } else {
+                    return aVal > bVal ? -1 : aVal < bVal ? 1 : 0;
+                }
+            });
+
+            updateSortArrows();
+            displayData();
+        }
+
+        function updateSortArrows() {
+            // 重置所有箭頭和背景色
+            document.querySelectorAll('th').forEach(th => {
+                const arrow = th.querySelector('.sort-arrow');
+                if (arrow) {
+                    arrow.classList.remove('active');
+                    arrow.textContent = '↕';
+                }
+                th.classList.remove('sorted');
+            });
+
+            // 設置當前排序的箭頭和背景色
+            if (sortConfig.column) {
+                const header = document.querySelector(`th[onclick="sortTable('${sortConfig.column}')"]`);
+                if (header) {
+                    const arrow = header.querySelector('.sort-arrow');
+                    arrow.classList.add('active');
+                    arrow.textContent = sortConfig.direction === 'asc' ? '↑' : '↓';
+                    header.classList.add('sorted');
+                }
+            }
+        }
+
+        function clearData() {
+            earningsData = [];
+            filteredData = [];
+            document.getElementById('tableBody').innerHTML = '';
+            document.getElementById('tableContainer').style.display = 'none';
+            document.getElementById('stats').style.display = 'none';
+            document.getElementById('searchInput').value = '';
+            sortConfig = { column: null, direction: 'asc' };
+            
+            // 重置聯邦銀行篩選
+            ubotFilterMode = 'only';
+            const ubotOnlyRadio = document.getElementById('ubot-only');
+            if (ubotOnlyRadio) {
+                ubotOnlyRadio.checked = true;
+            }
+            
+            updateSortArrows();
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('error');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
+
+        function formatRevenueBillions(revenue) {
+            const billions = Math.abs(revenue) >= 1e9;
+            if (billions) {
+                // 如果是十億，乘以10轉換為億
+                return ((revenue / 1e9) * 10).toFixed(2);
+            } else {
+                return (revenue / 1e8).toFixed(2);
+            }
+        }
+
+        function generateSummaryText(item) {
+            if (!item.revenueActual || !item.revenueEstimate || !item.epsActual || !item.epsEstimate) {
+                return '尚無完整財報數據';
+            }
+
+            const revenueDiff = ((item.revenueActual - item.revenueEstimate) / Math.abs(item.revenueEstimate) * 100).toFixed(1);
+            const epsDiff = ((item.epsActual - item.epsEstimate) / Math.abs(item.epsEstimate) * 100).toFixed(1);
+            
+            const revenueInBillions = formatRevenueBillions(item.revenueActual);
+            const revenueEstimateInBillions = formatRevenueBillions(item.revenueEstimate);
+
+            // 取得並處理公司名稱
+            let companyName = ubotStockNames.get(item.symbol) || item.symbol;
+            
+            // 檢查是否包含中文名稱
+            const chineseNameMatch = companyName.match(/([A-Z0-9\s\-\&]+)([^A-Za-z0-9\s\-\&]+)/);
+            if (chineseNameMatch) {
+                // 如果有中文部分，取中文部分但移除後綴
+                let chinesePart = chineseNameMatch[2].trim();
+                // 使用比較精確的後綴移除邏輯，按照長度排序以確保更長的後綴先被移除
+                const suffixes = ['控股公司', '科技公司', '公司', '集團', '控股', '科技', '製藥', '國際'];
+                for (const suffix of suffixes) {
+                    if (chinesePart.endsWith(suffix)) {
+                        chinesePart = chinesePart.slice(0, -suffix.length).trim();
+                        break; // 找到匹配的後綴後就停止
+                    }
+                }
+                companyName = chinesePart;
+            } else {
+                // 如果是純英文名稱
+                if (item.symbol === 'MMM' && companyName.includes('3M公司')) {
+                    companyName = '3M'; // 保持3M的原始名稱
+                } else {
+                    // 移除常見後綴
+                    companyName = companyName
+                        .replace(/-CLASS [A-Z]$/i, '')
+                        .replace(/\s*(CORP|CORPORATION|INC|LTD|CO|LLC|GROUP|TECHNOLOGY|THERAPEUTICS|PHARMACEUTICAL|INTERNATIONAL|LIMITED)(\s|$)/gi, '')
+                        .trim();
+                }
+            }
+            
+            return `${companyName}(${item.symbol})公布${item.year}年Q${item.quarter}營收${revenueDiff > 0 ? '年增' : '年減'}${Math.abs(revenueDiff)}%至美元${revenueInBillions}億元，` +
+                   `${revenueDiff > 0 ? '優於' : '低於'}市場預期${revenueEstimateInBillions}億元，` +
+                   `EPS ${epsDiff > 0 ? '年增' : '年減'}${Math.abs(epsDiff)}%至${item.epsActual.toFixed(2)}元，` +
+                   `${epsDiff > 0 ? '優於' : '低於'}預期${item.epsEstimate.toFixed(2)}元。`;
+        }
+
+        function showSummary(row) {
+            const nextRow = row.nextElementSibling;
+            
+            // 先隱藏所有其他的摘要行
+            document.querySelectorAll('.summary-row').forEach(summaryRow => {
+                if (summaryRow !== nextRow) {
+                    summaryRow.style.display = 'none';
+                }
+            });
+            
+            // 切換當前摘要行的顯示狀態
+            if (nextRow && nextRow.classList.contains('summary-row')) {
+                nextRow.style.display = nextRow.style.display === 'none' ? 'table-row' : 'none';
+            }
+        }
+
+        async function copySummary(button) {
+            // 取得摘要文字（排除複製按鈕的內容）
+            const summaryText = button.parentElement.firstElementChild.textContent;
+            
+            try {
+                await navigator.clipboard.writeText(summaryText);
+                
+                // 顯示複製成功的視覺反饋
+                const originalText = button.textContent;
+                button.textContent = '✓';
+                button.style.color = '#28a745';
+                
+                // 1秒後恢復原始圖示
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.color = '#666';
+                }, 1000);
+            } catch (err) {
+                console.error('複製失敗:', err);
+                alert('複製失敗，請手動複製');
+            }
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美股分析工具 - 首頁</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            text-align: center;
+            color: #1a2c5b;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .tool-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            text-decoration: none;
+            color: inherit;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            border-color: #4a90e2;
+            text-decoration: none;
+            color: inherit;
+        }
+        .tool-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .tool-icon.stocks {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+        .tool-icon.calendar {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+        }
+        .tool-icon.news {
+            background: linear-gradient(135deg, #00c6fb, #005bea);
+            color: white;
+        }
+        .tool-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a2c5b;
+            margin-bottom: 1rem;
+        }
+        .tool-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .tool-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .tool-features li {
+            padding: 0.5rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .tool-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 2rem;
+        }
+        .footer a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 2rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .tools-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🇺🇸 美股分析工具</h1>
+        <p class="subtitle">專業的美股數據分析與投資決策輔助工具</p>
+        
+        <div class="tools-grid">
+            <a href="us_stock_news.html" class="tool-card">
+                <div class="tool-icon news">📰</div>
+                <div class="tool-title">美股新聞</div>
+                <div class="tool-description">
+                    即時追蹤美股市場動態，掌握最新財經新聞與市場分析。
+                </div>
+                <ul class="tool-features">
+                    <li>實時新聞更新</li>
+                    <li>重要市場訊息</li>
+                    <li>個股相關新聞</li>
+                    <li>熱門話題追蹤</li>
+                </ul>
+            </a>
+
+            <a href="stock_summary_dynamic.html" class="tool-card">
+                <div class="tool-icon stocks">📈</div>
+                <div class="tool-title">美股複委託同業分析</div>
+                <div class="tool-description">
+                    分析各大銀行提供的美股複委託服務，比較不同券商的上架股票數量和產業分布。
+                </div>
+                <ul class="tool-features">
+                    <li>多家銀行數據比較</li>
+                    <li>產業分類篩選</li>
+                    <li>即時搜尋功能</li>
+                    <li>數據統計分析</li>
+                </ul>
+            </a>
+            
+            <a href="earnings_calendar.html" class="tool-card">
+                <div class="tool-icon calendar">📅</div>
+                <div class="tool-title">美股財報日曆</div>
+                <div class="tool-description">
+                    追蹤美股公司的財報發布時間，查看 EPS 和營收的預估與實際數據對比。
+                </div>
+                <ul class="tool-features">
+                    <li>Finnhub API 即時數據</li>
+                    <li>EPS 預估 vs 實際比較</li>
+                    <li>營收數據分析</li>
+                    <li>可自訂日期範圍</li>
+                </ul>
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>
+                數據來源：
+                <a href="#" target="_blank">Finnhub API</a> | 
+                各大銀行官方網站
+            </p>
+            <p>最後更新：<span id="lastUpdate"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // 顯示最後更新時間
+        document.getElementById('lastUpdate').textContent = new Date().toLocaleDateString('zh-TW');
+    </script>
+</body>
+</html> 

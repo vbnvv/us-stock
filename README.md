@@ -1,4 +1,4 @@
-https://vbnvv.github.io/us-stock/stock_summary_dynamic.html
+https://vbnvv.github.io/us-stock/html/earnings_calendar.html
 
 # 📈 美股分析工具
 

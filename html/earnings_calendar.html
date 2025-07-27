@@ -382,6 +382,9 @@
         let ubotStocks = new Set(); // 聯邦銀行股票清單
         let ubotStockNames = new Map(); // 聯邦銀行股票代碼與名稱對應
         let ubotFilterMode = 'only'; // 聯邦銀行篩選模式: 'all', 'only'
+        
+        // API Token
+        const API_TOKEN = 'd1v545pr01qo0ln2isa0d1v545pr01qo0ln2isag';
 
         // 初始化
         document.addEventListener('DOMContentLoaded', async function() {
@@ -421,7 +424,7 @@
         // 載入聯邦銀行股票清單
         async function loadUbotStocks() {
             try {
-                const response = await fetch('all_bank_stock/ubot_bank.csv');
+                const response = await fetch('../data/all_bank_stock/ubot_bank.csv');
                 const csvText = await response.text();
                 const lines = csvText.trim().split('\n');
                 
@@ -491,7 +494,7 @@
                     
                     loadingElement.textContent = `載入中... (${i + 1}/4: ${period.name})`;
                     
-                    const apiUrl = `https://finnhub.io/api/v1/calendar/earnings?from=${fromDate}&to=${toDate}&token=d1v545pr01qo0ln2isa0d1v545pr01qo0ln2isag`;
+                    const apiUrl = `https://finnhub.io/api/v1/calendar/earnings?from=${fromDate}&to=${toDate}&token=${API_TOKEN}`;
                     
                     try {
                         const response = await fetch(apiUrl);

@@ -1,0 +1,77 @@
+<!-- Header Component -->
+<style>
+
+
+    .navbar {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        padding: 1rem 0;
+        margin-bottom: 2rem;
+        border-radius: 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navbar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .navbar li {
+        margin: 0;
+    }
+
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .navbar a:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .navbar a.active {
+        background: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        .header h1 {
+            font-size: 2em;
+        }
+
+        .navbar ul {
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+</style>
+
+
+
+<nav class="navbar">
+    <ul>
+        <li><a href="../index.html">🏠 首頁</a></li>
+        <li><a href="stock_summary_dynamic.html" id="nav-stocks">📈 美股同業分析</a></li>
+        <li><a href="earnings_calendar.html" id="nav-earnings">📅 財報日曆</a></li>
+        <li><a href="ipo_calendar.html" id="nav-ipo">🚀 IPO 日曆</a></li>
+        <li><a href="us_stock_news.html" id="nav-news">📰 美股新聞</a></li>
+    </ul>
+</nav>
+
+ 

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美股複委託同業上架數量 - 動態版</title>
+    <script src="../js/header-loader.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 1.5rem;
+        }
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+        h1 {
+            text-align: center;
+            color: #1a2c5b;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            align-items: center;
+            justify-content: center;
+        }
+        .search-box {
+            flex: 0 0 auto;
+            width: 400px;
+            max-width: 100%;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            border: 1px solid #ced4da;
+            font-size: 1rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .search-box input:focus {
+            outline: none;
+            border-color: #4d8af0;
+            box-shadow: 0 0 0 3px rgba(77, 138, 240, 0.2);
+        }
+
+        .download-btn {
+            background: linear-gradient(45deg, #28a745, #34ce57);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            font-size: 14px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(40, 167, 69, 0.2);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .download-btn:hover {
+            background: linear-gradient(45deg, #218838, #28a745);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+        }
+        .download-btn:active {
+            transform: translateY(0);
+        }
+        .download-btn span {
+            font-size: 16px;
+        }
+        .range-filter-container {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .range-slider-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            min-width: 250px;
+        }
+        .range-values {
+            display: none;
+        }
+        .range-separator {
+            font-weight: 600;
+            color: #495057;
+            margin: 0 0.2rem;
+        }
+        .range-tooltip {
+            position: absolute;
+            background: #333;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            white-space: nowrap;
+            z-index: 1000;
+            display: none;
+            transform: translateX(-50%);
+            margin-top: 30px;
+        }
+        .range-tooltip::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid #333;
+        }
+        .dual-range-slider {
+            position: relative;
+            width: 100%;
+            height: 6px;
+            background: #e9ecef;
+            border-radius: 3px;
+        }
+        .range-track {
+            position: absolute;
+            top: 0;
+            height: 6px;
+            background: linear-gradient(to right, #28a745, #4d8af0);
+            border-radius: 3px;
+            z-index: 1;
+        }
+        .range-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: transparent;
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #4d8af0;
+            border-radius: 50%;
+            cursor: pointer;
+            pointer-events: auto;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease;
+        }
+        .range-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .range-slider:last-child::-webkit-slider-thumb:hover {
+            background: #0056b3;
+        }
+        .range-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #4d8af0;
+            border-radius: 50%;
+            cursor: pointer;
+            pointer-events: auto;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease;
+        }
+        .range-slider::-moz-range-thumb:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .range-slider:last-child::-moz-range-thumb:hover {
+            background: #0056b3;
+        }
+        .range-slider::-webkit-slider-track {
+            background: transparent;
+        }
+        .range-slider::-moz-range-track {
+            background: transparent;
+        }
+        .range-slider:first-child::-webkit-slider-thumb {
+            background: #28a745;
+        }
+        .range-slider:first-child::-webkit-slider-thumb:hover {
+            background: #218838;
+        }
+        .range-slider:first-child::-moz-range-thumb {
+            background: #28a745;
+        }
+        .range-slider:first-child::-moz-range-thumb:hover {
+            background: #218838;
+        }
+        .reset-range-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background-color 0.2s;
+        }
+        .reset-range-btn:hover {
+            background: #5a6268;
+        }
+        .filter-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e9ecef;
+            align-items: flex-start;
+        }
+        .filter-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+            width: 100%;
+        }
+        .filter-label {
+            font-weight: 600;
+            color: #495057;
+            margin-right: 0.75rem;
+            white-space: nowrap;
+        }
+        .bank-filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+        }
+        .industry-filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+        }
+        .ubot-filter-container {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .ubot-segment-control {
+            display: flex;
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 20px;
+            padding: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        .ubot-segment-control input[type="radio"] {
+            display: none;
+        }
+        .ubot-segment-control label {
+            padding: 0.4rem 1rem;
+            cursor: pointer;
+            white-space: nowrap;
+            border-radius: 18px;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #6c757d;
+            background: transparent;
+            border: none;
+            position: relative;
+            z-index: 2;
+            min-width: 80px;
+            text-align: center;
+        }
+        .ubot-segment-control input[type="radio"]:checked + label {
+            background: #007bff;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+        }
+        .ubot-segment-control label:hover {
+            color: #495057;
+        }
+        .ubot-segment-control input[type="radio"]:checked + label:hover {
+            color: white;
+        }
+        .bank-toggle input[type="checkbox"] {
+            display: none;
+        }
+        .bank-toggle span {
+            display: inline-flex;
+            padding: 0.4rem 0.8rem;
+            border: 1px solid #ced4da;
+            border-radius: 18px;
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s;
+            background-color: #fff;
+            color: #495057;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .bank-toggle input[type="checkbox"]:checked + span {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+        .bank-toggle span .bank-name {
+            display: block;
+            font-weight: 600;
+            line-height: 1.2;
+            border: none !important;
+            background: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            box-shadow: none !important;
+        }
+        .bank-toggle span .bank-count {
+            display: block;
+            font-size: 0.75em;
+            color: #666;
+            margin-top: 1px;
+            font-weight: normal;
+            line-height: 1;
+            border: none !important;
+            background: none !important;
+            padding: 0 !important;
+            box-shadow: none !important;
+        }
+        .bank-toggle input[type="checkbox"]:checked + span .bank-name {
+            color: white;
+        }
+        .bank-toggle input[type="checkbox"]:checked + span .bank-count {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        .stock-table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        .stock-table th, .stock-table td {
+            padding: 0.4rem 1.25rem;
+            text-align: left;
+            vertical-align: middle;
+            border-bottom: 1px solid #e9ecef;
+            word-wrap: break-word;
+        }
+        .stock-table th:nth-child(1) { width: 15%; }
+        .stock-table th:nth-child(2) { width: 30%; }
+        .stock-table th:nth-child(3) { width: 20%; }
+        .stock-table th:nth-child(4) { width: 15%; }
+        .stock-table th:nth-child(5) { width: 20%; }
+        .stock-table thead th {
+            background-color: #f8f9fa;
+            color: #495057;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.2s;
+        }
+        .stock-table thead th:hover {
+            background-color: #e9ecef;
+        }
+        .stock-table thead th.sortable::after {
+            content: " ⇅";
+            opacity: 0.5;
+        }
+        .stock-table thead th.sort-asc::after {
+            content: " ↑";
+            opacity: 1;
+        }
+        .stock-table thead th.sort-desc::after {
+            content: " ↓";
+            opacity: 1;
+        }
+        .stock-table tbody tr:hover {
+            background-color: #f1f3f5;
+        }
+        .stock-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .stock-table tbody tr:nth-child(even):hover {
+            background-color: #eef1f3;
+        }
+        .status-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .loading-spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 0.5rem;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .error-message {
+            color: #dc3545;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+        .navbar {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .navbar li {
+            margin: 0;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .navbar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        .navbar a.active {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Container -->
+        <div id="header-container"></div>
+        
+        <h1>美股複委託同業上架數量 - 動態版</h1>
+        
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="查詢標的代號或名稱...">
+            </div>
+        </div>
+        
+        <div class="filter-wrapper">
+            <div class="filter-row">
+                <div class="bank-filter-container">
+                    <span class="filter-label">篩選銀行:</span>
+                    <!-- 銀行篩選器將由JavaScript動態生成 -->
+                </div>
+                <div class="ubot-filter-container">
+                    <span class="filter-label">聯邦銀行:</span>
+                    <div class="ubot-segment-control">
+                        <input type="radio" name="ubotFilter" value="all" id="ubot-all" checked>
+                        <label for="ubot-all">全部顯示</label>
+                        <input type="radio" name="ubotFilter" value="exclude" id="ubot-exclude">
+                        <label for="ubot-exclude">不含聯邦</label>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-row">
+                <div class="range-filter-container">
+                    <span class="filter-label">同業上架數量:</span>
+                    <div class="range-slider-container">
+                        <div class="range-values">
+                            <span id="minValue">1</span>
+                            <span class="range-separator">~</span>
+                            <span id="maxValue">10</span>
+                        </div>
+                        <div class="dual-range-slider">
+                            <div class="range-track" id="rangeTrack"></div>
+                            <input type="range" id="minRange" min="1" max="10" value="1" class="range-slider">
+                            <input type="range" id="maxRange" min="1" max="10" value="10" class="range-slider">
+                            <div class="range-tooltip" id="minTooltip"></div>
+                            <div class="range-tooltip" id="maxTooltip"></div>
+                        </div>
+                    </div>
+                    <button class="reset-range-btn" onclick="resetRangeFilter()">重置</button>
+                </div>
+            </div>
+            <div class="filter-row">
+                <div class="industry-filter-container">
+                    <span class="filter-label">產業篩選:</span>
+                    <!-- 產業篩選器將由JavaScript動態生成 -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="table-header" style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; margin-bottom: 0.75rem;">
+            <div id="table-info" style="font-size: 20px; color: #495057;">
+                正在載入數據...
+            </div>
+            <button class="download-btn" id="download-btn" onclick="stockReader.downloadCSV()" style="display: none;">
+                <span>📥</span> 下載CSV
+            </button>
+        </div>
+        
+        <div class="table-container">
+            <table class="stock-table">
+                <thead>
+                    <tr>
+                        <th class="sortable" data-sort="標的代號">標的代號</th>
+                        <th class="sortable" data-sort="標的名稱">標的名稱</th>
+                        <th>產業</th>
+                        <th class="sortable" data-sort="同業上架數量">同業上架數量</th>
+                        <th>上架銀行</th>
+                    </tr>
+                </thead>
+                <tbody id="stock-table-body">
+                    <tr>
+                        <td colspan="5" style="text-align: center; padding: 2rem; color: #999;">
+                            <div class="loading-spinner"></div>
+                            正在讀取數據文件...
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="status-info">
+            <div>
+                <span id="status-text">準備就緒</span>
+            </div>
+            <div>
+                <span id="statistics-text">統計信息將在數據加載完成後顯示</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Excel 文件讀取庫 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    
+    <!-- 我們的股票數據讀取器 -->
+    <script src="../js/stock_reader.js"></script>
+    
+    <script>
+        // 頁面初始化完成後的額外設置
+        document.addEventListener('DOMContentLoaded', async () => {
+            // 初始化 header
+            await loadHeader('stocks');
+            
+            const statusText = document.getElementById('status-text');
+            const statisticsText = document.getElementById('statistics-text');
+            
+            // 定期更新統計信息
+            setInterval(() => {
+                if (window.stockDataReader) {
+                    try {
+                        const stats = window.stockDataReader.getStatistics();
+                        statisticsText.textContent = `總計: ${stats.totalStocks} 檔 | 顯示: ${stats.filteredStocks} 檔 | 銀行: ${stats.totalBanks} 家 | 平均上架: ${stats.averageBankCount.toFixed(1)} 家`;
+                    } catch (error) {
+                        // 如果數據還未加載完成，忽略錯誤
+                    }
+                }
+            }, 1000);
+            
+            // 監聽數據加載狀態
+            const originalRenderTable = window.stockDataReader?.renderTable;
+            if (originalRenderTable) {
+                window.stockDataReader.renderTable = function(data) {
+                    originalRenderTable.call(this, data);
+                    statusText.textContent = '數據加載完成';
+                };
+            }
+        });
+        
+        // 全局錯誤處理
+        window.addEventListener('error', (event) => {
+            console.error('全局錯誤:', event.error);
+            const statusText = document.getElementById('status-text');
+            if (statusText) {
+                statusText.textContent = '發生錯誤，請檢查控制台';
+                statusText.style.color = '#dc3545';
+            }
+        });
+        
+        // 未捕獲的Promise錯誤處理
+        window.addEventListener('unhandledrejection', (event) => {
+            console.error('未處理的Promise錯誤:', event.reason);
+            const statusText = document.getElementById('status-text');
+            if (statusText) {
+                statusText.textContent = '數據加載失敗，請檢查網絡連接';
+                statusText.style.color = '#dc3545';
+            }
+        });
+    </script>
+</body>
+</html> 

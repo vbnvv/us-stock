@@ -79,10 +79,6 @@
             background: linear-gradient(135deg, #f093fb, #f5576c);
             color: white;
         }
-        .tool-icon.ipo {
-            background: linear-gradient(135deg, #ffecd2, #fcb69f);
-            color: white;
-        }
         .tool-icon.news {
             background: linear-gradient(135deg, #00c6fb, #005bea);
             color: white;
@@ -113,98 +109,100 @@
             content: "✓";
             position: absolute;
             left: 0;
-            color: #4CAF50;
+            color: #28a745;
             font-weight: bold;
         }
         .footer {
             text-align: center;
             color: #666;
             font-size: 0.9rem;
-            margin-top: 2rem;
+            border-top: 1px solid #e0e0e0;
             padding-top: 2rem;
-            border-top: 1px solid #eee;
+        }
+        .footer a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
         }
         @media (max-width: 768px) {
             .container {
                 margin: 1rem;
                 padding: 2rem;
             }
-            .tools-grid {
-                grid-template-columns: 1fr;
-            }
             h1 {
                 font-size: 2rem;
+            }
+            .tools-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>📈 美股分析工具</h1>
-        <p class="subtitle">專業的美股投資分析平台，提供全面的市場數據和工具</p>
+        <h1>🇺🇸 美股分析工具</h1>
+        <p class="subtitle">專業的美股數據分析與投資決策輔助工具</p>
         
         <div class="tools-grid">
-            <a href="html/stock_summary_dynamic.html" class="tool-card">
-                <div class="tool-icon stocks">📈</div>
-                <div class="tool-title">美股同業分析</div>
-                <div class="tool-description">
-                    深入分析美股公司財務數據，比較同業表現，提供投資決策支持。
-                </div>
-                <ul class="tool-features">
-                    <li>財務比率分析</li>
-                    <li>同業比較</li>
-                    <li>歷史數據追蹤</li>
-                    <li>視覺化圖表</li>
-                </ul>
-            </a>
-            
-            <a href="html/earnings_calendar.html" class="tool-card">
-                <div class="tool-icon calendar">📅</div>
-                <div class="tool-title">財報日曆</div>
-                <div class="tool-description">
-                    追蹤重要財報發布日期，掌握市場動向，及時了解公司業績表現。
-                </div>
-                <ul class="tool-features">
-                    <li>財報日期提醒</li>
-                    <li>EPS 預估與實際值</li>
-                    <li>營收數據分析</li>
-                    <li>智能排序功能</li>
-                </ul>
-            </a>
-            
-            <a href="html/ipo_calendar.html" class="tool-card">
-                <div class="tool-icon ipo">🚀</div>
-                <div class="tool-title">IPO 日曆</div>
-                <div class="tool-description">
-                    追蹤美股首次公開募股，掌握新上市公司的投資機會和市場動態。
-                </div>
-                <ul class="tool-features">
-                    <li>IPO 日期追蹤</li>
-                    <li>發行價格資訊</li>
-                    <li>募資額統計</li>
-                    <li>交易所分類</li>
-                </ul>
-            </a>
-            
-            <a href="html/us_stock_news.html" class="tool-card">
+            <a href="us_stock_news.html" class="tool-card">
                 <div class="tool-icon news">📰</div>
                 <div class="tool-title">美股新聞</div>
                 <div class="tool-description">
-                    即時美股新聞資訊，掌握市場動態，了解影響股價的重要事件。
+                    即時追蹤美股市場動態，掌握最新財經新聞與市場分析。
                 </div>
                 <ul class="tool-features">
-                    <li>即時新聞更新</li>
-                    <li>關鍵字標籤</li>
-                    <li>分頁瀏覽</li>
-                    <li>新聞摘要</li>
+                    <li>實時新聞更新</li>
+                    <li>重要市場訊息</li>
+                    <li>個股相關新聞</li>
+                    <li>熱門話題追蹤</li>
+                </ul>
+            </a>
+
+            <a href="stock_summary_dynamic.html" class="tool-card">
+                <div class="tool-icon stocks">📈</div>
+                <div class="tool-title">美股複委託同業分析</div>
+                <div class="tool-description">
+                    分析各大銀行提供的美股複委託服務，比較不同券商的上架股票數量和產業分布。
+                </div>
+                <ul class="tool-features">
+                    <li>多家銀行數據比較</li>
+                    <li>產業分類篩選</li>
+                    <li>即時搜尋功能</li>
+                    <li>數據統計分析</li>
+                </ul>
+            </a>
+            
+            <a href="earnings_calendar.html" class="tool-card">
+                <div class="tool-icon calendar">📅</div>
+                <div class="tool-title">美股財報日曆</div>
+                <div class="tool-description">
+                    追蹤美股公司的財報發布時間，查看 EPS 和營收的預估與實際數據對比。
+                </div>
+                <ul class="tool-features">
+                    <li>Finnhub API 即時數據</li>
+                    <li>EPS 預估 vs 實際比較</li>
+                    <li>營收數據分析</li>
+                    <li>可自訂日期範圍</li>
                 </ul>
             </a>
         </div>
         
         <div class="footer">
-            <p>© 2025 美股分析工具 | 數據來源：Finnhub API, 鉅亨網</p>
-            <p>本工具僅供參考，投資有風險，請謹慎決策</p>
+            <p>
+                數據來源：
+                <a href="#" target="_blank">Finnhub API</a> | 
+                各大銀行官方網站
+            </p>
+            <p>最後更新：<span id="lastUpdate"></span></p>
         </div>
     </div>
+
+    <script>
+        // 顯示最後更新時間
+        document.getElementById('lastUpdate').textContent = new Date().toLocaleDateString('zh-TW');
+    </script>
 </body>
 </html> 

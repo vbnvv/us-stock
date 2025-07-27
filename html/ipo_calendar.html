@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPO 日曆 - 美股投資工具</title>
+    <script src="../js/header-loader.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 1.5rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+
+
+
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            min-width: 120px;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #1a2c5b;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .filter-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .filter-group label {
+            font-weight: 600;
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        .filter-group input, .filter-group select {
+            padding: 10px 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .filter-group input:focus, .filter-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.2s;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background-color: #4a90e2;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #357abd;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #545b62;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+
+        .info {
+            background-color: #cce7ff;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+        }
+
+        th, td {
+            padding: 0.6rem 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+            white-space: nowrap;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            cursor: pointer;
+            user-select: none;
+            z-index: 1;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        th:hover {
+            background-color: #e9ecef;
+        }
+
+        th.sorted {
+            background-color: #e2e6ea;
+        }
+
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .sort-arrow {
+            display: inline-block;
+            margin-left: 0.5rem;
+            opacity: 0.5;
+        }
+
+        .sort-arrow.active {
+            opacity: 1;
+        }
+
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-expected {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-priced {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-filed {
+            background: #cce5ff;
+            color: #004085;
+        }
+
+        .status-withdrawn {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .exchange-badge {
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .exchange-nyse {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .exchange-nasdaq {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #dc3545;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+
+
+            .filter-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 8px 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Container -->
+        <div id="header-container"></div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalIpos">-</div>
+                <div class="stat-label">總 IPO 數量</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="expectedIpos">-</div>
+                <div class="stat-label">預期 IPO</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="pricedIpos">-</div>
+                <div class="stat-label">已定價 IPO</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="totalValue">-</div>
+                <div class="stat-label">總募資額 (億美元)</div>
+            </div>
+        </div>
+
+        <div class="info">
+            數據來源: <strong>Finnhub API</strong> | 顯示美股 IPO 的重要資訊，包括發行日期、交易所、公司名稱、股票代碼、發行價格和募資額<br>
+            <small>自動查詢：從過去7天開始的所有 IPO 數據（不設限結束日期）</small><br>
+            <small>排序邏輯：按日期排序，最近的 IPO 排在前面</small>
+        </div>
+
+        <div class="controls">
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label>公司名稱/代碼</label>
+                    <input type="text" id="nameFilter" placeholder="搜尋公司名稱或股票代碼...">
+                </div>
+                <div class="filter-group">
+                    <label>交易所</label>
+                    <select id="exchangeFilter">
+                        <option value="">全部交易所</option>
+                        <option value="NYSE">NYSE</option>
+                        <option value="NASDAQ">NASDAQ</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>狀態</label>
+                    <select id="statusFilter">
+                        <option value="">全部狀態</option>
+                        <option value="expected">預期</option>
+                        <option value="priced">已定價</option>
+                        <option value="filed">已申請</option>
+                        <option value="withdrawn">已撤回</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>開始日期</label>
+                    <input type="date" id="startDate">
+                </div>
+            </div>
+            <div class="filter-row">
+                <button class="btn btn-primary" onclick="fetchIpoData()">🔄 重新載入</button>
+                <button class="btn btn-secondary" onclick="clearFilters()">🧹 清除篩選</button>
+                <button class="btn btn-success" onclick="exportToCSV()">📊 匯出 CSV</button>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table id="ipoTable">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable('date')">日期 <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortTable('symbol')">股票代碼 <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortTable('name')">公司名稱 <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortTable('exchange')">交易所 <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortTable('price')">發行價格 <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortTable('numberOfShares')">發行股數 <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortTable('totalSharesValue')">募資額 <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortTable('status')">狀態 <span class="sort-arrow">↕</span></th>
+                    </tr>
+                </thead>
+                <tbody id="ipoTableBody">
+                    <tr>
+                        <td colspan="8" class="loading">
+                            <div class="spinner"></div>
+                            正在載入 IPO 數據...
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let ipoData = [];
+        let filteredData = [];
+        let sortConfig = { column: 'date', direction: 'desc' };
+
+        // API 配置
+        const API_TOKEN = 'd1v545pr01qo0ln2isa0d1v545pr01qo0ln2isag';
+        const BASE_URL = 'https://finnhub.io/api/v1/calendar/ipo';
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', async function() {
+            // 初始化 header
+            await loadHeader('ipo');
+            
+            setDefaultDateRange();
+            fetchIpoData();
+            setupEventListeners();
+        });
+
+        function setDefaultDateRange() {
+            const today = new Date();
+            const sevenDaysAgo = new Date(today);
+            sevenDaysAgo.setDate(today.getDate() - 7);
+
+            document.getElementById('startDate').value = sevenDaysAgo.toISOString().split('T')[0];
+        }
+
+        function setupEventListeners() {
+            document.getElementById('nameFilter').addEventListener('input', filterData);
+            document.getElementById('exchangeFilter').addEventListener('change', filterData);
+            document.getElementById('statusFilter').addEventListener('change', filterData);
+            document.getElementById('startDate').addEventListener('change', filterData);
+        }
+
+        async function fetchIpoData() {
+            const startDate = document.getElementById('startDate').value;
+
+            if (!startDate) {
+                showError('請選擇開始日期');
+                return;
+            }
+
+            showLoading();
+
+            try {
+                // 不設限結束日期，只設定開始日期
+                const url = `${BASE_URL}?from=${startDate}&token=${API_TOKEN}`;
+                const response = await fetch(url);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                
+                if (data.ipoCalendar) {
+                    ipoData = data.ipoCalendar;
+                    filterData();
+                    updateStats();
+                    updateSortArrows();
+                } else {
+                    showError('無法獲取 IPO 數據');
+                }
+
+            } catch (error) {
+                console.error('Error fetching IPO data:', error);
+                showError(`載入失敗: ${error.message}`);
+            }
+        }
+
+        function filterData() {
+            const nameFilter = document.getElementById('nameFilter').value.toLowerCase();
+            const exchangeFilter = document.getElementById('exchangeFilter').value;
+            const statusFilter = document.getElementById('statusFilter').value;
+            const startDate = document.getElementById('startDate').value;
+
+            filteredData = ipoData.filter(item => {
+                const matchesName = !nameFilter || 
+                    (item.name && item.name.toLowerCase().includes(nameFilter)) ||
+                    (item.symbol && item.symbol.toLowerCase().includes(nameFilter));
+                
+                const matchesExchange = !exchangeFilter || item.exchange === exchangeFilter;
+                const matchesStatus = !statusFilter || item.status === statusFilter;
+                
+                const matchesDate = !startDate || item.date >= startDate;
+
+                return matchesName && matchesExchange && matchesStatus && matchesDate;
+            });
+
+            // 應用排序
+            sortData();
+            updateSortArrows();
+            displayData();
+        }
+
+        function sortData() {
+            filteredData.sort((a, b) => {
+                let aVal, bVal;
+                
+                aVal = a[sortConfig.column];
+                bVal = b[sortConfig.column];
+                
+                // 處理 null 值
+                if (aVal === null && bVal === null) return 0;
+                if (aVal === null) return 1;
+                if (bVal === null) return -1;
+                
+                // 日期比較
+                if (sortConfig.column === 'date') {
+                    return sortConfig.direction === 'asc' ? 
+                        new Date(aVal) - new Date(bVal) : 
+                        new Date(bVal) - new Date(aVal);
+                }
+                
+                // 數值比較
+                if (sortConfig.column === 'totalSharesValue' || sortConfig.column === 'numberOfShares') {
+                    const aNum = aVal || 0;
+                    const bNum = bVal || 0;
+                    return sortConfig.direction === 'asc' ? aNum - bNum : bNum - aNum;
+                }
+                
+                // 字串比較
+                aVal = String(aVal).toLowerCase();
+                bVal = String(bVal).toLowerCase();
+                
+                if (sortConfig.direction === 'asc') {
+                    return aVal < bVal ? -1 : aVal > bVal ? 1 : 0;
+                } else {
+                    return aVal > bVal ? -1 : aVal < bVal ? 1 : 0;
+                }
+            });
+        }
+
+        function updateSortArrows() {
+            // 重置所有箭頭和背景色
+            document.querySelectorAll('th').forEach(th => {
+                const arrow = th.querySelector('.sort-arrow');
+                if (arrow) {
+                    arrow.classList.remove('active');
+                    arrow.textContent = '↕';
+                }
+                th.classList.remove('sorted');
+            });
+
+            // 設置當前排序的箭頭和背景色
+            if (sortConfig.column) {
+                const header = document.querySelector(`th[onclick="sortTable('${sortConfig.column}')"]`);
+                if (header) {
+                    const arrow = header.querySelector('.sort-arrow');
+                    arrow.classList.add('active');
+                    arrow.textContent = sortConfig.direction === 'asc' ? '↑' : '↓';
+                    header.classList.add('sorted');
+                }
+            }
+        }
+
+        function sortTable(column) {
+            if (sortConfig.column === column) {
+                sortConfig.direction = sortConfig.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                sortConfig.column = column;
+                sortConfig.direction = 'asc';
+            }
+
+            sortData();
+            displayData();
+            updateSortArrows();
+        }
+
+        function updateSortArrows() {
+            const headers = document.querySelectorAll('th.sortable');
+            headers.forEach(header => {
+                header.classList.remove('sort-asc', 'sort-desc');
+                if (header.textContent.toLowerCase().includes(sortConfig.column)) {
+                    header.classList.add(sortConfig.direction === 'asc' ? 'sort-asc' : 'sort-desc');
+                }
+            });
+        }
+
+        function displayData() {
+            const tableBody = document.getElementById('ipoTableBody');
+            tableBody.innerHTML = '';
+
+            if (filteredData.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="8" class="no-data">沒有找到符合條件的 IPO 數據</td></tr>';
+                return;
+            }
+
+            filteredData.forEach(item => {
+                const row = tableBody.insertRow();
+                
+                // 日期
+                const dateCell = row.insertCell();
+                dateCell.textContent = formatDate(item.date);
+                
+                // 股票代碼
+                const symbolCell = row.insertCell();
+                symbolCell.textContent = item.symbol || '-';
+                
+                // 公司名稱
+                const nameCell = row.insertCell();
+                nameCell.textContent = item.name || '-';
+                
+                // 交易所
+                const exchangeCell = row.insertCell();
+                if (item.exchange) {
+                    const exchangeClass = item.exchange.toLowerCase().includes('nasdaq') ? 'nasdaq' : 'nyse';
+                    exchangeCell.innerHTML = `<span class="exchange-badge exchange-${exchangeClass}">${item.exchange}</span>`;
+                } else {
+                    exchangeCell.textContent = '-';
+                }
+                
+                // 發行價格
+                const priceCell = row.insertCell();
+                priceCell.textContent = item.price || '-';
+                
+                // 發行股數
+                const sharesCell = row.insertCell();
+                sharesCell.textContent = item.numberOfShares ? formatNumber(item.numberOfShares) : '-';
+                
+                // 募資額
+                const valueCell = row.insertCell();
+                if (item.totalSharesValue) {
+                    const valueInMillions = item.totalSharesValue / 1000000;
+                    valueCell.textContent = `$${valueInMillions.toFixed(1)}M`;
+                } else {
+                    valueCell.textContent = '-';
+                }
+                
+                // 狀態
+                const statusCell = row.insertCell();
+                if (item.status) {
+                    statusCell.innerHTML = `<span class="status-badge status-${item.status}">${getStatusText(item.status)}</span>`;
+                } else {
+                    statusCell.textContent = '-';
+                }
+            });
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('zh-TW', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit'
+            });
+        }
+
+        function formatNumber(num) {
+            return new Intl.NumberFormat().format(num);
+        }
+
+        function getStatusText(status) {
+            const statusMap = {
+                'expected': '預期',
+                'priced': '已定價',
+                'filed': '已申請',
+                'withdrawn': '已撤回'
+            };
+            return statusMap[status] || status;
+        }
+
+        function updateStats() {
+            const totalIpos = ipoData.length;
+            const expectedIpos = ipoData.filter(item => item.status === 'expected').length;
+            const pricedIpos = ipoData.filter(item => item.status === 'priced').length;
+            
+            const totalValue = ipoData.reduce((sum, item) => {
+                return sum + (item.totalSharesValue || 0);
+            }, 0) / 100000000; // 轉換為億美元
+
+            document.getElementById('totalIpos').textContent = totalIpos;
+            document.getElementById('expectedIpos').textContent = expectedIpos;
+            document.getElementById('pricedIpos').textContent = pricedIpos;
+            document.getElementById('totalValue').textContent = totalValue.toFixed(1);
+        }
+
+        function clearFilters() {
+            document.getElementById('nameFilter').value = '';
+            document.getElementById('exchangeFilter').value = '';
+            document.getElementById('statusFilter').value = '';
+            setDefaultDateRange();
+            filterData();
+        }
+
+        function exportToCSV() {
+            if (filteredData.length === 0) {
+                alert('沒有數據可以匯出');
+                return;
+            }
+
+            const headers = ['日期', '股票代碼', '公司名稱', '交易所', '發行價格', '發行股數', '募資額', '狀態'];
+            const csvContent = [
+                headers.join(','),
+                ...filteredData.map(item => [
+                    item.date,
+                    item.symbol || '',
+                    `"${item.name || ''}"`,
+                    item.exchange || '',
+                    item.price || '',
+                    item.numberOfShares || '',
+                    item.totalSharesValue || '',
+                    item.status || ''
+                ].join(','))
+            ].join('\n');
+
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', `ipo_calendar_${new Date().toISOString().split('T')[0]}.csv`);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function showLoading() {
+            const tableBody = document.getElementById('ipoTableBody');
+            tableBody.innerHTML = '<tr><td colspan="8" class="loading"><div class="spinner"></div>正在載入 IPO 數據...</td></tr>';
+        }
+
+        function showError(message) {
+            const tableBody = document.getElementById('ipoTableBody');
+            tableBody.innerHTML = `<tr><td colspan="8" class="error">❌ ${message}</td></tr>`;
+        }
+    </script>
+</body>
+</html> 

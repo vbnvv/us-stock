@@ -310,6 +310,8 @@
             <button class="btn btn-secondary" onclick="clearData()">清除數據</button>
         </div>
 
+
+
         <div class="controls">
             <div class="search-box">
                 <input type="text" id="searchInput" placeholder="搜尋股票代碼或公司名稱..." oninput="filterData()">
@@ -415,9 +417,9 @@
                 });
             });
             
-            // 自動載入財報數據
-            setTimeout(() => {
-                fetchEarningsData();
+            // 自動載入財報數據（原本範圍 + 特定日期）
+            setTimeout(async () => {
+                await fetchAllEarningsData();
             }, 500); // 延遲500ms確保頁面完全載入
         });
 
@@ -610,6 +612,310 @@
             } catch (error) {
                 console.error('Error fetching data:', error);
                 showError('載入數據時發生錯誤: ' + error.message);
+            } finally {
+                document.getElementById('loading').style.display = 'none';
+            }
+        }
+
+        async function fetchAllEarningsData() {
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('error').style.display = 'none';
+            document.getElementById('tableContainer').style.display = 'none';
+            document.getElementById('stats').style.display = 'none';
+
+            let allEarningsData = [];
+            const loadingElement = document.getElementById('loading');
+
+            try {
+                // 第一階段：查詢原本的日期範圍
+                loadingElement.textContent = '載入中... (第一階段：原本日期範圍)';
+                
+                // 計算三個時間區間
+                const today = new Date();
+                
+                // 過去15天-今天
+                const period1Start = new Date(today);
+                period1Start.setDate(today.getDate() - 15);
+                const period1End = new Date(today);
+                
+                // 今天-未來15天
+                const period2Start = new Date(today);
+                const period2End = new Date(today);
+                period2End.setDate(today.getDate() + 15);
+                
+                // 未來15天之後
+                const period3Start = new Date(today);
+                period3Start.setDate(today.getDate() + 15);
+                const period3End = new Date(today);
+                period3End.setDate(today.getDate() + 60); // 未來60天
+
+                const periods = [
+                    { start: period1Start, end: period1End, name: '過去15天-今天' },
+                    { start: period2Start, end: period2End, name: '今天-未來15天' },
+                    { start: period3Start, end: period3End, name: '未來15天之後' }
+                ];
+
+                // 查詢原本的日期範圍
+                for (let i = 0; i < periods.length; i++) {
+                    const period = periods[i];
+                    const fromDate = period.start.toISOString().split('T')[0];
+                    const toDate = period.end.toISOString().split('T')[0];
+                    
+                    loadingElement.textContent = `載入中... (第一階段 ${i + 1}/3: ${period.name})`;
+                    
+                    const apiUrl = `https://finnhub.io/api/v1/calendar/earnings?from=${fromDate}&to=${toDate}&token=${API_TOKEN}`;
+                    
+                    try {
+                        const response = await fetch(apiUrl);
+                        
+                        if (!response.ok) {
+                            console.warn(`HTTP error for period ${period.name}: status ${response.status}`);
+                            continue;
+                        }
+                        
+                        const data = await response.json();
+                        
+                        if (data && data.earningsCalendar && data.earningsCalendar.length > 0) {
+                            allEarningsData = allEarningsData.concat(data.earningsCalendar);
+                            console.log(`${period.name}: ${data.earningsCalendar.length} 筆資料`);
+                        }
+                        
+                        // 延遲100ms避免API限制
+                        await new Promise(resolve => setTimeout(resolve, 100));
+                        
+                    } catch (error) {
+                        console.warn(`Error fetching period ${period.name}:`, error);
+                        continue;
+                    }
+                }
+
+                // 第二階段：查詢特定日期
+                loadingElement.textContent = '載入中... (第二階段：特定日期)';
+                
+                const specificDates = [
+                    '2025-07-29',
+                    '2025-07-30', 
+                    '2025-07-31',
+                    '2025-08-01',
+                    '2025-08-04',
+                    '2025-08-05'
+                ];
+                
+                // 逐日查詢特定日期
+                for (let i = 0; i < specificDates.length; i++) {
+                    const date = specificDates[i];
+                    loadingElement.textContent = `載入中... (第二階段 ${i + 1}/${specificDates.length}: ${date})`;
+                    
+                    const apiUrl = `https://finnhub.io/api/v1/calendar/earnings?from=${date}&to=${date}&token=${API_TOKEN}`;
+                    
+                    try {
+                        const response = await fetch(apiUrl);
+                        
+                        if (!response.ok) {
+                            console.warn(`HTTP error for date ${date}: status ${response.status}`);
+                            continue;
+                        }
+                        
+                        const data = await response.json();
+                        
+                        if (data && data.earningsCalendar && data.earningsCalendar.length > 0) {
+                            allEarningsData = allEarningsData.concat(data.earningsCalendar);
+                            console.log(`特定日期 ${date}: ${data.earningsCalendar.length} 筆資料`);
+                        }
+                        
+                        // 延遲100ms避免API限制
+                        await new Promise(resolve => setTimeout(resolve, 100));
+                        
+                    } catch (error) {
+                        console.warn(`Error fetching date ${date}:`, error);
+                        continue;
+                    }
+                }
+                
+                // 第三階段：去重和處理
+                loadingElement.textContent = '載入中... (第三階段：去重處理)';
+                
+                if (allEarningsData.length > 0) {
+                    // 去除重複的資料 (根據symbol + date去重)
+                    const uniqueData = [];
+                    const seenItems = new Set();
+                    
+                    allEarningsData.forEach(item => {
+                        const key = `${item.symbol}-${item.date}-${item.quarter}-${item.year}`;
+                        if (!seenItems.has(key)) {
+                            seenItems.add(key);
+                            uniqueData.push(item);
+                        }
+                    });
+                    
+                    console.log(`原本範圍 + 特定日期總共載入 ${allEarningsData.length} 筆資料`);
+                    console.log(`去重後剩餘 ${uniqueData.length} 筆資料`);
+                    
+                    // 自定義排序：從今天往前推找到最近一個有數據的日期開始
+                    const today = new Date();
+                    today.setHours(0, 0, 0, 0);
+                    
+                    // 找到最近一個有實際數據的日期
+                    let referenceDate = null;
+                    const datesWithData = uniqueData
+                        .filter(item => item.epsActual !== null || item.revenueActual !== null)
+                        .map(item => new Date(item.date))
+                        .sort((a, b) => b - a); // 按日期降序排列
+                    
+                    // 找到今天或之前最近的有數據日期
+                    for (let date of datesWithData) {
+                        if (date <= today) {
+                            referenceDate = date;
+                            break;
+                        }
+                    }
+                    
+                    // 如果沒有找到，使用最早的有數據日期
+                    if (!referenceDate && datesWithData.length > 0) {
+                        referenceDate = datesWithData[datesWithData.length - 1];
+                    }
+                    
+                    // 如果還是沒有，使用今天
+                    if (!referenceDate) {
+                        referenceDate = today;
+                    }
+                    
+                    // 將參考日期存儲為全局變量，供顯示時使用
+                    window.referenceDate = referenceDate.toISOString().split('T')[0];
+                    
+                    uniqueData.sort((a, b) => {
+                        const dateA = new Date(a.date);
+                        const dateB = new Date(b.date);
+                        
+                        // 檢查是否有實際數據
+                        const hasActualDataA = a.epsActual !== null || a.revenueActual !== null;
+                        const hasActualDataB = b.epsActual !== null || b.revenueActual !== null;
+                        
+                        // 如果一個有實際數據而另一個沒有，有實際數據的排在前面
+                        if (hasActualDataA && !hasActualDataB) return -1;
+                        if (!hasActualDataA && hasActualDataB) return 1;
+                        
+                        // 如果都有實際數據或都沒有實際數據，按循環排序邏輯
+                        // 先從參考日期開始往後排列，然後回頭從最早排列到參考日期前一天
+                        if (dateA >= referenceDate && dateB >= referenceDate) {
+                            // 都是參考日期或之後的日期，按正常順序（遞增）
+                            return dateA - dateB;
+                        } else if (dateA >= referenceDate && dateB < referenceDate) {
+                            // A是參考日期或之後，B是之前，A排在前面
+                            return -1;
+                        } else if (dateA < referenceDate && dateB >= referenceDate) {
+                            // A是之前，B是參考日期或之後，B排在前面
+                            return 1;
+                        } else {
+                            // 都是參考日期之前的日期，按正常順序（遞增）
+                            return dateA - dateB;
+                        }
+                    });
+                    
+                    earningsData = uniqueData;
+                    console.log(`最終載入 ${earningsData.length} 筆財報數據 (去重後)`);
+                    
+                    // 應用當前的篩選設定
+                    filterData();
+                    // 更新排序箭頭以反映預設排序
+                    updateSortArrows();
+                    document.getElementById('tableContainer').style.display = 'block';
+                    document.getElementById('stats').style.display = 'flex';
+                } else {
+                    showError('沒有找到財報數據');
+                }
+                
+            } catch (error) {
+                console.error('Error fetching all data:', error);
+                showError('載入數據時發生錯誤: ' + error.message);
+            } finally {
+                document.getElementById('loading').style.display = 'none';
+            }
+        }
+
+        async function fetchSpecificDates() {
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('error').style.display = 'none';
+            document.getElementById('tableContainer').style.display = 'none';
+            document.getElementById('stats').style.display = 'none';
+
+            // 指定要查詢的日期
+            const specificDates = [
+                '2025-07-29',
+                '2025-07-30', 
+                '2025-07-31',
+                '2025-08-01',
+                '2025-08-04',
+                '2025-08-05'
+            ];
+
+            try {
+                let allEarningsData = [];
+                const loadingElement = document.getElementById('loading');
+                
+                // 逐日查詢
+                for (let i = 0; i < specificDates.length; i++) {
+                    const date = specificDates[i];
+                    loadingElement.textContent = `載入中... (${i + 1}/${specificDates.length}: ${date})`;
+                    
+                    const apiUrl = `https://finnhub.io/api/v1/calendar/earnings?from=${date}&to=${date}&token=${API_TOKEN}`;
+                    
+                    try {
+                        const response = await fetch(apiUrl);
+                        
+                        if (!response.ok) {
+                            console.warn(`HTTP error for date ${date}: status ${response.status}`);
+                            continue;
+                        }
+                        
+                        const data = await response.json();
+                        
+                        if (data && data.earningsCalendar && data.earningsCalendar.length > 0) {
+                            allEarningsData = allEarningsData.concat(data.earningsCalendar);
+                            console.log(`${date}: ${data.earningsCalendar.length} 筆資料`);
+                        }
+                        
+                        // 延遲100ms避免API限制
+                        await new Promise(resolve => setTimeout(resolve, 100));
+                        
+                    } catch (error) {
+                        console.warn(`Error fetching date ${date}:`, error);
+                        continue;
+                    }
+                }
+                
+                if (allEarningsData.length > 0) {
+                    // 去除重複的資料 (根據symbol + date去重)
+                    const uniqueData = [];
+                    const seenItems = new Set();
+                    
+                    allEarningsData.forEach(item => {
+                        const key = `${item.symbol}-${item.date}-${item.quarter}-${item.year}`;
+                        if (!seenItems.has(key)) {
+                            seenItems.add(key);
+                            uniqueData.push(item);
+                        }
+                    });
+                    
+                    // 按日期排序
+                    uniqueData.sort((a, b) => new Date(a.date) - new Date(b.date));
+                    
+                    earningsData = uniqueData;
+                    console.log(`特定日期查詢總共載入 ${earningsData.length} 筆財報數據 (去重後)`);
+                    
+                    // 應用當前的篩選設定
+                    filterData();
+                    // 更新排序箭頭以反映預設排序
+                    updateSortArrows();
+                    document.getElementById('tableContainer').style.display = 'block';
+                    document.getElementById('stats').style.display = 'flex';
+                } else {
+                    showError('指定日期沒有找到財報數據');
+                }
+                
+            } catch (error) {
+                console.error('Error fetching specific dates:', error);
+                showError('載入特定日期數據時發生錯誤: ' + error.message);
             } finally {
                 document.getElementById('loading').style.display = 'none';
             }

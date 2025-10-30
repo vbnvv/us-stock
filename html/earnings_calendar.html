@@ -1241,33 +1241,6 @@
             // 取得並處理公司名稱
             let companyName = ubotStockNames.get(item.symbol) || item.symbol;
             
-            // 檢查是否包含中文名稱
-            const chineseNameMatch = companyName.match(/([A-Z0-9\s\-\&]+)([^A-Za-z0-9\s\-\&]+)/);
-            if (chineseNameMatch) {
-                // 如果有中文部分，取中文部分但移除後綴
-                let chinesePart = chineseNameMatch[2].trim();
-                // 使用比較精確的後綴移除邏輯，按照長度排序以確保更長的後綴先被移除
-                const suffixes = ['控股公司', '科技公司', '公司', '集團', '控股', '科技', '製藥', '國際'];
-                for (const suffix of suffixes) {
-                    if (chinesePart.endsWith(suffix)) {
-                        chinesePart = chinesePart.slice(0, -suffix.length).trim();
-                        break; // 找到匹配的後綴後就停止
-                    }
-                }
-                companyName = chinesePart;
-            } else {
-                // 如果是純英文名稱
-                if (item.symbol === 'MMM' && companyName.includes('3M公司')) {
-                    companyName = '3M'; // 保持3M的原始名稱
-                } else {
-                    // 移除常見後綴
-                    companyName = companyName
-                        .replace(/-CLASS [A-Z]$/i, '')
-                        .replace(/\s*(CORP|CORPORATION|INC|LTD|CO|LLC|GROUP|TECHNOLOGY|THERAPEUTICS|PHARMACEUTICAL|INTERNATIONAL|LIMITED)(\s|$)/gi, '')
-                        .trim();
-                }
-            }
-            
             return `${companyName}(${item.symbol})公布${item.year}年Q${item.quarter}營收${revenueDiff > 0 ? '年增' : '年減'}${Math.abs(revenueDiff)}%至${revenueInBillions}億美元，` +
                    `${revenueDiff > 0 ? '優於' : '低於'}市場預期${revenueEstimateInBillions}億元，` +
                    `EPS ${epsDiff > 0 ? '年增' : '年減'}${Math.abs(epsDiff)}%至${item.epsActual.toFixed(2)}元，` +
@@ -1315,4 +1288,5 @@
     </script>
 </body>
 </html> 
+
 

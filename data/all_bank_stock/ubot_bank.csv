@@ -1,194 +1,226 @@
-﻿股票名稱,代碼
-DECKERS OUTDOOR CORP 德克斯戶外用品公司,DECK
-CAPRICOR THERAPEUTICS INC Capricor治療公司,CAPR
-VERTIV HOLDINGS CO-A 維諦技術控股公司,VRT
-ESTEE LAUDER COMPANIES-CL A 雅詩蘭黛,EL
-SUPER MICRO COMPUTER INC 美超微電腦股份有限公司,SMCI
-TESLA INC 特斯拉公司,TSLA
-CVS HEALTH CORP CVS保健公司,CVS
-GE VERNOVA INC 奇異維諾瓦公司,GEV
-ELEVANCE HEALTH INC Elevance健康公司,ELV
-FEDEX CORP 聯邦快遞公司,FDX
-ADVANCED MICRO DEVICES 超微半導體公司,AMD
-ON SEMICONDUCTOR 安森美半導體,ON
-GILEAD SCIENCES INC 吉利德科學公司,GILD
-帕蘭提爾科技公司,PLTR
-CADENCE DESIGN SYS INC Cadence設計系統公司,CDNS
-MARRIOTT INTERNATIONAL -CL A 萬豪國際集團(馬里蘭),MAR
-DELL TECHNOLOGIES -C 戴爾科技公司,DELL
-SERVE ROBOTICS INC Serve Robotics公司(限專投),SERV
-CSX CORP CSX公司,CSX
-SNOWFLAKE INC-CLASS A Snowflake公司,SNOW
-GENERAL MOTORS CO 通用汽車公司,GM
-ARM HOLDINGS PLC 安謀控股公開有限公司,ARM
-UNION PACIFIC CORP 聯合太平洋公司,UNP
-FORD MOTOR CO 福特汽車公司,F
-CONSTELLATION ENERGY 星座能源公司,CEG
-INVESCO LTD 景順有限公司,IVZ
-STRYKER CORP 史賽克,SYK
-GARMIN LTD 國際航電股份有限公司,GRMN
-TAIWAN SEMICONDUCTOR-SP ADR 台積電,TSM
-UNITED AIRLINES HOLDINGS INC 聯合航空控股公司,UAL
-EQUINIX INC Equinix公司,EQIX
-INTUITIVE SURGICAL INC 直覺外科公司,ISRG
-NASDAQ INC 那斯達克有限公司,NDAQ
-NOVO-NORDISK A/S-SPONS ADR 諾和諾德公司,NVO
-GOLDMAN SACHS GROUP INC 高盛集團,GS
-MCDONALDS CORP 麥當勞公司,MCD
-GE AEROSPACE 奇異公司,GE
-DANAHER CORP 丹納赫集團,DHR
-3M CO 3M公司,MMM
-SIMON PROPERTY GROUP INC 賽門物業集團,SPG
-BLOCK INC 布洛克公司,XYZ
-NIKE INC -CL B 耐吉公司,NKE
-SOLVENTUM CORP SOLVENTUM公司,SOLV
-AMERICAN EXPRESS CO 美國運通,AXP
-RAYTHEON TECHNOLOGIES CORP 雷神科技公司,RTX
-PALO ALTO NETWORKS INC 帕羅奧圖網路公司,PANW
-XYLEM INC,XYL
-UNITED PARCEL SERVICE-CL B 聯合包裹服務公司,UPS
-METLIFE INC 大都會人壽,MET
-CATERPILLAR INC 開拓重工公司,CAT
-BANK OF NEW YORK MELLON CORP 紐約梅隆銀行,BK
-ORACLE CORP 甲骨文公司,ORCL
-WALMART INC 沃爾瑪公司,WMT
-ELI LILLY & CO 禮來公司,LLY
-UNITEDHEALTH GROUP INC 聯合健康集團公司,UNH
-VISA INC-CLASS A SHARES 威士卡,V
-MASTERCARD INC - A 萬事達卡,MA
-THE CIGNA GROUP 信諾集團,CI
-MONSTER BEVERAGE CORP 怪獸飲料公司,MNST
-THE BOEING CO 波音公司,BA
-STARBUCKS CORP 星巴克公司,SBUX
-S&P GLOBAL INC 標準普爾全球公司,SPGI
-AMERICAN ELECTRIC POWER 美國電力公司,AEP
-BERKSHIRE HATHAWAY INC-CLASS B 波克夏海瑟威公司,BRK/B
-ABBOTT LABORATORIES 亞培,ABT
-CITIGROUP INC 花旗集團,C
-MERCK & CO. INC. 默克藥廠,MRK
-FREEPORT-MCMORAN INC 自由港麥克莫蘭銅金公司,FCX
-JPMORGAN CHASE & CO 摩根大通銀行,JPM
-THERMO FISHER SCIENTIFIC INC 賽默飛世爾科技有限公司,TMO
-AIR PRODUCTS & CHEMICALS INC 氣體產品與化學,APD
-MEDTRONIC PLC 美敦力公司,MDT
-SCHLUMBERGER LTD 斯倫貝謝公眾有限公司,SLB
-ANALOG DEVICES INC 亞德諾公司,ADI
-INTUIT INC 直覺公司,INTU
-HOME DEPOT INC 家得寶公司,HD
-YUM! BRANDS INC 百勝餐飲,YUM
-CISCO SYSTEMS INC 思科系統股份有限公司,CSCO
-CHARLES SCHWAB CORP 嘉信理財公司,SCHW
-MONDELEZ INTERNATIONAL INC-A 億滋國際,MDLZ
-MSCI INC MSCI 明晟,MSCI
-MICROSOFT CORP 微軟公司,MSFT
-LOWES COS INC 羅威公司,LOW
-AMPHENOL CORP-CL A 安費諾,APH
-WELLS FARGO & CO 富國銀行,WFC
-ALPHABET INC-CLASS A Alphabet公司,GOOGL
-DEERE & CO 迪爾,DE
-SALESFORCE INC 賽富時公司,CRM
-PROLOGIS INC 普洛斯,PLD
-PHILLIPS 66 菲利浦66,PSX
-ACCENTURE PLC-CL A 埃森哲有限公司,ACN
-BROADCOM INC 博通公司,AVGO
-SANOFI-ADR 賽諾菲有限責任公司(法國),SNY
-UBER TECHNOLOGIES INC 優步科技公司,UBER
-SEMPRA 桑普拉,SRE
-BLACKROCK INC 貝萊德公司,BLK
-MODERNA INC 莫德納公司,MRNA
-ALTRIA GROUP INC 高特利集團,MO
-MORGAN STANLEY 摩根士丹利,MS
-AMERICAN AIRLINES GROUP INC 美國航空集團公司,AAL
-LULULEMON ATHLETICA INC 露露檸檬公司,LULU
-REDWIRE CORP 紅線公司,RDW
-LINDE PLC 林德公開有限公司,LIN
-AT&T INC AT&T公司,T
-DELTA AIR LINES INC 達美航空,DAL
-MARVELL TECHNOLOGY INC 邁威爾科技有限公司,MRVL
-直覺機器公司(限專投),LUNR
-TARGET CORP 目標百貨公司,TGT
-ARISTA NETWORKS INC Arista網路公司,ANET
-PAYPAL HOLDINGS INC Paypal控股有限公司,PYPL
-NOVARTIS AG-SPONSORED ADR 諾華公司,NVS
-PDD HOLDINGS INC 拼多多控股公司,PDD
-COSTCO WHOLESALE CORP 好市多公司,COST
-OCCIDENTAL PETROLEUM CORP 西方石油,OXY
-LOCKHEED MARTIN CORP 洛克希德馬丁,LMT
-BANK OF AMERICA CORP 美國銀行,BAC
-WELLTOWER INC 威爾塔公司,WELL
-THE COCA-COLA CO 可口可樂公司,KO
-ROKU INC Roku公司,ROKU
-APPLE INC 蘋果公司,AAPL
-DOMINION ENERGY INC 道明尼能源公司,D
-VERIZON COMMUNICATIONS INC 威瑞森電信公司,VZ
-NETFLIX INC 網飛公司,NFLX
-MOODYS CORP 穆迪,MCO
-HP INC 惠普公司,HPQ
-BOSTON SCIENTIFIC CORP 波士頓科學公司,BSX
-GENERAL DYNAMICS CORP 通用動力公司,GD
-CARNIVAL CORP 嘉年華集團,CCL
-CIRCLE INTERNET GROUP INC Circle網路集團公司,CRCL
-HONEYWELL INTERNATIONAL INC 漢威聯合國際公司,HON
-NVIDIA CORP 輝達,NVDA
-NEXTERA ENERGY INC 新紀元能源公司,NEE
-HORMEL FOODS CORP 霍梅爾食品,HRL
-BAIDU INC - SPON ADR 百度股份有限公司,BIDU
-AIRBNB INC-CLASS A 愛彼迎公司,ABNB
-KLA CORP 科磊公司,KLAC
-ADOBE INC 奧多比系統公司,ADBE
-REGENERON PHARMACEUTICALS 雷傑納榮製藥公司,REGN
-QUALCOMM INC 高通公司,QCOM
-ABBVIE INC 艾伯維公司,ABBV
-META PLATFORMS INC-CLASS A Meta平台公司,META
-INTL BUSINESS MACHINES CORP 國際商業機器,IBM
-BOOKING HOLDINGS INC 繽客控股公司,BKNG
-HIMAX TECHNOLOGIES INC-ADR 奇景光電,HIMX
-THE PROCTER & GAMBLE CO 寶僑公司,PG
-AMAZON.COM INC 亞馬遜公司,AMZN
-EXXON MOBIL CORP 埃克森美孚公司,XOM
-TEXAS INSTRUMENTS INC 德州儀器公司,TXN
-THE WALT DISNEY CO 華特迪士尼公司,DIS
-MICRON TECHNOLOGY INC 美光科技公司,MU
-NXP SEMICONDUCTORS NV 恩智浦半導體股份有限公司,NXPI
-ALBEMARLE CORP 雅保公司,ALB
-VERTEX PHARMACEUTICALS INC 福泰製藥公司,VRTX
-AMERICAN TOWER CORP 美國電塔,AMT
-COLGATE-PALMOLIVE CO 高露潔-棕欖公司,CL
-ELECTRONIC ARTS INC 美商藝電公司,EA
-AMGEN INC 安進公司,AMGN
-CHEVRON CORP 雪佛龍公司,CVX
-GSK PLC-SPON ADR 葛蘭素史克公開有限公司,GSK
-CONOCOPHILLIPS 康菲石油,COP
-PEPSICO INC 百事可樂公司,PEP
-JOHNSON & JOHNSON 嬌生公司,JNJ
-LAM RESEARCH CORP 科林研發股份有限公司,LRCX
-ALIBABA GROUP HOLDING-SP ADR 阿里巴巴集團控股有限公司,BABA
-BRISTOL-MYERS SQUIBB CO 必治妥施貴寶公司,BMY
-ZOOM  COMMUNICATIONS-A ZOOM通訊有限公司,ZM
-UIPATH INC - CLASS A UiPath公司,PATH
-COINBASE GLOBAL INC -CLASS A 比特幣基地全球公司,COIN
-KROGER CO,KR
-APPLIED MATERIALS INC 應用材料,AMAT
-SYNOPSYS INC 新思科技公司,SNPS
-ASTRAZENECA PLC-SPONS ADR 阿斯特捷利康公開有限公司,AZN
-T-MOBILE US INC T-Mobile美國公司,TMUS
-UNITY SOFTWARE INC Unity軟體公司,U
-ASML HOLDING NV-NY REG SHS 艾司摩爾控股公司,ASML
-CRISPR THERAPEUTICS AG CRISPR治療公司,CRSP
-SOUNDHOUND AI INC-A SOUNDHOUND AI公司,SOUN
-HCA HEALTHCARE INC HCA醫療保健公司,HCA
-NAVITAS SEMICONDUCTOR CORP 納微半導體有限公司,NVTS
-STRATEGY INC-CL A 策略公司,MSTR
-PFIZER INC 輝瑞大藥廠股份有限公司,PFE
-NOVAVAX INC 諾瓦瓦克斯公司,NVAX
-Chewy公司(限專投),CHWY
-SERVICENOW INC ServiceNow公司,NOW
-ALCOA CORP 美國鋁業公司,AA
-BITDEER TECHNOLOGIES GROUP-A 比特小鹿(限專投),BTDR
-COREWEAVE INC-CL A CoreWeave公司,CRWV
-UNUSUAL MACHINES INC Unusual Machines公司(限專投),UMAC
+股票名稱,代碼
+美國鋁業公司,AA
+美國航空集團公司,AAL
+蘋果公司,AAPL
+艾伯維公司,ABBV
+愛彼迎公司,ABNB
+亞培,ABT
+埃森哲有限公司,ACN
+奧多比系統公司,ADBE
+亞德諾公司,ADI
+美國電力公司,AEP
+雅寶公司,ALB
+應用材料,AMAT
+超微半導體公司,AMD
+安進公司,AMGN
+美國電塔,AMT
+亞馬遜公司,AMZN
+Arista網路公司,ANET
+氣體產品與化學,APD
+安費諾,APH
 應用數位公司(限專投),APLD
-COMCAST CORP-CLASS A 康卡斯特公司,CMCSA
-WOLFSPEED INC Wolfspeed公司,WOLF
-INTEL CORP 英特爾,INTC
-CHARTER COMMUNICATIONS INC-A 特許通訊公司,CHTR
+安謀控股公開有限公司,ARM
+艾司摩爾控股公司,ASML
+博通公司,AVGO
+美國運通,AXP
+阿斯特捷利康公開有限公司,AZN
+波音公司,BA
+阿里巴巴集團控股有限公司,BABA
+美國銀行,BAC
+百度股份有限公司,BIDU
+紐約梅隆銀行,BK
+繽客控股公司,BKNG
+貝萊德公司,BLK
+必治妥施貴寶公司,BMY
+波克夏海瑟威公司,BRK/B
+波士頓科學公司,BSX
+比特小鹿有限公司(限專投),BTDR
+花旗集團,C
+卡特彼勒公司,CAT
+嘉年華集團,CCL
+Cadence設計系統公司,CDNS
+星座能源公司,CEG
+特許通訊公司,CHTR
+Chewy公司(限專投),CHWY
+信諾集團,CI
+高露潔-棕欖公司,CL
+康卡斯特公司,CMCSA
+比特幣基地全球公司,COIN
+康菲石油,COP
+好市多公司,COST
+賽富時公司,CRM
+CoreWeave公司,CRWV
+思科系統股份有限公司,CSCO
+CSXCorp,CSX
+CVS保健公司,CVS
+雪佛龍公司,CVX
+道明尼能源公司,D
+達美航空,DAL
+迪爾,DE
+德克斯戶外用品公司,DECK
+戴爾科技公司,DELL
+丹納赫集團,DHR
+華特迪士尼公司,DIS
+美商藝電公司,EA
+雅詩蘭黛,EL
+Elevance健康公司,ELV
+Equinix公司,EQIX
+福特汽車公司,F
+自由港麥克莫蘭銅金公司,FCX
+聯邦快遞公司,FDX
+通用動力公司,GD
+奇異公司,GE
+GE Vernova Inc,GEV
+吉利德科學公司,GILD
+通用汽車公司,GM
+Alphabet公司,GOOGL
+國際航電股份有限公司,GRMN
+高盛集團,GS
+葛蘭素史克公開有限公司,GSK
+HCA醫療保健公司,HCA
+家得寶公司,HD
+奇景光電,HIMX
+漢威聯合國際公司,HON
+惠普公司,HPQ
+霍梅爾食品,HRL
+國際商業機器,IBM
+英特爾,INTC
+直覺公司,INTU
+直覺外科公司,ISRG
+景順有限公司,IVZ
+嬌生公司,JNJ
+摩根大通銀行,JPM
+科磊公司,KLAC
+可口可樂公司,KO
+克羅格公司,KR
+林德公開有限公司,LIN
+禮來公司,LLY
+洛克希德馬丁,LMT
+羅威公司,LOW
+科林研發股份有限公司,LRCX
+露露檸檬公司,LULU
+直覺機器公司(限專投),LUNR
+萬事達卡,MA
+萬豪國際集團(馬里蘭),MAR
+麥當勞公司,MCD
+穆迪,MCO
+億滋國際,MDLZ
+美敦力公司,MDT
+大都會人壽,MET
+Meta平台公司,META
+3M,MMM
+怪獸飲料公司,MNST
+高特利集團,MO
+默克藥廠,MRK
+莫德納公司,MRNA
+Marvell Technology Inc,MRVL
+摩根士丹利,MS
+MSCI明晟,MSCI
+微軟公司,MSFT
+策略公司,MSTR
+美光科技公司,MU
+那斯達克有限公司,NDAQ
+NextEraEnergyInc,NEE
+網飛公司,NFLX
+耐吉公司,NKE
+ServiceNow公司,NOW
+諾瓦瓦克斯公司,NVAX
+輝達,NVDA
+諾和諾德公司,NVO
+諾華公司,NVS
+納微半導體有限公司(限專投),NVTS
+恩智浦半導體股份有限公司,NXPI
+安森美半導體,ON
+甲骨文公司,ORCL
+西方石油,OXY
+Palo Alto Networks Inc,PANW
+拼多多控股公司,PDD
+百事可樂公司,PEP
+輝瑞大藥廠股份有限公司,PFE
+寶僑公司,PG
+普洛斯,PLD
+帕蘭提爾科技公司,PLTR
+菲利浦66,PSX
+Paypal控股有限公司,PYPL
+高通公司,QCOM
+紅線公司,RDW
+Regeneron Pharmaceuticals In,REGN
+Roku公司,ROKU
+雷神科技公司,RTX
+星巴克公司,SBUX
+嘉信理財公司,SCHW
+Serve Robotics公司(限專投),SERV
+斯倫貝謝公眾有限公司,SLB
+超微電腦公司,SMCI
+Snowflake公司,SNOW
+新思科技公司,SNPS
+賽諾菲有限責任公司(法國),SNY
+Solventum Corp,SOLV
+SoundHound AI Inc,SOUN
+賽門物業集團,SPG
+標準普爾全球公司,SPGI
+桑普拉,SRE
+史賽克,SYK
+AT&T公司,T
+目標百貨公司,TGT
+賽默飛世爾科技有限公司,TMO
+T-Mobile美國公司,TMUS
+特斯拉公司,TSLA
+台積電,TSM
+德州儀器公司,TXN
+Unity軟體公司,U
+聯合航空控股公司,UAL
+優步科技公司,UBER
+Unusual Machines公司(限專投),UMAC
+聯合健康集團公司,UNH
+聯合太平洋公司,UNP
+聯合包裹服務公司,UPS
+威士卡,V
+維諦技術控股公司,VRT
+福泰製藥公司,VRTX
+威瑞森電信公司,VZ
+威爾塔公司,WELL
+富國銀行,WFC
+沃爾瑪公司,WMT
+Wolfspeed公司,WOLF
+埃克森美孚公司,XOM
+賽萊默公司,XYL
+布洛克公司,XYZ
+百勝餐飲,YUM
+UiPath公司,PATH
+Capricor治療公司,CAPR
+Circle網路集團公司,CRCL
+CRISPR治療公司,CRSP
+數據狗公司,DDOG
+慧與企業公司,HPE
+Crowdstrike控股公司,CRWD
+華納兄弟探索公司,WBD
+極光創新公司,AUR
+尼比厄斯集團公眾有限公司,NBIS
+Zoom視訊通訊有限公司,ZM
+交易台公司,TTD
+羅賓漢市場公司,HOOD
+奧科洛公司,OKLO
+Centrus Energy Corp,LEU
+卡梅科公司,CCJ
+紐思凱電力公司,SMR
+利可迅生技公司,RXRX
+Oscar Health Inc,OSCR
+索菲科技公司,SOFI
+Ondas控股公司,ONDS
+健永生技股份有限公司,MENS
+祥茂光電科技股份有限公司,AAOI
+Energy Fuels公司,UUUU
+BitMine科技公司,BMNR
+Rubrik公司,RBRK
+D-Wave量子公司,QBTS
+AppLovin公司,APP
+IonQ公司,IONQ
+量子運算公司,QUBT
+Rigetti計算公司,RGTI
+Rivian汽車公司,RIVN
+Lucid集團公司,LCID
+Astera實驗室公司,ALAB
+MP材料公司,MP
+Lithium Americas公司,LAC
+Viavi解決方案公司,VIAV

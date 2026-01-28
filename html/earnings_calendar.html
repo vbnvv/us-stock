@@ -1242,7 +1242,7 @@
             // 取得並處理公司名稱
             let companyName = ubotStockNames.get(item.symbol) || item.symbol;
             
-            return `${companyName}(${item.symbol})公布${item.year}年Q${item.quarter}營收${revenueDiff > 0 ? '年增' : '年減'}${Math.abs(revenueDiff)}%至${revenueInBillions}億美元，` +
+            return `${companyName}(${item.symbol})公布${item.year}年Q${item.quarter}營收年增/年減XXXX%至${revenueInBillions}億美元，` +
                    `${revenueDiff > 0 ? '優於' : '低於'}市場預期${revenueEstimateInBillions}億元，` +
                    `EPS ${epsDiff > 0 ? '年增' : '年減'}${Math.abs(epsDiff)}%至${item.epsActual.toFixed(2)}元，` +
                    `${epsDiff > 0 ? '優於' : '低於'}預期${item.epsEstimate.toFixed(2)}元。`;
@@ -1289,6 +1289,7 @@
     </script>
 </body>
 </html> 
+
 
 
 
